@@ -1,11 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>JP Class 105</title>
+  <title>히라가나 50음표</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f6f8;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      margin: auto;
+    }
+    td {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #ccc;
+      font-size: 28px;
+      cursor: pointer;
+      background: #fff;
+    }
+    td.empty {
+      background: #eee;
+      cursor: default;
+    }
+    td:active {
+      background: #dceeff;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>JP Class 105</h1>
-  <p>메인 페이지</p>
+
+<h1>히라가나 50음표</h1>
+<p>글자를 클릭하면 발음이 재생됩니다</p>
+
+<table>
+  <tr>
+    <td onclick="play('a')">あ</td>
+    <td onclick="play('i')">い</td>
+    <td onclick="play('u')">う</td>
+    <td onclick="play('e')">え</td>
+    <td onclick="play('o')">お</td>
+  </tr>
+  <tr>
+    <td onclick="play('ka')">か</td>
+    <td onclick="play('ki')">き</td>
+    <td onclick="play('ku')">く</td>
+    <td onclick="play('ke')">け</td>
+    <td onclick="play('ko')">こ</td>
+  </tr>
+  <tr>
+    <td onclick="play('sa')">さ</td>
+    <td onclick="play('shi')">し</td>
+    <td onclick="play('su')">す</td>
+    <td onclick="play('se')">せ</td>
+    <td onclick="play('so')">そ</td>
+  </tr>
+  <tr>
+    <td onclick="play('ta')">た</td>
+    <td onclick="play('chi')">ち</td>
+    <td onclick="play('tsu')">つ</td>
+    <td onclick="play('te')">て</td>
+    <td onclick="play('to')">と</td>
+  </tr>
+  <tr>
+    <td onclick="play('na')">な</td>
+    <td onclick="play('ni')">に</td>
+    <td onclick="play('nu')">ぬ</td>
+    <td onclick="play('ne')">ね</td>
+    <td onclick="play('no')">の</td>
+  </tr>
+  <tr>
+    <td onclick="play('ha')">は</td>
+    <td onclick="play('hi')">ひ</td>
+    <td onclick="play('fu')">ふ</td>
+    <td onclick="play('he')">へ</td>
+    <td onclick="play('ho')">ほ</td>
+  </tr>
+  <tr>
+    <td onclick="play('ma')">ま</td>
+    <td onclick="play('mi')">み</td>
+    <td onclick="play('mu')">む</td>
+    <td onclick="play('me')">め</td>
+    <td onclick="play('mo')">も</td>
+  </tr>
+  <tr>
+    <td onclick="play('ya')">や</td>
+    <td class="empty"></td>
+    <td onclick="play('yu')">ゆ</td>
+    <td class="empty"></td>
+    <td onclick="play('yo')">よ</td>
+  </tr>
+  <tr>
+    <td onclick="play('ra')">ら</td>
+    <td onclick="play('ri')">り</td>
+    <td onclick="play('ru')">る</td>
+    <td onclick="play('re')">れ</td>
+    <td onclick="play('ro')">ろ</td>
+  </tr>
+  <tr>
+    <td onclick="play('wa')">わ</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td onclick="play('wo')">を</td>
+  </tr>
+  <tr>
+    <td colspan="5" onclick="play('n')">ん</td>
+  </tr>
+</table>
+
+<audio id="audio"></audio>
+
+<script>
+  function play(sound) {
+    const audio = document.getElementById("audio");
+    audio.src = "audio/" + sound + ".mp3";
+    audio.play();
+  }
+</script>
+
 </body>
 </html>
