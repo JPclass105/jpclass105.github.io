@@ -170,7 +170,7 @@ function selectChar(cell, displayChar, fileChar) {
   // 랜덤 폴더 음성 재생
   const folder = Math.floor(Math.random() * 4) + 1;
   const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
-  audio.volume = 0.4;
+  audio.volume = 1;
   audio.play();
 }
 </script>
