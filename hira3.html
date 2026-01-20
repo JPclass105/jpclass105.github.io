@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>히라가나 탁음 발음</title>
+  <title>히라가나 50음 발음</title>
 
   <style>
     body {
@@ -17,6 +17,39 @@
       margin-bottom: 8px;
     }
 
+    
+/* 상단 청음, 탁음, 반탁음 */
+.top-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.top-links a {
+  text-decoration: none;
+  color: #555;
+  border: 1px solid #ccc;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+/* 현재 페이지 */
+.top-links a.active {
+  background-color: #ffc0cb;
+  border-color: #f3a6b6;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 선택사항: hover 효과 */
+.top-links a:hover {
+  background-color: #ffe4ec;
+}
+
+    
     /* 상단 큰 표시 */
     .big-box {
       width: 200px;
@@ -26,7 +59,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 84px;
+      font-size: 85px;
       background-color: #fff;
     }
 
@@ -40,27 +73,20 @@
       width: 56px;
       height: 56px;
       font-size: 24px;
+      cursor: pointer;
       transition: background-color 0.2s;
     }
 
     td.active {
-      cursor: pointer;
-    }
-
-    td.active.selected {
-      background-color: #ffc0cb;
-    }
-
-    td.disabled {
-      color: #bbb;
-      background-color: #fafafa;
+      background-color: #ffc0cb; /* 핑크 */
     }
 
     .empty {
       background-color: #fafafa;
+      cursor: default;
     }
 
-    /* 모바일 대응 */
+    /* 📱 소형 모바일 대응 */
     @media (max-height: 700px) {
       .big-box {
         width: 180px;
@@ -79,104 +105,87 @@
 
 <body>
 
-<h1>히라가나 탁음 발음</h1>
+<h1>히라가나 50음 발음</h1>
+<div class="top-links">
+  <a href="hira.html" class="active">청음</a>
+  <a href="hira2.html">탁음</a>
+  <a href="hira3.html">반탁음</a>
+</div>
+<div id="bigDisplay" class="big-box">ぱ</div>
 
-<div id="bigDisplay" class="big-box">が</div>
-
-<table>
-  <!-- あ행 (비활성) -->
+<table id="kanaTable">
   <tr>
-    <td class="disabled">あ</td>
-    <td class="disabled">い</td>
-    <td class="disabled">う</td>
-    <td class="disabled">え</td>
-    <td class="disabled">お</td>
+    <td class="empty">あ</td>
+    <td class="empty">い</td>
+    <td class="empty">う</td>
+    <td class="empty">え</td>
+    <td class="empty">お</td>
   </tr>
-
-  <!-- か행 → が행 -->
   <tr>
-    <td class="active" onclick="selectChar(this,'が','ga')">が</td>
-    <td class="active" onclick="selectChar(this,'ぎ','gi')">ぎ</td>
-    <td class="active" onclick="selectChar(this,'ぐ','gu')">ぐ</td>
-    <td class="active" onclick="selectChar(this,'げ','ge')">げ</td>
-    <td class="active" onclick="selectChar(this,'ご','go')">ご</td>
+    <td class="empty">が</td>
+    <td class="empty")">ぎ</td>
+    <td class="empty">ぐ</td>
+    <td class="empty">げ</td>
+    <td class="empty">ご</td>
   </tr>
-
-  <!-- さ행 → ざ행 -->
   <tr>
-    <td class="active" onclick="selectChar(this,'ざ','za')">ざ</td>
-    <td class="active" onclick="selectChar(this,'じ','ji')">じ</td>
-    <td class="active" onclick="selectChar(this,'ず','zu')">ず</td>
-    <td class="active" onclick="selectChar(this,'ぜ','ze')">ぜ</td>
-    <td class="active" onclick="selectChar(this,'ぞ','zo')">ぞ</td>
+    <td class="empty">ざ</td>
+    <td class="empty">じ</td>
+    <td class="empty">ず</td>
+    <td class="empty">ぜ</td>
+    <td class="empty">ぞ</td>
   </tr>
-
-  <!-- た행 → だ행 -->
   <tr>
-    <td class="active" onclick="selectChar(this,'だ','da')">だ</td>
-    <td class="active" onclick="selectChar(this,'ぢ','ji')">ぢ</td>
-    <td class="active" onclick="selectChar(this,'づ','zu')">づ</td>
-    <td class="active" onclick="selectChar(this,'で','de')">で</td>
-    <td class="active" onclick="selectChar(this,'ど','do')">ど</td>
+  <td class="empty">だ</td>
+  <td class="empty">ぢ</td>
+  <td class="empty">づ</td>
+  <td class="empty">で</td>
+  <td class="empty">ど</td>
   </tr>
-
-  <!-- な행 (비활성) -->
   <tr>
-    <td class="disabled">な</td>
-    <td class="disabled">に</td>
-    <td class="disabled">ぬ</td>
-    <td class="disabled">ね</td>
-    <td class="disabled">の</td>
+    <td class="empty">な</td>
+    <td class="empty">に</td>
+    <td class="empty">ぬ</td>
+    <td class="empty">ね</td>
+    <td class="empty">の</td>
   </tr>
-
-  <!-- は행 (비활성: 반탁음에서 사용) -->
   <tr>
-    <td class="disabled">は</td>
-    <td class="disabled">ひ</td>
-    <td class="disabled">ふ</td>
-    <td class="disabled">へ</td>
-    <td class="disabled">ほ</td>
+    <td onclick="selectChar(this,'ぱ','pa')">ぱ</td>
+    <td onclick="selectChar(this,'ぴ','pi')">ぴ</td>
+    <td onclick="selectChar(this,'ぷ','pu')">ぷ</td>
+    <td onclick="selectChar(this,'ぺ','pe')">ぺ</td>
+    <td onclick="selectChar(this,'ぽ','po')">ぽ</td>
   </tr>
-
-  <!-- ま행 -->
   <tr>
-    <td class="disabled">ま</td>
-    <td class="disabled">み</td>
-    <td class="disabled">む</td>
-    <td class="disabled">め</td>
-    <td class="disabled">も</td>
+    <td class="empty">ま</td>
+    <td class="empty">み</td>
+    <td class="empty">む</td>
+    <td class="empty">め</td>
+    <td class="empty">も</td>
   </tr>
-
-  <!-- や행 -->
   <tr>
-    <td class="disabled">や</td>
+    <td class="empty">や</td>
     <td class="empty"></td>
-    <td class="disabled">ゆ</td>
+    <td class="empty">ゆ</td>
     <td class="empty"></td>
-    <td class="disabled">よ</td>
+    <td class="empty">よ</td>
   </tr>
-
-  <!-- ら행 -->
   <tr>
-    <td class="disabled">ら</td>
-    <td class="disabled">り</td>
-    <td class="disabled">る</td>
-    <td class="disabled">れ</td>
-    <td class="disabled">ろ</td>
+    <td class="empty">ら</td>
+    <td class="empty">り</td>
+    <td class="empty">る</td>
+    <td class="empty">れ</td>
+    <td class="empty">ろ</td>
   </tr>
-
-  <!-- わ행 -->
   <tr>
-    <td class="disabled">わ</td>
+    <td class="empty">わ</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
-    <td class="disabled">を</td>
+    <td class="empty">を</td>
   </tr>
-
-  <!-- ん -->
   <tr>
-    <td class="disabled">ん</td>
+    <td class="empty">ん</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -186,17 +195,19 @@
 
 <script>
 function selectChar(cell, displayChar, fileChar) {
+  // 큰 글자 표시
   document.getElementById('bigDisplay').textContent = displayChar;
 
-  document.querySelectorAll('td.selected').forEach(td =>
-    td.classList.remove('selected')
-  );
+  // 이전 선택 제거
+  document.querySelectorAll('td.active').forEach(td => td.classList.remove('active'));
 
-  cell.classList.add('selected');
+  // 현재 선택 강조
+  cell.classList.add('active');
 
+  // 랜덤 폴더 음성 재생
   const folder = Math.floor(Math.random() * 4) + 1;
   const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
-  audio.volume = 0.4;
+  audio.volume = 1;
   audio.play();
 }
 </script>
