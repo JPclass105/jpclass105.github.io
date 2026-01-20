@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>히라가나 탁음 발음</title>
+  <title>히라가나 50음 발음</title>
 
   <style>
     body {
@@ -14,39 +14,43 @@
 
     h1 {
       font-size: 20px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    /* 상단 링크 */
-    .top-links {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
+    
+/* 상단 청음, 탁음, 반탁음 */
+.top-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
 
-    .top-links a {
-      text-decoration: none;
-      color: #555;
-      border: 1px solid #ccc;
-      padding: 4px 12px;
-      border-radius: 6px;
-      background-color: #fff;
-    }
+.top-links a {
+  text-decoration: none;
+  color: #555;
+  border: 1px solid #ccc;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background-color: #fff;
+}
 
-    .top-links a.active {
-      background-color: #ffc0cb;
-      border-color: #f3a6b6;
-      font-weight: bold;
-      color: #333;
-    }
+/* 현재 페이지 */
+.top-links a.active {
+  background-color: #ffc0cb;
+  border-color: #f3a6b6;
+  color: #333;
+  font-weight: bold;
+}
 
-    .top-links a:hover {
-      background-color: #ffe4ec;
-    }
+/* 선택사항: hover 효과 */
+.top-links a:hover {
+  background-color: #ffe4ec;
+}
 
-    /* 큰 글자 */
+    
+    /* 상단 큰 표시 */
     .big-box {
       width: 200px;
       height: 200px;
@@ -55,7 +59,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 84px;
+      font-size: 85px;
       background-color: #fff;
     }
 
@@ -74,7 +78,7 @@
     }
 
     td.active {
-      background-color: #ffc0cb;
+      background-color: #ffc0cb; /* 핑크 */
     }
 
     .empty {
@@ -82,6 +86,7 @@
       cursor: default;
     }
 
+    /* 📱 소형 모바일 대응 */
     @media (max-height: 700px) {
       .big-box {
         width: 180px;
@@ -100,18 +105,22 @@
 
 <body>
 
-<!-- 상단 네비 -->
+<h1>히라가나 50음 발음</h1>
 <div class="top-links">
-  <a href="hira.html">청음</a>
-  <a href="hira2.html" class="active">탁음</a>
+  <a href="hira.html" class="active">청음</a>
+  <a href="hira2.html">탁음</a>
   <a href="hira3.html">반탁음</a>
 </div>
+<div id="bigDisplay" class="big-box">あ</div>
 
-<h1>히라가나 탁음 발음</h1>
-
-<div id="bigDisplay" class="big-box">が</div>
-
-<table>
+<table id="kanaTable">
+  <tr>
+    <td class="empty">あ</td>
+    <td class="empty">い</td>
+    <td class="empty">う</td>
+    <td class="empty">え</td>
+    <td class="empty">お</td>
+  </tr>
   <tr>
     <td onclick="selectChar(this,'が','ga')">が</td>
     <td onclick="selectChar(this,'ぎ','gi')">ぎ</td>
@@ -121,17 +130,24 @@
   </tr>
   <tr>
     <td onclick="selectChar(this,'ざ','za')">ざ</td>
-    <td onclick="selectChar(this,'じ','ji')">じ</td>
+    <td onclick="selectChar(this,'じ','zi')">じ</td>
     <td onclick="selectChar(this,'ず','zu')">ず</td>
     <td onclick="selectChar(this,'ぜ','ze')">ぜ</td>
     <td onclick="selectChar(this,'ぞ','zo')">ぞ</td>
   </tr>
   <tr>
-    <td onclick="selectChar(this,'だ','da')">だ</td>
-    <td onclick="selectChar(this,'ぢ','ji')">ぢ</td>
-    <td onclick="selectChar(this,'づ','zu')">づ</td>
-    <td onclick="selectChar(this,'で','de')">で</td>
-    <td onclick="selectChar(this,'ど','do')">ど</td>
+  <td onclick="selectChar(this,'だ','da')">だ</td>
+  <td onclick="selectChar(this,'ぢ','ji')">ぢ</td>
+  <td onclick="selectChar(this,'づ','zu')">づ</td>
+  <td onclick="selectChar(this,'で','de')">で</td>
+  <td onclick="selectChar(this,'ど','do')">ど</td>
+  </tr>
+  <tr>
+    <td class="empty">な</td>
+    <td class="empty">に</td>
+    <td class="empty">ぬ</td>
+    <td class="empty">ね</td>
+    <td class="empty">の</td>
   </tr>
   <tr>
     <td onclick="selectChar(this,'ば','ba')">ば</td>
@@ -140,18 +156,58 @@
     <td onclick="selectChar(this,'べ','be')">べ</td>
     <td onclick="selectChar(this,'ぼ','bo')">ぼ</td>
   </tr>
+  <tr>
+    <td class="empty">ま</td>
+    <td class="empty">み</td>
+    <td class="empty">む</td>
+    <td class="empty">め</td>
+    <td class="empty">も</td>
+  </tr>
+  <tr>
+    <td class="empty">や</td>
+    <td class="empty"></td>
+    <td class="empty">ゆ</td>
+    <td class="empty"></td>
+    <td class="empty">よ</td>
+  </tr>
+  <tr>
+    <td class="empty">ら</td>
+    <td class="empty">り</td>
+    <td class="empty">る</td>
+    <td class="empty">れ</td>
+    <td class="empty">ろ</td>
+  </tr>
+  <tr>
+    <td class="empty">わ</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty">を</td>
+  </tr>
+  <tr>
+    <td class="empty">ん</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+  </tr>
 </table>
 
 <script>
 function selectChar(cell, displayChar, fileChar) {
+  // 큰 글자 표시
   document.getElementById('bigDisplay').textContent = displayChar;
 
+  // 이전 선택 제거
   document.querySelectorAll('td.active').forEach(td => td.classList.remove('active'));
+
+  // 현재 선택 강조
   cell.classList.add('active');
 
+  // 랜덤 폴더 음성 재생
   const folder = Math.floor(Math.random() * 4) + 1;
   const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
-  audio.volume = 0.4;
+  audio.volume = 1;
   audio.play();
 }
 </script>
