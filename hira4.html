@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>히라가나 요음</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    /* 상단 네비 버튼 */
+    .nav {
+        margin-bottom: 30px;
+    }
+
+    .nav a {
+        display: inline-block;
+        padding: 10px 18px;
+        margin: 0 6px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        background: #ddd;
+        color: #555;
+    }
+
+    .nav a.active {
+        background: #ff9800;
+        color: #fff;
+    }
+
+    /* 요음 테이블 */
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        background: #fff;
+    }
+
+    td {
+        width: 90px;
+        height: 70px;
+        border: 1px solid #ccc;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    td:hover {
+        background: #e3f2fd;
+    }
+</style>
+
+<script>
+    function playSound(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        speechSynthesis.speak(utterance);
+    }
+</script>
+</head>
+
+<body>
+
+<h1>히라가나 요음</h1>
+
+<div class="nav">
+    <a href="hira.html">청음</a>
+    <a href="hira2.html">탁음</a>
+    <a href="hira3.html">반탁음</a>
+    <a href="#" class="active">요음</a>
+</div>
+
+<table>
+<tr>
+<td onclick="playSound('きゃ')">きゃ</td>
+<td onclick="playSound('きゅ')">きゅ</td>
+<td onclick="playSound('きょ')">きょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('しゃ')">しゃ</td>
+<td onclick="playSound('しゅ')">しゅ</td>
+<td onclick="playSound('しょ')">しょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('ちゃ')">ちゃ</td>
+<td onclick="playSound('ちゅ')">ちゅ</td>
+<td onclick="playSound('ちょ')">ちょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('にゃ')">にゃ</td>
+<td onclick="playSound('にゅ')">にゅ</td>
+<td onclick="playSound('にょ')">にょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('ひゃ')">ひゃ</td>
+<td onclick="playSound('ひゅ')">ひゅ</td>
+<td onclick="playSound('ひょ')">ひょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('みゃ')">みゃ</td>
+<td onclick="playSound('みゅ')">みゅ</td>
+<td onclick="playSound('みょ')">みょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('りゃ')">りゃ</td>
+<td onclick="playSound('りゅ')">りゅ</td>
+<td onclick="playSound('りょ')">りょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('ぎゃ')">ぎゃ</td>
+<td onclick="playSound('ぎゅ')">ぎゅ</td>
+<td onclick="playSound('ぎょ')">ぎょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('じゃ')">じゃ</td>
+<td onclick="playSound('じゅ')">じゅ</td>
+<td onclick="playSound('じょ')">じょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('びゃ')">びゃ</td>
+<td onclick="playSound('びゅ')">びゅ</td>
+<td onclick="playSound('びょ')">びょ</td>
+</tr>
+
+<tr>
+<td onclick="playSound('ぴゃ')">ぴゃ</td>
+<td onclick="playSound('ぴゅ')">ぴゅ</td>
+<td onclick="playSound('ぴょ')">ぴょ</td>
+</tr>
+</table>
+
+</body>
+</html>
