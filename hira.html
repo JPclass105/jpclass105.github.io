@@ -29,13 +29,17 @@
 .top-links a {
   text-decoration: none;
   color: #333;
-  border: 1px solid #ccc;
-  padding: 4px 10px;
+  border: 1px solid #f3a6b6;
+  padding: 4px 12px;
   border-radius: 6px;
+  background-color: #ffe4ec;   /* 기본 상태에서도 색 유지 */
+  transition: background-color 0.2s, transform 0.1s;
 }
 
+/* 마우스 오버 시 조금 더 강조 */
 .top-links a:hover {
-  background-color: #ffe4ec;
+  background-color: #ffc0cb;
+  transform: scale(1.05);
 }
     /* 상단 큰 표시 */
     .big-box {
