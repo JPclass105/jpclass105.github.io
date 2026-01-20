@@ -17,7 +17,35 @@
       margin-bottom: 8px;
     }
 
-    /* 상단 큰 표시 */
+    /* 상단 청음, 탁음, 반탁음 */
+    .top-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .top-links a {
+      text-decoration: none;
+      color: #555;
+      border: 1px solid #ccc;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+
+    .top-links a.active {
+      background-color: #ffc0cb;
+      border-color: #f3a6b6;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .top-links a:hover {
+      background-color: #ffe4ec;
+    }
+
     .big-box {
       width: 200px;
       height: 200px;
@@ -26,7 +54,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 84px;
+      font-size: 85px;
       background-color: #fff;
     }
 
@@ -72,6 +100,11 @@
 <body>
 
 <h1>카타카나 50음 발음</h1>
+<div class="top-links">
+  <a href="kata.html" class="active">청음</a>
+  <a href="kata2.html">탁음</a>
+  <a href="kata3.html">반탁음</a>
+</div>
 
 <div id="bigDisplay" class="big-box">ア</div>
 
@@ -159,7 +192,9 @@
 function selectChar(cell, displayChar, fileChar) {
   document.getElementById('bigDisplay').textContent = displayChar;
 
-  document.querySelectorAll('td.active').forEach(td => td.classList.remove('active'));
+  document.querySelectorAll('td.active')
+    .forEach(td => td.classList.remove('active'));
+
   cell.classList.add('active');
 
   const folder = Math.floor(Math.random() * 4) + 1;
