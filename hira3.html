@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>히라가나 탁음</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.nav {
+    margin: 15px 0 30px;
+}
+
+.nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #999;
+}
+
+.nav a.active {
+    color: #e60073;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    font-size: 36px;
+    vertical-align: middle;
+}
+
+/* 비활성 */
+td.disabled {
+    color: #ccc;
+    background: #fafafa;
+}
+
+/* 활성 */
+td.active {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+td.active:hover {
+    background: #ffe6f2;
+}
+</style>
+</head>
+
+<body>
+
+<h1>히라가나 50음 발음</h1>
+
+<div class="nav">
+    <a href="hira.html">청음</a>
+    <a href="hira2.html" class="active">탁음</a>
+    <a href="hira3.html">반탁음</a>
+</div>
+
+<table>
+<tr>
+    <td class="disabled">あ</td>
+    <td class="disabled">い</td>
+    <td class="disabled">う</td>
+    <td class="disabled">え</td>
+    <td class="disabled">お</td>
+</tr>
+
+<tr>
+    <td class="active" onclick="play('ga')">が</td>
+    <td class="active" onclick="play('gi')">ぎ</td>
+    <td class="active" onclick="play('gu')">ぐ</td>
+    <td class="active" onclick="play('ge')">げ</td>
+    <td class="active" onclick="play('go')">ご</td>
+</tr>
+
+<tr>
+    <td class="active" onclick="play('za')">ざ</td>
+    <td class="active" onclick="play('ji')">じ</td>
+    <td class="active" onclick="play('zu')">ず</td>
+    <td class="active" onclick="play('ze')">ぜ</td>
+    <td class="active" onclick="play('zo')">ぞ</td>
+</tr>
+
+<tr>
+    <td class="active" onclick="play('da')">だ</td>
+    <td class="active" onclick="play('ji2')">ぢ</td>
+    <td class="active" onclick="play('zu2')">づ</td>
+    <td class="active" onclick="play('de')">で</td>
+    <td class="active" onclick="play('do')">ど</td>
+</tr>
+
+<tr>
+    <td class="active" onclick="play('ba')">ば</td>
+    <td class="active" onclick="play('bi')">び</td>
+    <td class="active" onclick="play('bu')">ぶ</td>
+    <td class="active" onclick="play('be')">べ</td>
+    <td class="active" onclick="play('bo')">ぼ</td>
+</tr>
+</table>
+
+<audio id="audio"></audio>
+
+<script>
+function play(name) {
+    const audio = document.getElementById("audio");
+    audio.src = "mp3/" + name + ".mp3";
+    audio.play();
+}
+</script>
+
+</body>
+</html>
