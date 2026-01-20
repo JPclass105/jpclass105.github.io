@@ -1,150 +1,174 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>히라가나 요음</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>히라가나 요음 발음</title>
+
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background: #f8f9fa;
-        margin: 0;
-        padding: 20px;
+      font-family: sans-serif;
+      padding: 10px;
+      text-align: center;
     }
 
     h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
+      font-size: 20px;
+      margin-bottom: 8px;
     }
 
-    /* 상단 네비 버튼 */
-    .nav {
-        margin-bottom: 30px;
+    /* 상단 메뉴 */
+    .top-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 6px;
+      font-size: 14px;
     }
 
-    .nav a {
-        display: inline-block;
-        padding: 10px 18px;
-        margin: 0 6px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: bold;
-        background: #ddd;
-        color: #555;
+    .top-links a {
+      text-decoration: none;
+      color: #555;
+      border: 1px solid #ccc;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background-color: #fff;
     }
 
-    .nav a.active {
-        background: #ff9800;
-        color: #fff;
+    .top-links a.active {
+      background-color: #ffc0cb;
+      border-color: #f3a6b6;
+      color: #333;
+      font-weight: bold;
     }
 
-    /* 요음 테이블 */
+    .top-links a:hover {
+      background-color: #ffe4ec;
+    }
+
+    /* 큰 글자 */
+    .big-box {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+      margin: 8px auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      background-color: #fff;
+    }
+
     table {
-        margin: 0 auto;
-        border-collapse: collapse;
-        background: #fff;
+      margin: 0 auto;
+      border-collapse: collapse;
     }
 
     td {
-        width: 90px;
-        height: 70px;
-        border: 1px solid #ccc;
-        font-size: 28px;
-        cursor: pointer;
+      border: 1px solid #ccc;
+      width: 64px;
+      height: 64px;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background-color 0.2s;
     }
 
-    td:hover {
-        background: #e3f2fd;
+    td.active {
+      background-color: #ffc0cb;
     }
-</style>
 
-<script>
-    function playSound(text) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'ja-JP';
-        speechSynthesis.speak(utterance);
+    @media (max-height: 700px) {
+      .big-box {
+        width: 180px;
+        height: 180px;
+        font-size: 72px;
+      }
+
+      td {
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
+      }
     }
-</script>
+  </style>
 </head>
 
 <body>
 
-<h1>히라가나 요음</h1>
+<h1>히라가나 요음 발음</h1>
 
-<div class="nav">
-    <a href="hira.html">청음</a>
-    <a href="hira2.html">탁음</a>
-    <a href="hira3.html">반탁음</a>
-    <a href="#" class="active">요음</a>
+<div class="top-links">
+  <a href="hira.html">청음</a>
+  <a href="hira2.html">탁음</a>
+  <a href="hira3.html">반탁음</a>
+  <a href="hira_yoon.html" class="active">요음</a>
 </div>
 
+<div id="bigDisplay" class="big-box">きゃ</div>
+
 <table>
-<tr>
-<td onclick="playSound('きゃ')">きゃ</td>
-<td onclick="playSound('きゅ')">きゅ</td>
-<td onclick="playSound('きょ')">きょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('しゃ')">しゃ</td>
-<td onclick="playSound('しゅ')">しゅ</td>
-<td onclick="playSound('しょ')">しょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('ちゃ')">ちゃ</td>
-<td onclick="playSound('ちゅ')">ちゅ</td>
-<td onclick="playSound('ちょ')">ちょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('にゃ')">にゃ</td>
-<td onclick="playSound('にゅ')">にゅ</td>
-<td onclick="playSound('にょ')">にょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('ひゃ')">ひゃ</td>
-<td onclick="playSound('ひゅ')">ひゅ</td>
-<td onclick="playSound('ひょ')">ひょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('みゃ')">みゃ</td>
-<td onclick="playSound('みゅ')">みゅ</td>
-<td onclick="playSound('みょ')">みょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('りゃ')">りゃ</td>
-<td onclick="playSound('りゅ')">りゅ</td>
-<td onclick="playSound('りょ')">りょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('ぎゃ')">ぎゃ</td>
-<td onclick="playSound('ぎゅ')">ぎゅ</td>
-<td onclick="playSound('ぎょ')">ぎょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('じゃ')">じゃ</td>
-<td onclick="playSound('じゅ')">じゅ</td>
-<td onclick="playSound('じょ')">じょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('びゃ')">びゃ</td>
-<td onclick="playSound('びゅ')">びゅ</td>
-<td onclick="playSound('びょ')">びょ</td>
-</tr>
-
-<tr>
-<td onclick="playSound('ぴゃ')">ぴゃ</td>
-<td onclick="playSound('ぴゅ')">ぴゅ</td>
-<td onclick="playSound('ぴょ')">ぴょ</td>
-</tr>
+  <tr>
+    <td onclick="selectChar(this,'きゃ','kya')">きゃ</td>
+    <td onclick="selectChar(this,'きゅ','kyu')">きゅ</td>
+    <td onclick="selectChar(this,'きょ','kyo')">きょ</td>
+  </tr>
+  <tr>
+    <td onclick="selectChar(this,'ぎゃ','gya')">ぎゃ</td>
+    <td onclick="selectChar(this,'ぎゅ','gyu')">ぎゅ</td>
+    <td onclick="selectChar(this,'ぎょ','gyo')">ぎょ</td>
+  </tr>
+  <tr>
+    <td onclick="selectChar(this,'しゃ','sha')">しゃ</td>
+    <td onclick="selectChar(this,'しゅ','shu')">しゅ</td>
+    <td onclick="selectChar(this,'しょ','sho')">しょ</td>
+  </tr>
+  <tr>
+    <td onclick="selectChar(this,'じゃ','ja')">じゃ</td>
+    <td onclick="selectChar(this,'じゅ','ju')">じゅ</td>
+    <td onclick="selectChar(this,'じょ','jo')">じょ</td>
+  </tr>
+  <tr>
+    <td onclick="selectChar(this,'ちゃ','cha')">ちゃ</td>
+    <td onclick="selectChar(this,'ちゅ','chu')">ちゅ</td>
+    <td onclick="selectChar(this,'ちょ','cho')">ちょ</td>
+  </tr>
+  <tr>
+    <td onclick="selectChar(this,'にゃ','nya')">にゃ</td>
+    <td onclick="selectChar(this,'にゅ','nyu')">にゅ</td>
+    <td onclick="selectChar(this,'にょ','nyo')">にょ</td>
+  </tr>
+  <tr>
+    <td onclick="selectChar(this,'ひゃ','hya')">ひゃ</td>
+    <td onclick="selectChar(this,'ひゅ','hyu')">ひゅ</td>
+    <td onclick="selectChar(this,'ひょ','hyo')">ひょ</td>
+  </tr>
+  <tr>
+    <td onclick="selectChar(this,'びゃ','bya')">びゃ</td>
+    <td onclick="selectChar(this,'びゅ','byu')">びゅ</td>
+    <td onclick="selectChar(this,'びょ','byo')">びょ</td>
+  </tr>
+  <tr>
+    <td onclick="selectChar(this,'ぴゃ','pya')">ぴゃ</td>
+    <td onclick="selectChar(this,'ぴゅ','pyu')">ぴゅ</td>
+    <td onclick="selectChar(this,'ぴょ','pyo')">ぴょ</td>
+  </tr>
 </table>
+
+<script>
+function selectChar(cell, displayChar, fileChar) {
+  document.getElementById("bigDisplay").textContent = displayChar;
+
+  document.querySelectorAll("td.active")
+    .forEach(td => td.classList.remove("active"));
+
+  cell.classList.add("active");
+
+  const folder = Math.floor(Math.random() * 4) + 1;
+  const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
+  audio.volume = 1;
+  audio.play();
+}
+</script>
 
 </body>
 </html>
