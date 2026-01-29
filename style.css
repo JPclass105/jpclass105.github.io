@@ -146,7 +146,7 @@ body {
     cursor: pointer;
     font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
     font-weight: 600;   /* 🔥 글자 두껍게 */
-    display: flex;
+    /*display: flex;
     /*justify-content: center;  /* 가로 중앙 */
     /*align-items: center;      /* 세로 중앙 */
     text-align: center;
