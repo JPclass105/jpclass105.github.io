@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background: #f4f1ea;
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
     display: flex;
     justify-content: center;
 }
