@@ -130,6 +130,7 @@ body {
     justify-content: center;
     font-size: 72px;
     background: #fff;
+    font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
 }
 
 .kana-table {
@@ -143,6 +144,7 @@ body {
     height: 42px;
     font-size: 22px;
     cursor: pointer;
+    font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
 }
 
 .kana-table td.active {
