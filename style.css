@@ -177,3 +177,23 @@ body {
     background-color: #eef7ff;
     transform: scale(1.08);
 }
+
+.voice-select {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.voice-select button {
+    margin: 4px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.voice-select button.active {
+    background: #a5d8ff;
+    font-weight: bold;
+}
