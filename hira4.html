@@ -1,106 +1,138 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>히라가나 요음 발음</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>히라가나 요음 발음</title>
 
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 10px;
-      text-align: center;
-      background: #fff;
-    }
+<style>
+body {
+  font-family: sans-serif;
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+  background: #f2f2f2;
+}
 
-    h1 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
+.diary {
+  width: 390px;
+  margin: 0 auto;
+  background: #ffffff;
+  min-height: 100vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  padding-bottom: 30px;
+}
 
-    /* 상단 메뉴 */
-    .top-links {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
+h1 {
+  font-size: 20px;
+  margin: 0;
+  padding: 15px 0 5px;
+}
 
-    .top-links a {
-      text-decoration: none;
-      color: #555;
-      border: 1px solid #ccc;
-      padding: 4px 12px;
-      border-radius: 6px;
-      background-color: #fff;
-    }
+/* 상단 메뉴 */
+.top-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
 
-    .top-links a.active {
-      background-color: #ffc0cb;
-      border-color: #f3a6b6;
-      color: #333;
-      font-weight: bold;
-    }
+.top-links a {
+  text-decoration: none;
+  color: #555;
+  border: 1px solid #ccc;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background-color: #fff;
+}
 
-    .top-links a:hover {
-      background-color: #ffe4ec;
-    }
+.top-links a.active {
+  background-color: #ffc0cb;
+  border-color: #f3a6b6;
+  color: #333;
+  font-weight: bold;
+}
 
-    /* 큰 글자 */
-    .big-box {
-      width: 250px;
-      height: 160px;
-      border: 2px solid #333;
-      margin: 8px auto 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 72px;
-      background-color: #fff;
-    }
+.top-links a:hover {
+  background-color: #ffe4ec;
+}
 
-    table {
-      margin: 0 auto;
-      border-collapse: collapse;
-    }
+/* 큰 글자 */
+.big-box {
+  width: 250px;
+  height: 160px;
+  border: 2px solid #333;
+  margin: 8px auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+  background-color: #fff;
+}
 
-    td {
-      border: 1px solid #ccc;
-      width: 90px;
-      height: 52px;
-      font-size: 22px;
-      cursor: pointer;
-      transition: background-color 0.2s, transform 0.05s;
-      padding: 4px 2px;
-    }
+table {
+  margin: 0 auto 20px;
+  border-collapse: collapse;
+}
 
-    td:active {
-      transform: scale(0.96);
-    }
+td {
+  border: 1px solid #ccc;
+  width: 85px;
+  height: 45px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-    td.active {
-      background-color: #ffc0cb;
-    }
+td.active {
+  background-color: #ffc0cb;
+}
 
-    /* 📱 모바일 최적화 */
-    @media (max-width: 480px) {
-      td {
-        width: 30vw;
-        height: 48px;
-        font-size: 20px;
-      }
+/* 우측 탭 */
+.tabs {
+  position: fixed;
+  right: calc(50% - 195px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
 
-      .big-box {
-        width: 180px;
-        height: 140px;
-        font-size: 64px;
-      }
-    }
-  </style>
+.tabs a { text-decoration: none; }
+
+.tabs button {
+  margin: 4px 0;
+  padding: 8px 10px;
+  border: none;
+  font-size: 12px;
+  border-radius: 6px 0 0 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 60px;
+}
+
+/* 파스텔 탭 색상 */
+.tab1 { background: #FFD1DC; }
+.tab2 { background: #FFE4B5; }
+.tab3 { background: #FFFACD; }
+.tab4 { background: #D5F5E3; }
+.tab5 { background: #D6EAF8; }
+.tab6 { background: #E8DAEF; }
+.tab7 { background: #FADBD8; }
+.tab8 { background: #D4EFDF; }
+.tab9 { background: #FCF3CF; }
+
+@media (max-width: 420px) {
+  .tabs { right: 0; }
+}
+</style>
 </head>
 
 <body>
+
+<div class="diary">
 
 <h1>히라가나 요음 발음</h1>
 
@@ -114,41 +146,47 @@
 <div id="bigDisplay" class="big-box">きゃ</div>
 
 <table>
-  <tr><td onclick="selectChar(this,'きゃ','kya')" class="active">きゃ</td><td onclick="selectChar(this,'きゅ','kyu')">きゅ</td><td onclick="selectChar(this,'きょ','kyo')">きょ</td></tr>
-  <tr><td onclick="selectChar(this,'しゃ','sha')">しゃ</td><td onclick="selectChar(this,'しゅ','shu')">しゅ</td><td onclick="selectChar(this,'しょ','sho')">しょ</td></tr>
-  <tr><td onclick="selectChar(this,'ちゃ','cha')">ちゃ</td><td onclick="selectChar(this,'ちゅ','chu')">ちゅ</td><td onclick="selectChar(this,'ちょ','cho')">ちょ</td></tr>
-  <tr><td onclick="selectChar(this,'にゃ','nya')">にゃ</td><td onclick="selectChar(this,'にゅ','nyu')">にゅ</td><td onclick="selectChar(this,'にょ','nyo')">にょ</td></tr>
-  <tr><td onclick="selectChar(this,'ひゃ','hya')">ひゃ</td><td onclick="selectChar(this,'ひゅ','hyu')">ひゅ</td><td onclick="selectChar(this,'ひょ','hyo')">ひょ</td></tr>
-  <tr><td onclick="selectChar(this,'みゃ','mya')">みゃ</td><td onclick="selectChar(this,'みゅ','myu')">みゅ</td><td onclick="selectChar(this,'みょ','myo')">みょ</td></tr>
-  <tr><td onclick="selectChar(this,'りゃ','rya')">りゃ</td><td onclick="selectChar(this,'りゅ','ryu')">りゅ</td><td onclick="selectChar(this,'りょ','ryo')">りょ</td></tr>
+<tr><td onclick="selectChar(this,'きゃ','kya')">きゃ</td><td onclick="selectChar(this,'きゅ','kyu')">きゅ</td><td onclick="selectChar(this,'きょ','kyo')">きょ</td></tr>
+<tr><td onclick="selectChar(this,'しゃ','sha')">しゃ</td><td onclick="selectChar(this,'しゅ','shu')">しゅ</td><td onclick="selectChar(this,'しょ','sho')">しょ</td></tr>
+<tr><td onclick="selectChar(this,'ちゃ','cha')">ちゃ</td><td onclick="selectChar(this,'ちゅ','chu')">ちゅ</td><td onclick="selectChar(this,'ちょ','cho')">ちょ</td></tr>
+<tr><td onclick="selectChar(this,'にゃ','nya')">にゃ</td><td onclick="selectChar(this,'にゅ','nyu')">にゅ</td><td onclick="selectChar(this,'にょ','nyo')">にょ</td></tr>
+<tr><td onclick="selectChar(this,'ひゃ','hya')">ひゃ</td><td onclick="selectChar(this,'ひゅ','hyu')">ひゅ</td><td onclick="selectChar(this,'ひょ','hyo')">ひょ</td></tr>
+<tr><td onclick="selectChar(this,'みゃ','mya')">みゃ</td><td onclick="selectChar(this,'みゅ','myu')">みゅ</td><td onclick="selectChar(this,'みょ','myo')">みょ</td></tr>
+<tr><td onclick="selectChar(this,'りゃ','rya')">りゃ</td><td onclick="selectChar(this,'りゅ','ryu')">りゅ</td><td onclick="selectChar(this,'りょ','ryo')">りょ</td></tr>
 
-  <tr><td onclick="selectChar(this,'ぎゃ','gya')">ぎゃ</td><td onclick="selectChar(this,'ぎゅ','gyu')">ぎゅ</td><td onclick="selectChar(this,'ぎょ','gyo')">ぎょ</td></tr>
-  <tr><td onclick="selectChar(this,'じゃ','ja')">じゃ</td><td onclick="selectChar(this,'じゅ','ju')">じゅ</td><td onclick="selectChar(this,'じょ','jo')">じょ</td></tr>
-  <tr><td onclick="selectChar(this,'ぢゃ','dya')">ぢゃ</td><td onclick="selectChar(this,'ぢゅ','dyu')">ぢゅ</td><td onclick="selectChar(this,'ぢょ','dyo')">ぢょ</td></tr>
-  <tr><td onclick="selectChar(this,'びゃ','bya')">びゃ</td><td onclick="selectChar(this,'びゅ','byu')">びゅ</td><td onclick="selectChar(this,'びょ','byo')">びょ</td></tr>
+<tr><td onclick="selectChar(this,'ぎゃ','gya')">ぎゃ</td><td onclick="selectChar(this,'ぎゅ','gyu')">ぎゅ</td><td onclick="selectChar(this,'ぎょ','gyo')">ぎょ</td></tr>
+<tr><td onclick="selectChar(this,'じゃ','ja')">じゃ</td><td onclick="selectChar(this,'じゅ','ju')">じゅ</td><td onclick="selectChar(this,'じょ','jo')">じょ</td></tr>
+<tr><td onclick="selectChar(this,'ぢゃ','dya')">ぢゃ</td><td onclick="selectChar(this,'ぢゅ','dyu')">ぢゅ</td><td onclick="selectChar(this,'ぢょ','dyo')">ぢょ</td></tr>
+<tr><td onclick="selectChar(this,'びゃ','bya')">びゃ</td><td onclick="selectChar(this,'びゅ','byu')">びゅ</td><td onclick="selectChar(this,'びょ','byo')">びょ</td></tr>
 
-  <tr><td onclick="selectChar(this,'ぴゃ','pya')">ぴゃ</td><td onclick="selectChar(this,'ぴゅ','pyu')">ぴゅ</td><td onclick="selectChar(this,'ぴょ','pyo')">ぴょ</td></tr>
+<tr><td onclick="selectChar(this,'ぴゃ','pya')">ぴゃ</td><td onclick="selectChar(this,'ぴゅ','pyu')">ぴゅ</td><td onclick="selectChar(this,'ぴょ','pyo')">ぴょ</td></tr>
 </table>
 
-<script>
-let currentAudio = null;
+</div>
 
+<!-- 우측 탭 -->
+<div class="tabs">
+  <a href="hira.html"><button class="tab1">1</button></a>
+  <a href="kata.html"><button class="tab2">2</button></a>
+  <a href="bubble.html"><button class="tab3">3</button></a>
+  <a href="page4.html"><button class="tab4">4</button></a>
+  <a href="index.html"><button class="tab5">Home</button></a>
+  <a href="page6.html"><button class="tab6">6</button></a>
+  <a href="page7.html"><button class="tab7">7</button></a>
+  <a href="page8.html"><button class="tab8">8</button></a>
+  <a href="page9.html"><button class="tab9">9</button></a>
+</div>
+
+<script>
 function selectChar(cell, displayChar, fileChar) {
   document.getElementById("bigDisplay").textContent = displayChar;
-
-  document.querySelectorAll("td.active")
-    .forEach(td => td.classList.remove("active"));
+  document.querySelectorAll("td.active").forEach(td => td.classList.remove("active"));
   cell.classList.add("active");
 
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-
   const folder = Math.floor(Math.random() * 4) + 1;
-  currentAudio = new Audio(`audio/${folder}/${fileChar}.mp3`);
-  currentAudio.volume = 1;
-  currentAudio.play();
+  const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
+  audio.volume = 1;
+  audio.play();
 }
 </script>
 
