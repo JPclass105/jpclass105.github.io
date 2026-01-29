@@ -14,16 +14,27 @@ body {
     box-sizing: border-box;
 }
 
+/* 다이어리 전체도 높이 제한 제거 */
+.diary-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;   /* 중앙정렬 → 위쪽 정렬 */
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
 .page {
     background: #ffffff;
     width: 100%;
-    max-width: 480px;
-    min-height: 600px;
+    max-width: 720px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    padding: 30px 20px 40px;
+    padding: 40px 30px 60px;
     box-sizing: border-box;
-    position: relative;
+
+    /* ❌ 기존: min-height: 640px;  삭제 */
+    min-height: auto;      /* 내용만큼 늘어남 */
 }
 
 h2 {
@@ -65,8 +76,12 @@ h2 {
 .tabs {
     position: fixed;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    
+    /*top: 50%;
+    transform: translateY(-50%);*/
+    top: 120px;  /* 기존 50% 대신 고정 위치 */
+    transform: none;
+    
     display: flex;
     flex-direction: column;
     gap: 8px;
