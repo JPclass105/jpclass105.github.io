@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>히라가나 50음 발음</title>
+  <title>히라가나 요음 발음</title>
 
   <style>
     body {
       font-family: sans-serif;
       padding: 10px;
       text-align: center;
+      background: #fff;
     }
 
     h1 {
@@ -55,7 +56,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 90px;
+      font-size: 72px;
       background-color: #fff;
     }
 
@@ -66,28 +67,34 @@
 
     td {
       border: 1px solid #ccc;
-      width: 85px;
-      height: 45px;
-      font-size: 24px;
+      width: 90px;
+      height: 52px;
+      font-size: 22px;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, transform 0.05s;
+      padding: 4px 2px;
+    }
+
+    td:active {
+      transform: scale(0.96);
     }
 
     td.active {
       background-color: #ffc0cb;
     }
 
-    @media (max-height: 700px) {
-      .big-box {
-        width: 180px;
-        height: 180px;
-        font-size: 72px;
+    /* 📱 모바일 최적화 */
+    @media (max-width: 480px) {
+      td {
+        width: 30vw;
+        height: 48px;
+        font-size: 20px;
       }
 
-      td {
-        width: 56px;
-        height: 56px;
-        font-size: 20px;
+      .big-box {
+        width: 180px;
+        height: 140px;
+        font-size: 64px;
       }
     }
   </style>
@@ -95,7 +102,7 @@
 
 <body>
 
-<h1>히라가나 50음 발음</h1>
+<h1>히라가나 요음 발음</h1>
 
 <div class="top-links">
   <a href="hira.html">청음</a>
@@ -107,86 +114,41 @@
 <div id="bigDisplay" class="big-box">きゃ</div>
 
 <table>
-  <!-- 청음 요음 -->
-  <tr>
-    <td onclick="selectChar(this,'きゃ','kya')">きゃ</td>
-    <td onclick="selectChar(this,'きゅ','kyu')">きゅ</td>
-    <td onclick="selectChar(this,'きょ','kyo')">きょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'しゃ','sha')">しゃ</td>
-    <td onclick="selectChar(this,'しゅ','shu')">しゅ</td>
-    <td onclick="selectChar(this,'しょ','sho')">しょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ちゃ','cha')">ちゃ</td>
-    <td onclick="selectChar(this,'ちゅ','chu')">ちゅ</td>
-    <td onclick="selectChar(this,'ちょ','cho')">ちょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'にゃ','nya')">にゃ</td>
-    <td onclick="selectChar(this,'にゅ','nyu')">にゅ</td>
-    <td onclick="selectChar(this,'にょ','nyo')">にょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ひゃ','hya')">ひゃ</td>
-    <td onclick="selectChar(this,'ひゅ','hyu')">ひゅ</td>
-    <td onclick="selectChar(this,'ひょ','hyo')">ひょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'みゃ','mya')">みゃ</td>
-    <td onclick="selectChar(this,'みゅ','myu')">みゅ</td>
-    <td onclick="selectChar(this,'みょ','myo')">みょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'りゃ','rya')">りゃ</td>
-    <td onclick="selectChar(this,'りゅ','ryu')">りゅ</td>
-    <td onclick="selectChar(this,'りょ','ryo')">りょ</td>
-  </tr>
+  <tr><td onclick="selectChar(this,'きゃ','kya')" class="active">きゃ</td><td onclick="selectChar(this,'きゅ','kyu')">きゅ</td><td onclick="selectChar(this,'きょ','kyo')">きょ</td></tr>
+  <tr><td onclick="selectChar(this,'しゃ','sha')">しゃ</td><td onclick="selectChar(this,'しゅ','shu')">しゅ</td><td onclick="selectChar(this,'しょ','sho')">しょ</td></tr>
+  <tr><td onclick="selectChar(this,'ちゃ','cha')">ちゃ</td><td onclick="selectChar(this,'ちゅ','chu')">ちゅ</td><td onclick="selectChar(this,'ちょ','cho')">ちょ</td></tr>
+  <tr><td onclick="selectChar(this,'にゃ','nya')">にゃ</td><td onclick="selectChar(this,'にゅ','nyu')">にゅ</td><td onclick="selectChar(this,'にょ','nyo')">にょ</td></tr>
+  <tr><td onclick="selectChar(this,'ひゃ','hya')">ひゃ</td><td onclick="selectChar(this,'ひゅ','hyu')">ひゅ</td><td onclick="selectChar(this,'ひょ','hyo')">ひょ</td></tr>
+  <tr><td onclick="selectChar(this,'みゃ','mya')">みゃ</td><td onclick="selectChar(this,'みゅ','myu')">みゅ</td><td onclick="selectChar(this,'みょ','myo')">みょ</td></tr>
+  <tr><td onclick="selectChar(this,'りゃ','rya')">りゃ</td><td onclick="selectChar(this,'りゅ','ryu')">りゅ</td><td onclick="selectChar(this,'りょ','ryo')">りょ</td></tr>
 
-  <!-- 탁음 요음 -->
-  <tr>
-    <td onclick="selectChar(this,'ぎゃ','gya')">ぎゃ</td>
-    <td onclick="selectChar(this,'ぎゅ','gyu')">ぎゅ</td>
-    <td onclick="selectChar(this,'ぎょ','gyo')">ぎょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'じゃ','ja')">じゃ</td>
-    <td onclick="selectChar(this,'じゅ','ju')">じゅ</td>
-    <td onclick="selectChar(this,'じょ','jo')">じょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ぢゃ','dya')">ぢゃ</td>
-    <td onclick="selectChar(this,'ぢゅ','dyu')">ぢゅ</td>
-    <td onclick="selectChar(this,'ぢょ','dyo')">ぢょ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'びゃ','bya')">びゃ</td>
-    <td onclick="selectChar(this,'びゅ','byu')">びゅ</td>
-    <td onclick="selectChar(this,'びょ','byo')">びょ</td>
-  </tr>
+  <tr><td onclick="selectChar(this,'ぎゃ','gya')">ぎゃ</td><td onclick="selectChar(this,'ぎゅ','gyu')">ぎゅ</td><td onclick="selectChar(this,'ぎょ','gyo')">ぎょ</td></tr>
+  <tr><td onclick="selectChar(this,'じゃ','ja')">じゃ</td><td onclick="selectChar(this,'じゅ','ju')">じゅ</td><td onclick="selectChar(this,'じょ','jo')">じょ</td></tr>
+  <tr><td onclick="selectChar(this,'ぢゃ','dya')">ぢゃ</td><td onclick="selectChar(this,'ぢゅ','dyu')">ぢゅ</td><td onclick="selectChar(this,'ぢょ','dyo')">ぢょ</td></tr>
+  <tr><td onclick="selectChar(this,'びゃ','bya')">びゃ</td><td onclick="selectChar(this,'びゅ','byu')">びゅ</td><td onclick="selectChar(this,'びょ','byo')">びょ</td></tr>
 
-  <!-- 반탁음 요음 -->
-  <tr>
-    <td onclick="selectChar(this,'ぴゃ','pya')">ぴゃ</td>
-    <td onclick="selectChar(this,'ぴゅ','pyu')">ぴゅ</td>
-    <td onclick="selectChar(this,'ぴょ','pyo')">ぴょ</td>
-  </tr>
+  <tr><td onclick="selectChar(this,'ぴゃ','pya')">ぴゃ</td><td onclick="selectChar(this,'ぴゅ','pyu')">ぴゅ</td><td onclick="selectChar(this,'ぴょ','pyo')">ぴょ</td></tr>
 </table>
 
 <script>
+let currentAudio = null;
+
 function selectChar(cell, displayChar, fileChar) {
   document.getElementById("bigDisplay").textContent = displayChar;
 
   document.querySelectorAll("td.active")
     .forEach(td => td.classList.remove("active"));
-
   cell.classList.add("active");
 
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+
   const folder = Math.floor(Math.random() * 4) + 1;
-  const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
-  audio.volume = 1;
-  audio.play();
+  currentAudio = new Audio(`audio/${folder}/${fileChar}.mp3`);
+  currentAudio.volume = 1;
+  currentAudio.play();
 }
 </script>
 
