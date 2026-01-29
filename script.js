@@ -38,3 +38,17 @@ const activeId = map[path];
 if (activeId) {
     document.getElementById(activeId).classList.add("active");
 }
+
+function selectChar(cell, displayChar, fileChar) {
+    document.getElementById('bigDisplay').textContent = displayChar;
+
+    document.querySelectorAll('.kana-table td.active')
+        .forEach(td => td.classList.remove('active'));
+
+    cell.classList.add('active');
+
+    const folder = Math.floor(Math.random() * 4) + 1;
+    const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
+    audio.volume = 1;
+    audio.play();
+}
