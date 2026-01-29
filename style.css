@@ -151,7 +151,7 @@ body {
     /*display: flex;*/
     /*justify-content: center;  /* 가로 중앙 */
     /*align-items: center;      /* 세로 중앙 */
-    /*text-align: center;*/
+    text-align: center;
 }
 
 .kana-table td.active {
