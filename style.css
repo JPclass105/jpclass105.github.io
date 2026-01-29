@@ -34,8 +34,8 @@ body {
 /* 📌 페이지 줄 간격 */
 .home-item {
     position: relative;
-    padding: 14px 0;   /* 🔥 이 높이와 탭 높이를 맞춤 */
-    font-size: 15px;
+    padding: 25px 0;   /* 🔥 이 높이와 탭 높이를 맞춤 */
+    font-size: 18px;
     cursor: pointer;
 }
 
