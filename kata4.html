@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>카타카나 요음</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <div class="diary">
+        <div class="page hira-page">
+            <h2>카타카나 요음</h2>
+
+            <div class="top-links">
+                <a href="kata.html">청음</a>
+                <a href="kata2.html">탁음</a>
+                <a href="kata3.html">반탁음</a>
+                <a href="kata4.html" class="active">요음</a>
+            </div>
+
+            <div id="bigDisplay" class="big-box">キャ</div>
+
+            <table class="kana-table">
+                <tr>
+                    <td onclick="selectChar(this,'キャ','kya')">キャ</td>
+                    <td onclick="selectChar(this,'キュ','kyu')">キュ</td>
+                    <td onclick="selectChar(this,'キョ','kyo')">キョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'シャ','sha')">シャ</td>
+                    <td onclick="selectChar(this,'シュ','shu')">シュ</td>
+                    <td onclick="selectChar(this,'ショ','sho')">ショ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'チャ','cha')">チャ</td>
+                    <td onclick="selectChar(this,'チュ','chu')">チュ</td>
+                    <td onclick="selectChar(this,'チョ','cho')">チョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ニャ','nya')">ニャ</td>
+                    <td onclick="selectChar(this,'ニュ','nyu')">ニュ</td>
+                    <td onclick="selectChar(this,'ニョ','nyo')">ニョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ヒャ','hya')">ヒャ</td>
+                    <td onclick="selectChar(this,'ヒュ','hyu')">ヒュ</td>
+                    <td onclick="selectChar(this,'ヒョ','hyo')">ヒョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ミャ','mya')">ミャ</td>
+                    <td onclick="selectChar(this,'ミュ','myu')">ミュ</td>
+                    <td onclick="selectChar(this,'ミョ','myo')">ミョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'リャ','rya')">リャ</td>
+                    <td onclick="selectChar(this,'リュ','ryu')">リュ</td>
+                    <td onclick="selectChar(this,'リョ','ryo')">リョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ギャ','gya')">ギャ</td>
+                    <td onclick="selectChar(this,'ギュ','gyu')">ギュ</td>
+                    <td onclick="selectChar(this,'ギョ','gyo')">ギョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ジャ','ja')">ジャ</td>
+                    <td onclick="selectChar(this,'ジュ','ju')">ジュ</td>
+                    <td onclick="selectChar(this,'ジョ','jo')">ジョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ビャ','bya')">ビャ</td>
+                    <td onclick="selectChar(this,'ビュ','byu')">ビュ</td>
+                    <td onclick="selectChar(this,'ビョ','byo')">ビョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ピャ','pya')">ピャ</td>
+                    <td onclick="selectChar(this,'ピュ','pyu')">ピュ</td>
+                    <td onclick="selectChar(this,'ピョ','pyo')">ピョ</td>
+                    <td class="empty"></td>
+                    <td class="empty"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 우측 탭 -->
+    <div class="tabs">
+        <a href="hira.html"><button id="tab1">1</button></a>
+        <a href="kata.html"><button id="tab2" class="active">2</button></a>
+        <a href="bubble.html"><button id="tab3">3</button></a>
+        <a href="page4.html"><button id="tab4">4</button></a>
+        <a href="index.html"><button id="homeTab">Home</button></a>
+        <a href="page6.html"><button id="tab6">6</button></a>
+        <a href="page7.html"><button id="tab7">7</button></a>
+        <a href="page8.html"><button id="tab8">8</button></a>
+        <a href="page9.html"><button id="tab9">9</button></a>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
