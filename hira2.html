@@ -3,54 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>히라가나 50음 발음</title>
+  <title>Page 2 - 히라가나 탁음</title>
 
   <style>
     body {
       font-family: sans-serif;
-      padding: 10px;
+      margin: 0;
+      background: #f2f2f2;
       text-align: center;
+    }
+
+    .diary {
+      width: 390px;
+      margin: 0 auto;
+      background: #ffffff;
+      min-height: 100vh;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
+      padding-bottom: 30px;
     }
 
     h1 {
       font-size: 20px;
-      margin-bottom: 8px;
+      margin: 0;
+      padding: 15px 0 5px;
     }
 
-    
-/* 상단 청음, 탁음, 반탁음 */
-.top-links {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  margin-bottom: 6px;
-  font-size: 14px;
-}
+    /* 상단 청음, 탁음, 반탁음 */
+    .top-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
 
-.top-links a {
-  text-decoration: none;
-  color: #555;
-  border: 1px solid #ccc;
-  padding: 4px 12px;
-  border-radius: 6px;
-  background-color: #fff;
-}
+    .top-links a {
+      text-decoration: none;
+      color: #555;
+      border: 1px solid #ccc;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background-color: #fff;
+    }
 
-/* 현재 페이지 */
-.top-links a.active {
-  background-color: #ffc0cb;
-  border-color: #f3a6b6;
-  color: #333;
-  font-weight: bold;
-}
+    .top-links a.active {
+      background-color: #ffc0cb;
+      border-color: #f3a6b6;
+      color: #333;
+      font-weight: bold;
+    }
 
-/* 선택사항: hover 효과 */
-.top-links a:hover {
-  background-color: #ffe4ec;
-}
+    .top-links a:hover {
+      background-color: #ffe4ec;
+    }
 
-    
-    /* 상단 큰 표시 */
+    /* 큰 글자 표시 */
     .big-box {
       width: 250px;
       height: 160px;
@@ -78,7 +85,7 @@
     }
 
     td.active {
-      background-color: #ffc0cb; /* 핑크 */
+      background-color: #ffc0cb;
     }
 
     .empty {
@@ -87,41 +94,64 @@
       cursor: default;
     }
 
-    /* 📱 소형 모바일 대응 */
-    @media (max-height: 700px) {
-      .big-box {
-        width: 180px;
-        height: 180px;
-        font-size: 76px;
-      }
+    /* 우측 탭 메뉴 */
+    .tabs {
+      position: fixed;
+      right: calc(50% - 195px);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+    }
 
-      td {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-      }
+    .tabs a { text-decoration: none; }
+
+    .tabs button {
+      margin: 4px 0;
+      padding: 8px 10px;
+      border: none;
+      font-size: 12px;
+      border-radius: 6px 0 0 6px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 60px;
+    }
+
+    .tab1 { background: #FFD1DC; }
+    .tab2 { background: #FFE4B5; }
+    .tab3 { background: #FFFACD; }
+    .tab4 { background: #D5F5E3; }
+    .tab5 { background: #D6EAF8; }
+    .tab6 { background: #E8DAEF; }
+    .tab7 { background: #FADBD8; }
+    .tab8 { background: #D4EFDF; }
+    .tab9 { background: #FCF3CF; }
+
+    @media (max-width: 420px) {
+      .tabs { right: 0; }
     }
   </style>
 </head>
 
 <body>
 
-<h1>히라가나 50음 발음</h1>
+<div class="diary">
+
+<h1>히라가나 탁음 발음</h1>
+
 <div class="top-links">
-  <a href="hira.html">청음</a>
-  <a href="hira2.html" class="active">탁음</a>
-  <a href="hira3.html">반탁음</a>
-  <a href="hira4.html">요음</a>
+  <a href="page1.html">청음</a>
+  <a href="page2.html" class="active">탁음</a>
+  <a href="page3.html">반탁음</a>
+  <a href="page4.html">요음</a>
 </div>
+
 <div id="bigDisplay" class="big-box">が</div>
 
-<table id="kanaTable">
+<table>
   <tr>
-    <td class="empty">あ</td>
-    <td class="empty">い</td>
-    <td class="empty">う</td>
-    <td class="empty">え</td>
-    <td class="empty">お</td>
+    <td class="empty">あ</td><td class="empty">い</td><td class="empty">う</td><td class="empty">え</td><td class="empty">お</td>
   </tr>
   <tr>
     <td onclick="selectChar(this,'が','ga')">が</td>
@@ -138,18 +168,14 @@
     <td onclick="selectChar(this,'ぞ','zo')">ぞ</td>
   </tr>
   <tr>
-  <td onclick="selectChar(this,'だ','da')">だ</td>
-  <td onclick="selectChar(this,'ぢ','di')">ぢ</td>
-  <td onclick="selectChar(this,'づ','du')">づ</td>
-  <td onclick="selectChar(this,'で','de')">で</td>
-  <td onclick="selectChar(this,'ど','do')">ど</td>
+    <td onclick="selectChar(this,'だ','da')">だ</td>
+    <td onclick="selectChar(this,'ぢ','di')">ぢ</td>
+    <td onclick="selectChar(this,'づ','du')">づ</td>
+    <td onclick="selectChar(this,'で','de')">で</td>
+    <td onclick="selectChar(this,'ど','do')">ど</td>
   </tr>
   <tr>
-    <td class="empty">な</td>
-    <td class="empty">に</td>
-    <td class="empty">ぬ</td>
-    <td class="empty">ね</td>
-    <td class="empty">の</td>
+    <td class="empty">な</td><td class="empty">に</td><td class="empty">ぬ</td><td class="empty">ね</td><td class="empty">の</td>
   </tr>
   <tr>
     <td onclick="selectChar(this,'ば','ba')">ば</td>
@@ -158,55 +184,29 @@
     <td onclick="selectChar(this,'べ','be')">べ</td>
     <td onclick="selectChar(this,'ぼ','bo')">ぼ</td>
   </tr>
-  <tr>
-    <td class="empty">ま</td>
-    <td class="empty">み</td>
-    <td class="empty">む</td>
-    <td class="empty">め</td>
-    <td class="empty">も</td>
-  </tr>
-  <tr>
-    <td class="empty">や</td>
-    <td class="empty"></td>
-    <td class="empty">ゆ</td>
-    <td class="empty"></td>
-    <td class="empty">よ</td>
-  </tr>
-  <tr>
-    <td class="empty">ら</td>
-    <td class="empty">り</td>
-    <td class="empty">る</td>
-    <td class="empty">れ</td>
-    <td class="empty">ろ</td>
-  </tr>
-  <tr>
-    <td class="empty">わ</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty">を</td>
-  </tr>
-  <tr>
-    <td class="empty">ん</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-  </tr>
 </table>
+
+</div>
+
+<!-- 우측 페이지 탭 -->
+<div class="tabs">
+  <a href="page1.html"><button class="tab1">1</button></a>
+  <a href="page2.html"><button class="tab2">2</button></a>
+  <a href="page3.html"><button class="tab3">3</button></a>
+  <a href="page4.html"><button class="tab4">4</button></a>
+  <a href="index.html"><button class="tab5">Home</button></a>
+  <a href="page6.html"><button class="tab6">6</button></a>
+  <a href="page7.html"><button class="tab7">7</button></a>
+  <a href="page8.html"><button class="tab8">8</button></a>
+  <a href="page9.html"><button class="tab9">9</button></a>
+</div>
 
 <script>
 function selectChar(cell, displayChar, fileChar) {
-  // 큰 글자 표시
   document.getElementById('bigDisplay').textContent = displayChar;
-
-  // 이전 선택 제거
   document.querySelectorAll('td.active').forEach(td => td.classList.remove('active'));
-
-  // 현재 선택 강조
   cell.classList.add('active');
 
-  // 랜덤 폴더 음성 재생
   const folder = Math.floor(Math.random() * 4) + 1;
   const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
   audio.volume = 1;
