@@ -1,208 +1,130 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>카타카나 50음 발음</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>카타카나 50음 발음</title>
 
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 10px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    /* 상단 청음, 탁음, 반탁음 */
-    .top-links {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
-
-    .top-links a {
-      text-decoration: none;
-      color: #555;
-      border: 1px solid #ccc;
-      padding: 4px 12px;
-      border-radius: 6px;
-      background-color: #fff;
-    }
-
-    .top-links a.active {
-      background-color: #ffc0cb;
-      border-color: #f3a6b6;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .top-links a:hover {
-      background-color: #ffe4ec;
-    }
-
-    .big-box {
-      width: 200px;
-      height: 200px;
-      border: 2px solid #333;
-      margin: 8px auto 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 85px;
-      background-color: #fff;
-    }
-
-    table {
-      margin: 0 auto 20px;
-      border-collapse: collapse;
-    }
-
-    td {
-      border: 1px solid #ccc;
-      width: 56px;
-      height: 56px;
-      font-size: 24px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    td.active {
-      background-color: #ffc0cb;
-    }
-
-    .empty {
-      background-color: #fafafa;
-      cursor: default;
-    }
-
-    @media (max-height: 700px) {
-      .big-box {
-        width: 180px;
-        height: 180px;
-        font-size: 76px;
-      }
-
-      td {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-      }
-    }
-  </style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>카타카나 50음 발음</h1>
-<div class="top-links">
-  <a href="kata.html" class="active">청음</a>
-  <a href="kata2.html">탁음</a>
-  <a href="kata3.html">반탁음</a>
+<div class="app">
+
+    <div class="diary">
+        <div class="page kana-page">
+            <h2>카타카나 50음 발음</h2>
+
+            <!-- 상단 탭 -->
+            <div class="top-links">
+                <a href="kata.html" class="active">청음</a>
+                <a href="kata2.html">탁음</a>
+                <a href="kata3.html">반탁음</a>
+                <a href="kata4.html">요음</a>
+            </div>
+
+            <!-- 큰 글자 표시 -->
+            <div id="bigDisplay" class="big-box">ア</div>
+
+            <!-- 카타카나 표 -->
+            <table class="kana-table">
+                <tr>
+                    <td onclick="selectChar(this,'ア','a')">ア</td>
+                    <td onclick="selectChar(this,'イ','i')">イ</td>
+                    <td onclick="selectChar(this,'ウ','u')">ウ</td>
+                    <td onclick="selectChar(this,'エ','e')">エ</td>
+                    <td onclick="selectChar(this,'オ','o')">オ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'カ','ka')">カ</td>
+                    <td onclick="selectChar(this,'キ','ki')">キ</td>
+                    <td onclick="selectChar(this,'ク','ku')">ク</td>
+                    <td onclick="selectChar(this,'ケ','ke')">ケ</td>
+                    <td onclick="selectChar(this,'コ','ko')">コ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'サ','sa')">サ</td>
+                    <td onclick="selectChar(this,'シ','si')">シ</td>
+                    <td onclick="selectChar(this,'ス','su')">ス</td>
+                    <td onclick="selectChar(this,'セ','se')">セ</td>
+                    <td onclick="selectChar(this,'ソ','so')">ソ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'タ','ta')">タ</td>
+                    <td onclick="selectChar(this,'チ','ti')">チ</td>
+                    <td onclick="selectChar(this,'ツ','tu')">ツ</td>
+                    <td onclick="selectChar(this,'テ','te')">テ</td>
+                    <td onclick="selectChar(this,'ト','to')">ト</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ナ','na')">ナ</td>
+                    <td onclick="selectChar(this,'ニ','ni')">ニ</td>
+                    <td onclick="selectChar(this,'ヌ','nu')">ヌ</td>
+                    <td onclick="selectChar(this,'ネ','ne')">ネ</td>
+                    <td onclick="selectChar(this,'ノ','no')">ノ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ハ','ha')">ハ</td>
+                    <td onclick="selectChar(this,'ヒ','hi')">ヒ</td>
+                    <td onclick="selectChar(this,'フ','hu')">フ</td>
+                    <td onclick="selectChar(this,'ヘ','he')">ヘ</td>
+                    <td onclick="selectChar(this,'ホ','ho')">ホ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'マ','ma')">マ</td>
+                    <td onclick="selectChar(this,'ミ','mi')">ミ</td>
+                    <td onclick="selectChar(this,'ム','mu')">ム</td>
+                    <td onclick="selectChar(this,'メ','me')">メ</td>
+                    <td onclick="selectChar(this,'モ','mo')">モ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ヤ','ya')">ヤ</td>
+                    <td class="empty">　</td>
+                    <td onclick="selectChar(this,'ユ','yu')">ユ</td>
+                    <td class="empty">　</td>
+                    <td onclick="selectChar(this,'ヨ','yo')">ヨ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ラ','ra')">ラ</td>
+                    <td onclick="selectChar(this,'リ','ri')">リ</td>
+                    <td onclick="selectChar(this,'ル','ru')">ル</td>
+                    <td onclick="selectChar(this,'レ','re')">レ</td>
+                    <td onclick="selectChar(this,'ロ','ro')">ロ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ワ','wa')">ワ</td>
+                    <td class="empty">　</td>
+                    <td class="empty">　</td>
+                    <td class="empty">　</td>
+                    <td onclick="selectChar(this,'ヲ','wo')">ヲ</td>
+                </tr>
+                <tr>
+                    <td onclick="selectChar(this,'ン','nn')">ン</td>
+                    <td class="empty">　</td>
+                    <td class="empty">　</td>
+                    <td class="empty">　</td>
+                    <td class="empty">　</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 📌 우측 다이어리 탭 -->
+    <div class="tabs">
+        <a href="hira.html"><button id="tab1">1</button></a>
+        <a href="kata.html"><button id="tab2" class="active">2</button></a>
+        <a href="bubble.html"><button id="tab3">3</button></a>
+        <a href="page4.html"><button id="tab4">4</button></a>
+        <a href="index.html"><button id="homeTab">Home</button></a>
+        <a href="page6.html"><button id="tab6">6</button></a>
+        <a href="page7.html"><button id="tab7">7</button></a>
+        <a href="page8.html"><button id="tab8">8</button></a>
+        <a href="page9.html"><button id="tab9">9</button></a>
+    </div>
+
 </div>
 
-<div id="bigDisplay" class="big-box">ア</div>
-
-<table id="kanaTable">
-  <tr>
-    <td onclick="selectChar(this,'ア','a')">ア</td>
-    <td onclick="selectChar(this,'イ','i')">イ</td>
-    <td onclick="selectChar(this,'ウ','u')">ウ</td>
-    <td onclick="selectChar(this,'エ','e')">エ</td>
-    <td onclick="selectChar(this,'オ','o')">オ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'カ','ka')">カ</td>
-    <td onclick="selectChar(this,'キ','ki')">キ</td>
-    <td onclick="selectChar(this,'ク','ku')">ク</td>
-    <td onclick="selectChar(this,'ケ','ke')">ケ</td>
-    <td onclick="selectChar(this,'コ','ko')">コ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'サ','sa')">サ</td>
-    <td onclick="selectChar(this,'シ','si')">シ</td>
-    <td onclick="selectChar(this,'ス','su')">ス</td>
-    <td onclick="selectChar(this,'セ','se')">セ</td>
-    <td onclick="selectChar(this,'ソ','so')">ソ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'タ','ta')">タ</td>
-    <td onclick="selectChar(this,'チ','ti')">チ</td>
-    <td onclick="selectChar(this,'ツ','tu')">ツ</td>
-    <td onclick="selectChar(this,'テ','te')">テ</td>
-    <td onclick="selectChar(this,'ト','to')">ト</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ナ','na')">ナ</td>
-    <td onclick="selectChar(this,'ニ','ni')">ニ</td>
-    <td onclick="selectChar(this,'ヌ','nu')">ヌ</td>
-    <td onclick="selectChar(this,'ネ','ne')">ネ</td>
-    <td onclick="selectChar(this,'ノ','no')">ノ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ハ','ha')">ハ</td>
-    <td onclick="selectChar(this,'ヒ','hi')">ヒ</td>
-    <td onclick="selectChar(this,'フ','hu')">フ</td>
-    <td onclick="selectChar(this,'ヘ','he')">ヘ</td>
-    <td onclick="selectChar(this,'ホ','ho')">ホ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'マ','ma')">マ</td>
-    <td onclick="selectChar(this,'ミ','mi')">ミ</td>
-    <td onclick="selectChar(this,'ム','mu')">ム</td>
-    <td onclick="selectChar(this,'メ','me')">メ</td>
-    <td onclick="selectChar(this,'モ','mo')">モ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ヤ','ya')">ヤ</td>
-    <td class="empty"></td>
-    <td onclick="selectChar(this,'ユ','yu')">ユ</td>
-    <td class="empty"></td>
-    <td onclick="selectChar(this,'ヨ','yo')">ヨ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ラ','ra')">ラ</td>
-    <td onclick="selectChar(this,'リ','ri')">リ</td>
-    <td onclick="selectChar(this,'ル','ru')">ル</td>
-    <td onclick="selectChar(this,'レ','re')">レ</td>
-    <td onclick="selectChar(this,'ロ','ro')">ロ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ワ','wa')">ワ</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td onclick="selectChar(this,'ヲ','wo')">ヲ</td>
-  </tr>
-  <tr>
-    <td onclick="selectChar(this,'ン','nn')">ン</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-  </tr>
-</table>
-
-<script>
-function selectChar(cell, displayChar, fileChar) {
-  document.getElementById('bigDisplay').textContent = displayChar;
-
-  document.querySelectorAll('td.active')
-    .forEach(td => td.classList.remove('active'));
-
-  cell.classList.add('active');
-
-  const folder = Math.floor(Math.random() * 4) + 1;
-  const audio = new Audio(`audio/${folder}/${fileChar}.mp3`);
-  audio.volume = 1;
-  audio.play();
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
