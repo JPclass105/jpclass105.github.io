@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f2f2f2;
+}
+
+/* 전체 가운데 정렬 */
+.diary-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* 다이어리 본체 */
+.diary {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+}
+
+/* 실제 페이지 */
+.page {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  padding: 40px 30px 60px;
+  box-sizing: border-box;
+}
+
+/* 홈 화면 전용 */
+.home h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.home-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.home-item {
+  position: relative;
+  padding: 14px 18px;
+  background: #fafafa;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 15px;
+}
+
+.home-item:hover {
+  background: #ffeef4;
+  transform: translateX(6px);
+}
+
+.home-item .line {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: #ccc;
+}
+
+/* 우측 탭 (다이어리에 붙음) */
+.tabs {
+  position: absolute;
+  top: 120px;
+  right: -70px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tab {
+  border: none;
+  padding: 10px 8px;
+  font-size: 12px;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  width: 60px;
+}
+
+.tab:hover {
+  transform: translateX(-4px);
+}
+
+.tab.active {
+  transform: translateX(-10px);
+  box-shadow: -3px 3px 8px rgba(0,0,0,0.15);
+}
+
+/* 파스텔 컬러 */
+.tab1 { background: #FFD1DC; }
+.tab2 { background: #FFE4B5; }
+.tab3 { background: #FFFACD; }
+.tab4 { background: #D5F5E3; }
+.tab5 { background: #D6EAF8; }
+.tab6 { background: #E8DAEF; }
+.tab7 { background: #FADBD8; }
+.tab8 { background: #D4EFDF; }
+.tab9 { background: #FCF3CF; }
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .tabs { right: -55px; }
+  .tab { width: 50px; font-size: 11px; }
+}
