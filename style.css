@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+}
+
+.diary {
+    position: relative;
+    width: 390px;
+    min-height: 100vh;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.page {
+    padding: 70px 20px 50px 20px;
+    min-height: 100vh;
+}
+
+.page h2 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+}
+
+/* 우측 탭 */
+.tabs {
+    position: fixed;
+    right: calc(50% - 195px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.tabs a {
+    text-decoration: none;
+}
+
+.tabs button {
+    margin: 4px 0;
+    padding: 8px 10px;
+    border: none;
+    font-size: 12px;
+    border-radius: 6px 0 0 6px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    transition: 0.2s;
+    width: 60px;
+}
+
+.tabs button:hover {
+    transform: translateX(-3px);
+}
+
+/* 파스텔 컬러 */
+.tab1 { background: #FFD1DC; }
+.tab2 { background: #FFE4B5; }
+.tab3 { background: #FFFACD; }
+.tab4 { background: #D5F5E3; }
+.tab5 { background: #D6EAF8; }
+.tab6 { background: #E8DAEF; }
+.tab7 { background: #FADBD8; }
+.tab8 { background: #D4EFDF; }
+.tab9 { background: #FCF3CF; }
+
+/* Home 연결 UI */
+.home-links { margin-top: 30px; }
+.home-item {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+.arrow { margin-left: auto; font-size: 18px; }
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 8px;
+}
+
+@media (max-width: 420px) {
+    .tabs { right: 0; }
+}
