@@ -19,11 +19,14 @@
 //});
 
 
-// 현재 페이지 자동 활성화 (파일명 기준)
-const path = window.location.pathname.split("/").pop();
+// 현재 페이지 URL 기준으로 활성 탭 자동 표시
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".tabs a");
+  const current = location.pathname.split("/").pop();
 
-document.querySelectorAll(".tabs a").forEach(link => {
-    if (link.getAttribute("href") === path) {
-        link.querySelector("button").classList.add("active");
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.querySelector("button").classList.add("active");
     }
+  });
 });
