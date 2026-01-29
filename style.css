@@ -65,6 +65,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     color: #444;
+    font-size: 16px;
 }
 
 /* 🌈 파스텔 탭 컬러 */
