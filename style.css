@@ -34,7 +34,7 @@ body {
 /* 📌 페이지 줄 간격 */
 .home-item {
     position: relative;
-    padding: 25px 0;   /* 🔥 이 높이와 탭 높이를 맞춤 */
+    padding: 15px 0;   /* 🔥 이 높이와 탭 높이를 맞춤 */
     font-size: 18px;
     cursor: pointer;
 }
@@ -51,13 +51,13 @@ body {
     width: 50px;
     display: flex;
     flex-direction: column;
-    margin-top: 78px; /* 🔥 제목 + 첫 줄 위치와 정렬 */
+    margin-top: 100px; /* 🔥 제목 + 첫 줄 위치와 정렬 */
     margin-left: 5px;
 }
 
 .tabs button {
     width: 100%;
-    height: 46px;   /* 🔥 home-item 한 줄 높이와 맞춤 */
+    height: 50px;   /* 🔥 home-item 한 줄 높이와 맞춤 */
     margin-bottom: 6px;
     border: none;
     border-radius: 0 12px 12px 0;
