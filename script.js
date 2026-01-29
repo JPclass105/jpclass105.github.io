@@ -19,14 +19,22 @@
 //});
 
 
-// 현재 페이지 URL 기준으로 활성 탭 자동 표시
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(".tabs a");
-  const current = location.pathname.split("/").pop();
+const path = window.location.pathname.split("/").pop();
 
-  links.forEach(link => {
-    if (link.getAttribute("href") === current) {
-      link.querySelector("button").classList.add("active");
-    }
-  });
-});
+const map = {
+    "hira.html": "tab1",
+    "kata.html": "tab2",
+    "bubble.html": "tab3",
+    "page4.html": "tab4",
+    "index.html": "homeTab",
+    "page6.html": "tab6",
+    "page7.html": "tab7",
+    "page8.html": "tab8",
+    "page9.html": "tab9"
+};
+
+const activeId = map[path];
+
+if (activeId) {
+    document.getElementById(activeId).classList.add("active");
+}
