@@ -158,7 +158,22 @@ body {
     background: #FFD1DC;
 }
 
-.kana-table .empty {
-    background: #f5f5f5;
-    cursor: default;
+/* 클릭 불가 칸 (비활성 글자) */
+.kana-table td.empty {
+    color: #cfcfcf;          /* 연한 회색 글자 */
+    background-color: #f9f9f9; /* 살짝 흐린 배경 */
+    cursor: default;         /* 마우스 포인터 기본값 */
+    font-weight: 400;        /* 두께도 살짝 얇게 */
+}
+
+/* 클릭 가능한 칸 */
+.kana-table td:not(.empty) {
+    color: #222;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+.kana-table td:not(.empty):hover {
+    background-color: #ffeef2;
+    transform: scale(1.08);
 }
