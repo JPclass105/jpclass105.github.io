@@ -1,130 +1,118 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>JPclass105's HOME!!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      background: #f5f6f8;
-      text-align: center;
-      padding: 20px;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diary Template</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+}
+
+/* 전체 다이어리 영역 (모바일 기준) */
+.diary {
+    position: relative;
+    width: 390px;
+    min-height: 100vh;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    overflow-x: hidden;
+}
+
+/* 각 페이지 */
+.page {
+    padding: 60px 20px 40px 20px;
+    min-height: 100vh;
+    border-bottom: 1px solid #eee;
+}
+
+.page h2 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+}
+
+/* 우측 탭 메뉴 */
+.tabs {
+    position: fixed;
+    right: calc(50% - 195px); /* 다이어리 우측에 붙이기 */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.tabs button {
+    margin: 4px 0;
+    padding: 6px 10px;
+    border: none;
+    background: #333;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px 0 0 4px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: 0.2s;
+}
+
+.tabs button:hover {
+    opacity: 1;
+    background: #000;
+}
+
+/* 모바일에서 화면 중앙 정렬 보정 */
+@media (max-width: 420px) {
+    .tabs {
+        right: 0;
     }
-    h1 {
-      margin-bottom: 20px;
-    }
-    table {
-      border-collapse: collapse;
-      margin: auto;
-    }
-    td {
-      width: 60px;
-      height: 60px;
-      border: 1px solid #ccc;
-      font-size: 28px;
-      cursor: pointer;
-      background: #fff;
-    }
-    td.empty {
-      background: #eee;
-      cursor: default;
-    }
-    td:active {
-      background: #dceeff;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-<h1>JPclass105's HOME!!</h1>
-<p>글자를 클릭하면 발음이 재생됩니다</p>
+<div class="diary">
 
-<table>
-  <tr>
-    <td onclick="play('a')">あ</td>
-    <td onclick="play('i')">い</td>
-    <td onclick="play('u')">う</td>
-    <td onclick="play('e')">え</td>
-    <td onclick="play('o')">お</td>
-  </tr>
-  <tr>
-    <td onclick="play('ka')">か</td>
-    <td onclick="play('ki')">き</td>
-    <td onclick="play('ku')">く</td>
-    <td onclick="play('ke')">け</td>
-    <td onclick="play('ko')">こ</td>
-  </tr>
-  <tr>
-    <td onclick="play('sa')">さ</td>
-    <td onclick="play('si')">し</td>
-    <td onclick="play('su')">す</td>
-    <td onclick="play('se')">せ</td>
-    <td onclick="play('so')">そ</td>
-  </tr>
-  <tr>
-    <td onclick="play('ta')">た</td>
-    <td onclick="play('ti')">ち</td>
-    <td onclick="play('tu')">つ</td>
-    <td onclick="play('te')">て</td>
-    <td onclick="play('to')">と</td>
-  </tr>
-  <tr>
-    <td onclick="play('na')">な</td>
-    <td onclick="play('ni')">に</td>
-    <td onclick="play('nu')">ぬ</td>
-    <td onclick="play('ne')">ね</td>
-    <td onclick="play('no')">の</td>
-  </tr>
-  <tr>
-    <td onclick="play('ha')">は</td>
-    <td onclick="play('hi')">ひ</td>
-    <td onclick="play('hu')">ふ</td>
-    <td onclick="play('he')">へ</td>
-    <td onclick="play('ho')">ほ</td>
-  </tr>
-  <tr>
-    <td onclick="play('ma')">ま</td>
-    <td onclick="play('mi')">み</td>
-    <td onclick="play('mu')">む</td>
-    <td onclick="play('me')">め</td>
-    <td onclick="play('mo')">も</td>
-  </tr>
-  <tr>
-    <td onclick="play('ya')">や</td>
-    <td class="empty"></td>
-    <td onclick="play('yu')">ゆ</td>
-    <td class="empty"></td>
-    <td onclick="play('yo')">よ</td>
-  </tr>
-  <tr>
-    <td onclick="play('ra')">ら</td>
-    <td onclick="play('ri')">り</td>
-    <td onclick="play('ru')">る</td>
-    <td onclick="play('re')">れ</td>
-    <td onclick="play('ro')">ろ</td>
-  </tr>
-  <tr>
-    <td onclick="play('wa')">わ</td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td onclick="play('wo')">を</td>
-  </tr>
-  <tr>
-    <td colspan="5" onclick="play('nn')">ん</td>
-  </tr>
-</table>
+    <div id="page1" class="page"><h2>Page 1</h2></div>
+    <div id="page2" class="page"><h2>Page 2</h2></div>
+    <div id="page3" class="page"><h2>Page 3</h2></div>
+    <div id="page4" class="page"><h2>Page 4</h2></div>
+    <div id="page5" class="page"><h2>Page 5</h2></div>
+    <div id="page6" class="page"><h2>Page 6</h2></div>
+    <div id="page7" class="page"><h2>Page 7</h2></div>
+    <div id="page8" class="page"><h2>Page 8</h2></div>
+    <div id="page9" class="page"><h2>Page 9</h2></div>
+    <div id="page10" class="page"><h2>Page 10</h2></div>
 
-<audio id="audio"></audio>
+</div>
+
+<!-- 우측 탭 버튼 -->
+<div class="tabs">
+    <button onclick="goToPage('page1')">1</button>
+    <button onclick="goToPage('page2')">2</button>
+    <button onclick="goToPage('page3')">3</button>
+    <button onclick="goToPage('page4')">4</button>
+    <button onclick="goToPage('page5')">5</button>
+    <button onclick="goToPage('page6')">6</button>
+    <button onclick="goToPage('page7')">7</button>
+    <button onclick="goToPage('page8')">8</button>
+    <button onclick="goToPage('page9')">9</button>
+    <button onclick="goToPage('page10')">10</button>
+</div>
 
 <script>
-  function play(sound) {
-    const audio = document.getElementById("audio");
-    audio.src = "audio/1/" + sound + ".mp3";
-    audio.play();
-  }
+function goToPage(pageId) {
+    document.getElementById(pageId).scrollIntoView({
+        behavior: "smooth"
+    });
+}
 </script>
 
 </body>
