@@ -1,92 +1,107 @@
 body {
     margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #f2f2f2;
-    display: flex;
-    justify-content: center;
+    font-family: 'Pretendard', sans-serif;
+    background: #f8f9fb;
 }
 
+/* 📖 다이어리 중앙 배치 */
 .diary {
-    position: relative;
-    width: 390px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.08);
-    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .page {
-    padding: 70px 20px 50px 20px;
-    min-height: 100vh;
+    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    min-height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 30px 20px 40px;
+    box-sizing: border-box;
+    position: relative;
 }
 
-.page h2 {
+h2 {
+    text-align: center;
     margin-top: 0;
-    font-size: 20px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 8px;
 }
 
-/* 우측 탭 */
+/* 홈 링크 */
+.home-links {
+    margin-top: 30px;
+}
+
+.home-item {
+    position: relative;
+    padding: 12px 10px;
+    margin: 10px 0;
+    background: #f1f3f5;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.home-item:hover {
+    background: #e2e6ea;
+    transform: translateX(4px);
+}
+
+/* 연결선 */
+.home-item .line {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    width: 40px;
+    height: 2px;
+    background: #ccc;
+}
+
+/* 📑 우측 다이어리 탭 */
 .tabs {
     position: fixed;
-    right: calc(50% - 195px);
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
+    gap: 8px;
     z-index: 1000;
 }
 
-.tabs a {
-    text-decoration: none;
-}
-
-.tabs button {
-    margin: 4px 0;
-    padding: 8px 10px;
+.tab {
+    width: 52px;
+    height: 48px;
     border: none;
-    font-size: 12px;
-    border-radius: 6px 0 0 6px;
+    border-radius: 12px 0 0 12px;
     cursor: pointer;
-    color: #333;
     font-weight: bold;
-    transition: 0.2s;
-    width: 60px;
+    transition: all 0.25s ease;
 }
 
-.tabs button:hover {
-    transform: translateX(-3px);
+/* 파스텔 색상들 */
+.tab1 { background: #ffd6e0; }
+.tab2 { background: #ffe8cc; }
+.tab3 { background: #dcedc1; }
+.tab4 { background: #cde7ff; }
+.tab5 { background: #e4d1ff; }
+.tab6 { background: #fff3b0; }
+.tab7 { background: #b5ead7; }
+.tab8 { background: #ffdac1; }
+.tab9 { background: #d0f4de; }
+
+/* Hover 효과 */
+.tab:hover {
+    transform: translateX(-6px);
 }
 
-/* 파스텔 컬러 */
-.tab1 { background: #FFD1DC; }
-.tab2 { background: #FFE4B5; }
-.tab3 { background: #FFFACD; }
-.tab4 { background: #D5F5E3; }
-.tab5 { background: #D6EAF8; }
-.tab6 { background: #E8DAEF; }
-.tab7 { background: #FADBD8; }
-.tab8 { background: #D4EFDF; }
-.tab9 { background: #FCF3CF; }
-
-/* Home 연결 UI */
-.home-links { margin-top: 30px; }
-.home-item {
-    display: flex;
-    align-items: center;
-    margin: 12px 0;
-    font-size: 14px;
-    cursor: pointer;
-}
-.arrow { margin-left: auto; font-size: 18px; }
-.line {
-    flex-grow: 1;
-    height: 1px;
-    background: #ccc;
-    margin: 0 8px;
-}
-
-@media (max-width: 420px) {
-    .tabs { right: 0; }
+/* 🌟 현재 페이지 탭 */
+.tab.active {
+    transform: translateX(-14px);
+    box-shadow: -4px 4px 12px rgba(0,0,0,0.15);
+    background: #ffffff !important;
 }
