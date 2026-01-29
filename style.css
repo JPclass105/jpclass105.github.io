@@ -131,6 +131,7 @@ body {
     font-size: 72px;
     background: #fff;
     font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-weight: 700;
 }
 
 .kana-table {
@@ -146,10 +147,11 @@ body {
     cursor: pointer;
     font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
     font-weight: 600;   /* 🔥 글자 두껍게 */
-    /*display: flex;
-    /*justify-content: center;  /* 가로 중앙 */
+    align-items: center;
+    display: flex;
+    justify-content: center;  /* 가로 중앙 */
     /*align-items: center;      /* 세로 중앙 */
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .kana-table td.active {
