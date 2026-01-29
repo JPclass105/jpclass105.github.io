@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    background: #f4f1ea;
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+/* 📱 모바일 고정 레이아웃 */
+.app {
+    position: relative;
+    width: 390px;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* 📖 다이어리 */
+.diary {
+    width: 340px;
+    background: #fffdf6;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin: 20px 0;
+    min-height: 85vh;
+}
+
+.page h2 {
+    margin-top: 0;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* 📌 페이지 줄 간격 */
+.home-item {
+    position: relative;
+    padding: 14px 0;   /* 🔥 이 높이와 탭 높이를 맞춤 */
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.home-item .line {
+    display: block;
+    height: 1px;
+    background: #ddd;
+    margin-top: 8px;
+}
+
+/* 📚 우측 탭 */
+.tabs {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 78px; /* 🔥 제목 + 첫 줄 위치와 정렬 */
+    margin-left: 5px;
+}
+
+.tabs button {
+    width: 100%;
+    height: 46px;   /* 🔥 home-item 한 줄 높이와 맞춤 */
+    margin-bottom: 6px;
+    border: none;
+    border-radius: 0 12px 12px 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #444;
+}
+
+/* 🌈 파스텔 탭 컬러 */
+#tab1 { background: #ffd9de; }   /* 연핑크 */
+#tab2 { background: #ffe7c7; }   /* 살구 */
+#tab3 { background: #fff6b7; }   /* 연노랑 */
+#tab4 { background: #dff5d8; }   /* 연연두 */
+#homeTab { background: #d6ecff; }/* 하늘 */
+#tab6 { background: #e4dbff; }   /* 연보라 */
+#tab7 { background: #ffdff3; }   /* 벚꽃 */
+#tab8 { background: #d7f7f3; }   /* 민트 */
+#tab9 { background: #f0e2d0; }   /* 베이지 */
+
+/* 호버 */
+.tabs button:hover {
+    filter: brightness(0.96);
+}
+
+/* ⭐ 현재 페이지 탭 */
+.tabs button.active {
+    background: #ffffff !important;
+    transform: translateX(-8px);
+    box-shadow: -3px 3px 8px rgba(0,0,0,0.12);
+    z-index: 2;
+}
