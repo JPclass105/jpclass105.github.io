@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>오늘의 한자 공부</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <div class="diary">
+        <div class="page">
+
+            <h2 style="text-align:center;">📘 오늘의 한자 공부</h2>
+
+            <div class="intro-text">
+                JLPT 빈출 한자를 매일 3개씩  
+                <b>N3 · N2 · N1 레벨별</b>로 학습합니다.  
+                시험 대비 + 실전 독해력 강화 💪
+            </div>
+
+            <div class="feature-box">
+                ✔ 한자 3개 레벨별 심층 분석<br>
+                ✔ 음독 · 훈독 정리<br>
+                ✔ 실제 시험 출제 포인트 제공<br>
+                ✔ 예문 + 해석 + 학습 팁 포함
+            </div>
+
+            <div class="cta-area">
+                <button class="main-btn" onclick="openKanjiBlog()">오늘의 한자 보러가기</button>
+            </div>
+
+            <div class="sub-text">
+                인스타 카드뉴스 + 블로그 상세 해설로  
+                매일 꾸준히 학습할 수 있습니다.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 📚 우측 탭 -->
+    <div class="tabs">
+        <a href="hira.html"><button id="tab1">1</button></a>
+        <a href="kata.html"><button id="tab2">2</button></a>
+        <a href="bubble.html"><button id="tab3">3</button></a>
+        <a href="grammar.html"><button id="tab4">4</button></a>
+        <a href="index.html"><button id="homeTab">Home</button></a>
+        <a href="news.html"><button id="tab6">5</button></a>
+        <a href="kanji.html"><button id="tab7" class="active">6</button></a>
+        <a href="anki.html"><button id="tab8">7</button></a>
+        <a href="show.html"><button id="tab9">8</button></a>
+    </div>
+
+</div>
+
+<script>
+function openKanjiBlog() {
+    window.open("https://blog.naver.com/jp_class105", "_blank");
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
