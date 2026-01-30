@@ -1,74 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anki 암기 시스템</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anki 학습 시스템</title>
 <link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
 </head>
 <body>
 
-<div class="container">
+<div class="app">
 
-    <h1>📚 Anki로 만드는 일본어 암기 시스템</h1>
+    <div class="diary">
+        <div class="page">
+            <h2>🧠 Anki 복습 학습 시스템</h2>
 
-    <p class="intro">
-        Anki는 전 세계 학습자들이 사용하는  
-        <strong>과학적 반복 복습(SRS)</strong> 기반 암기 프로그램입니다.  
-        단어가 오래 기억되지 않는 문제를 해결해 줍니다.
-    </p>
+            <p class="intro-text">
+                Anki는 <strong>전 세계 수험생과 언어 학습자들이 사용하는</strong>  
+                과학적인 반복 학습(SRS) 기반 암기 프로그램입니다.
+            </p>
 
-    <div class="card">
-        <h2>🔍 Anki는 믿을 수 있는 앱인가요?</h2>
-        <ul>
-            <li>공식 개발자가 만든 오리지널 학습 프로그램</li>
-            <li>PC와 Android 버전은 무료 제공</li>
-            <li>iPhone용 AnkiMobile은 유료 (공식 유지·개발 지원 목적)</li>
-            <li>전 세계 학습자와 교육기관에서 사용하는 검증된 앱</li>
-        </ul>
+            <div class="feature-box">
+                <div>✔ 망각 곡선 기반 자동 복습 시스템</div>
+                <div>✔ JLPT 단어·문법 암기에 최적화</div>
+                <div>✔ 모바일과 PC 동기화 지원</div>
+                <div>✔ 직접 만든 덱으로 체계적 학습 가능</div>
+            </div>
+
+            <p class="sub-text">
+                Anki는 개인 개발자가 만든 무료 오픈소스 학습 프로그램이며  
+                전 세계적으로 널리 사용되는 신뢰도 높은 학습 도구입니다.  
+                안드로이드와 PC 버전은 무료, iOS(아이폰·아이패드) 버전은 유료입니다.
+            </p>
+
+            <div class="cta-area">
+                <a href="https://blog.naver.com/jp_class105" target="_blank" rel="noopener">
+                    <button class="main-btn">📘 Anki 사용법 자세히 보기</button>
+                </a>
+            </div>
+
+            <p class="sub-text">
+                블로그에서 Anki 덱 활용법과 추천 학습 방법을 자세히 안내합니다.
+            </p>
+        </div>
     </div>
 
-    <div class="card">
-        <h2>🎯 일본어 공부에 왜 효과적일까?</h2>
-        <ul>
-            <li>잊어버리기 직전에 자동 복습</li>
-            <li>단어 · 한자 · 예문까지 확장 가능</li>
-            <li>JLPT 시험 대비에 최적화</li>
-            <li>PC·모바일 동기화로 언제 어디서나 학습</li>
-        </ul>
-    </div>
-
-    <div class="card highlight">
-        <h2>📦 JLPT 전용 Anki 덱 제공</h2>
-        <p>
-            이 사이트에서는 JLPT 레벨별 단어와 예문이 정리된  
-            <strong>일본어 전용 Anki 덱</strong>을 제공합니다.
-        </p>
-    </div>
-
-    <div class="cta">
-        <p>설치 방법과 사용법이 궁금하신가요?</p>
-        <a href="https://blog.naver.com/jp_class105" target="_blank">
-            <button class="primary-btn">블로그에서 자세한 사용법 보기</button>
-        </a>
+    <!-- 📌 우측 고정 탭 -->
+    <div class="tabs">
+        <a data-page="hira" href="#"><button id="tab1">1</button></a>
+        <a data-page="kata" href="#"><button id="tab2">2</button></a>
+        <a data-page="bubble" href="#"><button id="tab3">3</button></a>
+        <a data-page="grammar" href="#"><button id="tab4">4</button></a>
+        <a data-page="home" href="#"><button id="homeTab">Home</button></a>
+        <a data-page="news" href="#"><button id="tab6">5</button></a>
+        <a data-page="kanji" href="#"><button id="tab7">6</button></a>
+        <a data-page="anki" href="#"><button id="tab8" class="active">7</button></a>
+        <a data-page="show" href="#"><button id="tab9">8</button></a>
     </div>
 
 </div>
 
-
-<!-- 📌 하단 탭 (다른 페이지들과 동일 위치) -->
-<div class="tabs">
-    <a href="hira.html"><button id="tab1">1</button></a>
-    <a href="kata.html"><button id="tab2">2</button></a>
-    <a href="bubble.html"><button id="tab3">3</button></a>
-    <a href="grammar.html"><button id="tab4">4</button></a>
-    <a href="index.html"><button id="homeTab">Home</button></a>
-    <a href="news.html"><button id="tab6">5</button></a>
-    <a href="kanji.html"><button id="tab7">6</button></a>
-    <a href="anki.html"><button id="tab8" class="active">7</button></a>
-    <a href="show.html"><button id="tab9">8</button></a>
-</div>
-
+<script src="script.js"></script>
 </body>
 </html>
