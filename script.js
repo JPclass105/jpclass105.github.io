@@ -26,12 +26,12 @@ const PAGE_LINKS = {
     hira: "hira.html",
     kata: "kata.html",
     bubble: "bubble.html",
-    page4: "grammar.html",
+    grammar: "grammar.html",
     home: "index.html",
-    page6: "news.html",
-    page7: "kanji.html",
-    page8: "anki.html",
-    page9: "show.html"
+    news: "news.html",
+    kanji: "kanji.html",
+    anki: "anki.html",
+    show: "show.html"
 };
 
 /* 📍 현재 페이지 자동 active 처리 */
