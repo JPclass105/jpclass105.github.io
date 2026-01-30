@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Anki로 일본어 암기 시스템 만들기</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anki 암기 시스템</title>
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
 </head>
 <body>
 
-<!-- 📌 공통 탭 -->
+<div class="container">
+
+    <h1>📚 Anki로 만드는 일본어 암기 시스템</h1>
+
+    <p class="intro">
+        Anki는 전 세계 학습자들이 사용하는  
+        <strong>과학적 반복 복습(SRS)</strong> 기반 암기 프로그램입니다.  
+        단어가 오래 기억되지 않는 문제를 해결해 줍니다.
+    </p>
+
+    <div class="card">
+        <h2>🔍 Anki는 믿을 수 있는 앱인가요?</h2>
+        <ul>
+            <li>공식 개발자가 만든 오리지널 학습 프로그램</li>
+            <li>PC와 Android 버전은 무료 제공</li>
+            <li>iPhone용 AnkiMobile은 유료 (공식 유지·개발 지원 목적)</li>
+            <li>전 세계 학습자와 교육기관에서 사용하는 검증된 앱</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🎯 일본어 공부에 왜 효과적일까?</h2>
+        <ul>
+            <li>잊어버리기 직전에 자동 복습</li>
+            <li>단어 · 한자 · 예문까지 확장 가능</li>
+            <li>JLPT 시험 대비에 최적화</li>
+            <li>PC·모바일 동기화로 언제 어디서나 학습</li>
+        </ul>
+    </div>
+
+    <div class="card highlight">
+        <h2>📦 JLPT 전용 Anki 덱 제공</h2>
+        <p>
+            이 사이트에서는 JLPT 레벨별 단어와 예문이 정리된  
+            <strong>일본어 전용 Anki 덱</strong>을 제공합니다.
+        </p>
+    </div>
+
+    <div class="cta">
+        <p>설치 방법과 사용법이 궁금하신가요?</p>
+        <a href="https://blog.naver.com/jp_class105" target="_blank">
+            <button class="primary-btn">블로그에서 자세한 사용법 보기</button>
+        </a>
+    </div>
+
+</div>
+
+
+<!-- 📌 하단 탭 (다른 페이지들과 동일 위치) -->
 <div class="tabs">
     <a href="hira.html"><button id="tab1">1</button></a>
     <a href="kata.html"><button id="tab2">2</button></a>
@@ -20,66 +68,6 @@
     <a href="kanji.html"><button id="tab7">6</button></a>
     <a href="anki.html"><button id="tab8" class="active">7</button></a>
     <a href="show.html"><button id="tab9">8</button></a>
-</div>
-
-<!-- 📚 메인 콘텐츠 -->
-<div class="container">
-    <h1>📚 Anki로 일본어 암기 시스템 만들기</h1>
-
-    <p>
-        단어가 잘 외워지지 않는 이유는  
-        <strong>복습 타이밍이 불규칙하기 때문</strong>입니다.  
-        Anki는 **과학적 복습 알고리즘(Spaced Repetition System, SRS)** 기반으로 만든 암기 도구입니다.
-    </p>
-
-    <h2>🔍 Anki란 무엇인가요?</h2>
-    <p>
-        Anki는 오리지널 개발자가 만든 신뢰할 수 있는 암기 도구로,  
-        전세계 언어 학습자들이 사용하는 무료 기반 시스템입니다.
-    </p>
-
-    <ul>
-        <li><strong>공식 무료 앱</strong>: PC(Windows/Mac/Linux)와 Android 버전은 공식 무료 배포</li>
-        <li><strong>AnkiWeb</strong>: 브라우저 기반 무료 학습 및 동기화 기능 지원</li>
-        <li><strong>AnkiMobile (iOS)</strong>: Apple 앱스토어에서 유료(개발자 지원 목적)</li>
-    </ul>
-
-    <p>
-        ※ 공식 개발자가 직접 운영하고,  
-        많은 언어 교육 기관에서도 추천하는 도구이기 때문에  
-        <strong>신뢰성과 안정성이 매우 높습니다.</strong>  
-    </p>
-
-    <h2>🎯 일본어 학습에 Anki가 강력한 이유</h2>
-    <ul>
-        <li>망각되기 직전에 자동으로 복습 스케줄 생성</li>
-        <li>히라가나, 카타카나, 단어, 한자, 예문까지 모두 확장 가능</li>
-        <li>PC, 모바일, 웹(AnkiWeb) 동기화로 편리한 학습</li>
-        <li>JLPT 시험 대비에 최적화된 반복 구조</li>
-    </ul>
-
-    <h2>🧠 이런 분들에게 추천합니다</h2>
-    <ul>
-        <li>단어를 외워도 금방 잊어버리는 학습자</li>
-        <li>JLPT 시험을 준비 중인 분</li>
-        <li>시간은 부족하지만 효율적으로 공부하고 싶은 분</li>
-        <li>암기를 체계화하고 싶은 학습자</li>
-    </ul>
-
-    <h2>📦 일본어 전용 Anki 덱 제공</h2>
-    <p>
-        이 사이트에서는 JLPT 레벨별 단어, 한자, 예문이 정리된  
-        <strong>일본어 전용 Anki 덱</strong>을 제공합니다.  
-        단순 단어장 형식이 아닌, 시험과 실사용에 맞춘 구조입니다.
-    </p>
-
-    <div class="cta-box">
-        <p><strong>Anki 설치 방법 및 덱 사용법이 궁금하신가요?</strong></p>
-        <a href="https://blog.naver.com/jp_class105" target="_blank">
-            <button class="primary-btn">블로그에서 자세한 사용법 보기</button>
-        </a>
-    </div>
-
 </div>
 
 </body>
