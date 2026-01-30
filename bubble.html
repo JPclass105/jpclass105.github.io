@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>게임으로 공부하기</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <div class="diary">
+        <div class="page">
+            <h2>🎮 히라가나 · 카타카나 퀴즈 게임</h2>
+
+            <div class="game-intro">
+                <p>
+                    이 게임은 <strong>히라가나와 카타카나를 맞추는 학습 게임</strong>입니다.<br><br>
+                    총 <strong>3라운드</strong>로 진행되며, 문제를 풀면서 자연스럽게 문자를 익힐 수 있습니다.
+                </p>
+
+                <p>
+                    <strong>이메일 + 비밀번호</strong>로 간단히 로그인하면  
+                    당신의 점수가 자동으로 기록됩니다.
+                </p>
+
+                <p>
+                    🎁 점수에 따라 <strong>일본어 학습 PDF 교재를 무료 리워드</strong>로 제공합니다!
+                </p>
+            </div>
+
+            <!-- 게임 시작 버튼 (이미지 버튼) -->
+            <div class="game-start">
+                <img src="images/game-start-button.png" 
+                     alt="게임 시작하기" 
+                     class="start-btn"
+                     onclick="window.open('https://fabcl.bubbleapps.io/version-test', '_blank')">
+            </div>
+
+            <p class="game-note">
+                ※ 게임은 새 창에서 실행됩니다.
+            </p>
+        </div>
+    </div>
+
+    <!-- 📌 우측 공통 탭 -->
+    <div class="tabs">
+        <a href="hira.html"><button id="tab1">1</button></a>
+        <a href="kata.html"><button id="tab2">2</button></a>
+        <a href="bubble.html"><button id="tab3" class="active">3</button></a>
+        <a href="page4.html"><button id="tab4">4</button></a>
+        <a href="index.html"><button id="homeTab">Home</button></a>
+        <a href="page6.html"><button id="tab6">6</button></a>
+        <a href="page7.html"><button id="tab7">7</button></a>
+        <a href="page8.html"><button id="tab8">8</button></a>
+        <a href="page9.html"><button id="tab9">9</button></a>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
