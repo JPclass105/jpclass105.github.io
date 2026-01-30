@@ -21,6 +21,34 @@ if (activeId) {
         if (activeBtn) activeBtn.classList.add("active");
     }
 
+/* 🔗 페이지 주소 한 번만 관리 */
+const PAGE_LINKS = {
+    hira: "hira.html",
+    kata: "kata.html",
+    bubble: "bubble.html",
+    page4: "page4.html",
+    home: "index.html",
+    page6: "page6.html",
+    page7: "page7.html",
+    page8: "page8.html",
+    page9: "page9.html"
+};
+
+/* 📍 현재 페이지 자동 active 처리 */
+const currentPage = window.location.pathname.split("/").pop();
+
+Object.entries(PAGE_LINKS).forEach(([key, url]) => {
+    const link = document.querySelector(`a[data-page="${key}"]`);
+    if (!link) return;
+
+    link.href = url;
+
+    if (url === currentPage) {
+        const btn = link.querySelector("button");
+        if (btn) btn.classList.add("active");
+    }
+});
+
 function selectChar(td, kana, romaji) {
     document.getElementById("bigDisplay").textContent = kana;
 
