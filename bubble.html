@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>게임으로 공부하기</title>
+<title>히라가나·카타카나 게임</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,52 +12,54 @@
 
     <div class="diary">
         <div class="page">
-            <h2>🎮 히라가나 · 카타카나 퀴즈 게임</h2>
 
-            <div class="game-intro">
-                <p>
-                    이 게임은 <strong>히라가나와 카타카나를 맞추는 학습 게임</strong>입니다.<br><br>
-                    총 <strong>3라운드</strong>로 진행되며, 문제를 풀면서 자연스럽게 문자를 익힐 수 있습니다.
-                </p>
+            <h2 style="text-align:center;">🎮 히라가나 · 카타카나 게임</h2>
 
-                <p>
-                    <strong>이메일 + 비밀번호</strong>로 간단히 로그인하면  
-                    당신의 점수가 자동으로 기록됩니다.
-                </p>
-
-                <p>
-                    🎁 점수에 따라 <strong>일본어 학습 PDF 교재를 무료 리워드</strong>로 제공합니다!
-                </p>
+            <div class="intro-text">
+                게임으로 배우는 일본어 문자 학습 ✨<br>
+                재미있게 반복하면서 자연스럽게 외워집니다.
             </div>
 
-            <!-- 게임 시작 버튼 (이미지 버튼) -->
-            <div class="game-start">
-                <img src="images/bgs_btn.png" 
-                     alt="게임 시작하기" 
+            <div class="feature-box">
+                ✔ 히라가나 · 카타카나 랜덤 출제<br>
+                ✔ 총 3라운드 진행<br>
+                ✔ 이메일 로그인 시 점수 기록 저장<br>
+                ✔ 점수 달성 시 일본어 학습 PDF 무료 제공 🎁
+            </div>
+
+            <div class="cta-area">
+                <img src="images/start-button.png" alt="게임 시작"
                      class="start-btn"
-                     onclick="window.open('https://fabcl.bubbleapps.io/version-test', '_blank')">
+                     onclick="startGame()">
             </div>
 
-            <p class="game-note">
-                ※ 게임은 새 창에서 실행됩니다.
-            </p>
+            <div class="game-note">
+                ※ 새 창에서 게임이 실행됩니다
+            </div>
+
         </div>
     </div>
 
-    <!-- 📌 페이지 옆에 붙는 탭 -->
+    <!-- 📚 우측 탭 -->
     <div class="tabs">
-    <a data-page="hira" href="#"><button id="tab1">1</button></a>
-    <a data-page="kata" href="#"><button id="tab2">2</button></a>
-    <a data-page="bubble" href="#"><button id="tab3">3</button></a>
-    <a data-page="grammar" href="#"><button id="tab4">4</button></a>
-    <a data-page="home" href="#"><button id="homeTab">Home</button></a>
-    <a data-page="news" href="#"><button id="tab6">6</button></a>
-    <a data-page="kanji" href="#"><button id="tab7">7</button></a>
-    <a data-page="anki" href="#"><button id="tab8">8</button></a>
-    <a data-page="show" href="#"><button id="tab9">9</button></a>
-</div>
+        <a href="hira.html"><button id="tab1">1</button></a>
+        <a href="kata.html"><button id="tab2">2</button></a>
+        <a href="bubble.html"><button id="tab3" class="active">3</button></a>
+        <a href="grammar.html"><button id="tab4">4</button></a>
+        <a href="index.html"><button id="homeTab">Home</button></a>
+        <a href="news.html"><button id="tab6">5</button></a>
+        <a href="kanji.html"><button id="tab7">6</button></a>
+        <a href="anki.html"><button id="tab8">7</button></a>
+        <a href="show.html"><button id="tab9">8</button></a>
+    </div>
 
 </div>
+
+<script>
+function startGame() {
+    window.open("https://fabcl.bubbleapps.io/version-test", "_blank");
+}
+</script>
 
 <script src="script.js"></script>
 </body>
