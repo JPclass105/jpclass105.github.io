@@ -8,7 +8,6 @@ body {
 
 /* 📱 모바일 고정 레이아웃 */
 .app {
-    top: 25px;
     position: relative;
     width: 390px;
     min-height: 100vh;
@@ -18,7 +17,7 @@ body {
 /* 🔖 상단 브랜드 바 */
 .brand-header {
     position: absolute;
-    top: 15px;
+    top: 25px;
     left: 20px;
     font-size: 13px;
     color: #9aa0a6; /* 은은한 그레이 */
