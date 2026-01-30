@@ -14,15 +14,15 @@ body {
     display: flex;
 }
 
-/* 🔖 상단 브랜드 바 */
+/* 🔖 하단 바닥 브랜드 표시 */
 .brand-header {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    font-size: 13px;
-    color: #9aa0a6; /* 은은한 그레이 */
-    letter-spacing: 1px;
-    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: -10px; /* 다이어리와 간격 미세조정 */
+    font-size: 12px;
+    color: #b0b0b0;
+    letter-spacing: 2px;
 }
 
 /* 📖 다이어리 */
