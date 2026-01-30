@@ -14,6 +14,17 @@ body {
     display: flex;
 }
 
+/* 🔖 상단 브랜드 바 */
+.brand-header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 13px;
+    color: #9aa0a6; /* 은은한 그레이 */
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
 /* 📖 다이어리 */
 .diary {
     width: 340px;
