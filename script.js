@@ -6,19 +6,20 @@ const map = {
     "hira.html": "tab1",
     "kata.html": "tab2",
     "bubble.html": "tab3",
-    "page4.html": "tab4",
+    "grammar.html": "tab4",
     "index.html": "homeTab",
-    "page6.html": "tab6",
-    "page7.html": "tab7",
-    "page8.html": "tab8",
-    "page9.html": "tab9"
+    "news.html": "tab6",
+    "kanji.html": "tab7",
+    "anki.html": "tab8",
+    "show.html": "tab9"
 };
 
 const activeId = map[path];
 
 if (activeId) {
-    document.getElementById(activeId).classList.add("active");
-}
+        const activeBtn = document.getElementById(activeId);
+        if (activeBtn) activeBtn.classList.add("active");
+    }
 
 function selectChar(td, kana, romaji) {
     document.getElementById("bigDisplay").textContent = kana;
