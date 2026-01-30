@@ -39,6 +39,19 @@ body {
     cursor: pointer;
 }
 
+.home-item {
+    padding: 10px 12px;
+    margin: 6px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.home-item:active {
+    transform: scale(0.97);
+    filter: brightness(0.95);
+}
+
 .home-item .line {
     display: block;
     height: 1px;
