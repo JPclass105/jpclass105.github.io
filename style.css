@@ -59,15 +59,15 @@ body {
     margin-top: 8px;
 }
 
-.home-item.tab1:hover { background-color: #FFD1DC; }
-.home-item.tab2:hover { background-color: #FFE4B5; }
-.home-item.tab3:hover { background-color: #FFFACD; }
-.home-item.tab4:hover { background-color: #D5F5E3; }
-.home-item.tab5:hover { background-color: #D6EAF8; }
-.home-item.tab6:hover { background-color: #E8DAEF; }
-.home-item.tab7:hover { background-color: #FADBD8; }
-.home-item.tab8:hover { background-color: #D4EFDF; }
-.home-item.tab9:hover { background-color: #FCF3CF; }
+.home-item.tab1:hover { background-color: #ffd9de; }
+.home-item.tab2:hover { background-color: #ffe7c7; }
+.home-item.tab3:hover { background-color: #fff6b7; }
+.home-item.tab4:hover { background-color: #dff5d8; }
+.home-item.tab5:hover { background-color: #d6ecff; }
+.home-item.tab6:hover { background-color: #e4dbff; }
+.home-item.tab7:hover { background-color: #ffdff3; }
+.home-item.tab8:hover { background-color: #d7f7f3; }
+.home-item.tab9:hover { background-color: #f0e2d0; }
 
 /* 📚 우측 탭 */
 .tabs {
