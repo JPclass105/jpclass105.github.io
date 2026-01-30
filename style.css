@@ -59,6 +59,16 @@ body {
     margin-top: 8px;
 }
 
+.home-item.tab1:hover { background-color: #FFD1DC; }
+.home-item.tab2:hover { background-color: #FFE4B5; }
+.home-item.tab3:hover { background-color: #FFFACD; }
+.home-item.tab4:hover { background-color: #D5F5E3; }
+.home-item.tab5:hover { background-color: #D6EAF8; }
+.home-item.tab6:hover { background-color: #E8DAEF; }
+.home-item.tab7:hover { background-color: #FADBD8; }
+.home-item.tab8:hover { background-color: #D4EFDF; }
+.home-item.tab9:hover { background-color: #FCF3CF; }
+
 /* 📚 우측 탭 */
 .tabs {
     width: 50px;
