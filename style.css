@@ -222,7 +222,7 @@ body {
 }
 
 .game-intro {
-    font-size: 15px;
+    font-size: 26px;
     line-height: 1.6;
     margin: 20px 10px;
     text-align: center;
@@ -234,7 +234,7 @@ body {
 }
 
 .start-btn {
-    width: 200px;
+    width: 180px;
     max-width: 80%;
     cursor: pointer;
     transition: transform 0.15s ease;
@@ -245,7 +245,7 @@ body {
 }
 
 .game-note {
-    font-size: 12px;
+    font-size: 20px;
     color: #888;
     text-align: center;
     margin-top: 8px;
