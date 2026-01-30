@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>오늘의 일본 뉴스</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <div class="diary">
+        <div class="page">
+
+            <h2 style="text-align:center;">📰 오늘의 일본 뉴스</h2>
+
+            <div class="intro-text">
+                일본 현지 뉴스를 학습용으로 재구성하여  
+                <b>매일 1개씩</b> 쉽게 읽을 수 있도록 제공합니다.  
+                뉴스로 배우는 살아있는 일본어 📘
+            </div>
+
+            <div class="feature-box">
+                ✔ 정치 뉴스 제외<br>
+                ✔ JLPT 학습자용 쉬운 문장 구조<br>
+                ✔ 핵심 단어 · 표현 정리 포함<br>
+                ✔ 원문 출처 명시로 신뢰도 확보
+            </div>
+
+            <div class="cta-area">
+                <button class="main-btn" onclick="openNewsBlog()">오늘의 뉴스 보러가기</button>
+            </div>
+
+            <div class="sub-text">
+                블로그에서 매일 업데이트됩니다.<br>
+                뉴스 원문 기반 학습 콘텐츠로 독해 실력을 키워보세요.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 📚 우측 탭 -->
+    <div class="tabs">
+        <a href="hira.html"><button id="tab1">1</button></a>
+        <a href="kata.html"><button id="tab2">2</button></a>
+        <a href="bubble.html"><button id="tab3">3</button></a>
+        <a href="grammar.html"><button id="tab4">4</button></a>
+        <a href="index.html"><button id="homeTab">Home</button></a>
+        <a href="news.html"><button id="tab6" class="active">5</button></a>
+        <a href="kanji.html"><button id="tab7">6</button></a>
+        <a href="anki.html"><button id="tab8">7</button></a>
+        <a href="show.html"><button id="tab9">8</button></a>
+    </div>
+
+</div>
+
+<script>
+function openNewsBlog() {
+    window.open("https://blog.naver.com/jp_class105", "_blank");
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
