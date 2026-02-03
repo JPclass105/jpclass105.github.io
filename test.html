@@ -14,303 +14,304 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+    
+    body {
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #fafafa;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .slide-container {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* 모바일 슬라이드 (600px 너비 × 1080px 높이) */
+    .slide {
+        width: 100%;
+        max-width: 600px;
+        min-height: 1080px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 60px 40px;
+        margin: 10px auto;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        color: #2D3436;
+        line-height: 1.6;
+        break-inside: avoid;
+    }
+    
+    /* 한글/영문 */
+    .slide h1, .slide h2, .slide h3, .slide p, .slide li {
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    /* 일본어 텍스트 */
+    .japanese-text, .slide .jp {
+        font-family: 'Noto Sans JP', 'Pretendard', sans-serif;
+        font-weight: 500;
+    }
+    
+    /* ===== 제목 슬라이드 ===== */
+    .slide.title {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* 메인 제목 (표지 0강): 68px, Bold */
+    .slide.title h1 {
+        font-size: 68px;
+        margin-bottom: 12px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+        letter-spacing: 4px;
+    }
+    
+    .slide.title .icon {
+        font-size: 56px;
+        margin: 0 14px;
+        display: inline-block;
+    }
+    
+    /* 큰 제목 (부제목): 42px */
+    .slide.title .subtitle {
+        font-size: 42px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 28px;
+        line-height: 1.4;
+    }
+    
+    .slide.title .subtitle-jp {
+        font-size: 32px;
+        font-weight: 500;
+        color: #666;
+        margin-bottom: 48px;
+        letter-spacing: 3px;
+    }
+    
+    .slide.title .meta {
+        font-size: 26px;
+        color: #888;
+        line-height: 2;
+        font-weight: 500;
+    }
+    
+    .slide.title .meta div {
+        margin: 12px 0;
+    }
+    
+    /* ===== 일반 슬라이드 ===== */
+    /* 큰 제목 (페이지 제목 h2): 42px, Bold, 검은색 */
+    .slide h2 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 28px;
+        color: #1a1a1a;
+        border-bottom: 3px solid #e8e8e8;
+        padding-bottom: 18px;
+        line-height: 1.3;
+        page-break-after: avoid;
+    }
+    
+    /* 소제목 (섹션 h3): 34px, Bold */
+    .slide h3 {
+        font-size: 34px;
+        font-weight: 700;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        color: #1a1a1a;
+        line-height: 1.4;
+        page-break-after: avoid;
+    }
+    
+    /* 본문: 30px, Regular, #2D3436 */
+    .slide p {
+        font-size: 30px;
+        margin-bottom: 16px;
+        color: #2D3436;
+        line-height: 1.7;
+        orphans: 2;
+        widows: 2;
+        font-weight: 400;
+    }
+    
+    .slide ul, .slide ol {
+        margin-left: 28px;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+    }
+    
+    /* 리스트 (본문 크기): 30px */
+    .slide li {
+        font-size: 30px;
+        margin-bottom: 12px;
+        color: #2D3436;
+        line-height: 1.7;
+        font-weight: 400;
+    }
+    
+    /* 강조 텍스트 */
+    .slide strong {
+        font-weight: 700;
+        color: #1a1a1a;
+    }
+    
+    /* ===== 특수 박스 요소 ===== */
+    .highlight {
+        background: #fffef0;
+        padding: 22px;
+        border-left: 5px solid #ffd700;
+        margin: 22px 0;
+        border-radius: 6px;
+        page-break-inside: avoid;
+    }
+    
+    .highlight h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 34px;
+    }
+    
+    /* 박스 내 본문: 29px */
+    .highlight p {
+        margin-bottom: 0;
+        font-size: 29px;
+        line-height: 1.8;
+        color: #2D3436;
+    }
+    
+    .box {
+        background: #f0f8ff;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        page-break-inside: avoid;
+    }
+    
+    /* 팁 박스: 설명/주석 28px, 회색 */
+    .tip {
+        background: #e8f5e9;
+        padding: 18px;
+        border-left: 5px solid #4caf50;
+        margin: 18px 0;
+        border-radius: 6px;
+        font-size: 28px;
+        line-height: 1.7;
+        color: #555;
+        page-break-inside: avoid;
+        font-weight: 400;
+    }
+    
+    /* ===== 일본어 텍스트 ===== */
+    /* 일본어 예문: 32px, Regular */
+    .japanese-text {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+        margin: 16px 0;
+        letter-spacing: 10px;
+        text-align: center;
+        line-height: 2.0;
+        page-break-inside: avoid;
+    }
+    
+    /* 일본어 발음(루비): 30px, Regular, 회색 */
+    .japanese-small {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        color: #888;
+    }
+    
+    /* 큰 일본어: 36px */
+    .japanese-large {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 36px;
+        font-weight: 500;
+    }
+    
+    /* ===== 체크리스트 ===== */
+    .checklist {
+        background: #fafafa;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 6px;
+        page-break-inside: avoid;
+    }
+    
+    /* 체크리스트 아이템: 29px */
+    .checklist-item {
+        margin: 14px 0;
+        font-size: 29px;
+        line-height: 1.7;
+        color: #2D3436;
+        font-weight: 400;
+    }
+    
+    /* ===== PDF 인쇄 최적화 ===== */
+    @page {
+        size: 600px 1080px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    @media print {
         html, body {
-            width: 100%;
-            height: 100%;
-        }
-        
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #fafafa;
-            padding: 0;
             margin: 0;
-        }
-        
-        .slide-container {
-            width: 100vw;
+            padding: 0;
+            width: 600px;
             height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        /* 모바일 슬라이드 (600px 너비 × 1080px 높이) */
-        .slide {
-            width: 100%;
-            max-width: 600px;
-            min-height: 1080px;
             background: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding: 60px 40px;
-            margin: 10px auto;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            color: #2D3436;
-            line-height: 1.6;
-            break-inside: avoid;
         }
         
-        /* 한글/영문 */
-        .slide h1, .slide h2, .slide h3, .slide p, .slide li {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        
-        /* 일본어 텍스트 */
-        .japanese-text, .slide .jp {
-            font-family: 'Noto Sans JP', 'Pretendard', sans-serif;
-            font-weight: 500;
-        }
-        
-        /* ===== 제목 슬라이드 ===== */
-        .slide.title {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        
-        /* 메인 제목 (표지 0강): 80-90px, Bold */
-        .slide.title h1 {
-            font-size: 85px;
-            margin-bottom: 12px;
-            font-weight: 700;
-            color: #1a1a1a;
-            line-height: 1.2;
-            letter-spacing: 4px;
-        }
-        
-        .slide.title .icon {
-            font-size: 56px;
-            margin: 0 14px;
-            display: inline-block;
-        }
-        
-        /* 큰 제목 (부제목): 50-56px */
-        .slide.title .subtitle {
-            font-size: 53px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 28px;
-            line-height: 1.4;
-        }
-        
-        .slide.title .subtitle-jp {
-            font-size: 40px;
-            font-weight: 500;
-            color: #666;
-            margin-bottom: 48px;
-            letter-spacing: 3px;
-        }
-        
-        .slide.title .meta {
-            font-size: 32px;
-            color: #888;
-            line-height: 2;
-            font-weight: 500;
-        }
-        
-        .slide.title .meta div {
-            margin: 12px 0;
-        }
-        
-        /* ===== 일반 슬라이드 ===== */
-        /* 큰 제목 (페이지 제목 h2): 50-56px, Bold, 검은색 */
-        .slide h2 {
-            font-size: 52px;
-            font-weight: 700;
-            margin-bottom: 28px;
-            color: #1a1a1a;
-            border-bottom: 3px solid #e8e8e8;
-            padding-bottom: 18px;
-            line-height: 1.3;
-            page-break-after: avoid;
-        }
-        
-        /* 소제목 (섹션 h3): 38-42px, Bold */
-        .slide h3 {
-            font-size: 40px;
-            font-weight: 700;
-            margin-top: 24px;
-            margin-bottom: 16px;
-            color: #1a1a1a;
-            line-height: 1.4;
-            page-break-after: avoid;
-        }
-        
-        /* 본문: 36-40px, Regular, #2D3436 */
-        .slide p {
-            font-size: 38px;
-            margin-bottom: 16px;
-            color: #2D3436;
-            line-height: 1.7;
-            orphans: 2;
-            widows: 2;
-            font-weight: 400;
-        }
-        
-        .slide ul, .slide ol {
-            margin-left: 28px;
-            margin-bottom: 20px;
-            page-break-inside: avoid;
-        }
-        
-        /* 리스트 (본문 크기): 36-40px */
-        .slide li {
-            font-size: 38px;
-            margin-bottom: 12px;
-            color: #2D3436;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-        
-        /* 강조 텍스트 */
-        .slide strong {
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-        
-        /* ===== 특수 박스 요소 ===== */
-        .highlight {
-            background: #fffef0;
-            padding: 22px;
-            border-left: 5px solid #ffd700;
-            margin: 22px 0;
-            border-radius: 6px;
-            page-break-inside: avoid;
-        }
-        
-        .highlight h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 40px;
-        }
-        
-        /* 박스 내 본문: 36-38px */
-        .highlight p {
-            margin-bottom: 0;
-            font-size: 37px;
-            line-height: 1.8;
-            color: #2D3436;
-        }
-        
-        .box {
-            background: #f0f8ff;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            page-break-inside: avoid;
-        }
-        
-        /* 팁 박스: 설명/주석 34-36px, 회색 */
-        .tip {
-            background: #e8f5e9;
-            padding: 18px;
-            border-left: 5px solid #4caf50;
-            margin: 18px 0;
-            border-radius: 6px;
-            font-size: 35px;
-            line-height: 1.7;
-            color: #555;
-            page-break-inside: avoid;
-            font-weight: 400;
-        }
-        
-        /* ===== 일본어 텍스트 ===== */
-        /* 일본어 예문: 38-42px, Regular */
-        .japanese-text {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 40px;
-            font-weight: 400;
-            margin: 16px 0;
-            letter-spacing: 10px;
-            text-align: center;
-            line-height: 2.0;
-            page-break-inside: avoid;
-        }
-        
-        /* 일본어 발음(루비): 33-34px, Regular, 회색 */
-        .japanese-small {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 34px;
-            font-weight: 400;
-            color: #888;
-        }
-        
-        /* 큰 일본어: 42-48px */
-        .japanese-large {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 45px;
-            font-weight: 500;
-        }
-        
-        /* ===== 체크리스트 ===== */
-        .checklist {
-            background: #fafafa;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 6px;
-            page-break-inside: avoid;
-        }
-        
-        /* 체크리스트 아이템: 36-38px */
-        .checklist-item {
-            margin: 14px 0;
-            font-size: 37px;
-            line-height: 1.7;
-            color: #2D3436;
-            font-weight: 400;
-        }
-        
-        /* ===== PDF 인쇄 최적화 ===== */
-        @page {
-            size: 600px 1080px;
-            margin: 0;
-            padding: 0;
-        }
-        
-        @media print {
-            html, body {
-                margin: 0;
-                padding: 0;
-                width: 600px;
-                height: auto;
-                background: white;
-            }
-            
-            .slide {
-                width: 600px;
-                min-height: 1080px;
-                margin: 0;
-                padding: 60px 40px;
-                box-shadow: none;
-                border-radius: 0;
-                overflow: visible;
-                page-break-after: avoid;
-            }
-            
-            /* 페이지 내 요소 분리 방지 */
-            h2, h3, p, ul, ol {
-                page-break-inside: avoid;
-            }
-        }
-        
-        /* 스크롤 최적화 */
         .slide {
-            scrollbar-width: none;
+            width: 600px;
+            min-height: 1080px;
+            margin: 0;
+            padding: 60px 40px;
+            box-shadow: none;
+            border-radius: 0;
+            overflow: visible;
+            page-break-after: avoid;
         }
         
-        .slide::-webkit-scrollbar {
-            display: none;
+        /* 페이지 내 요소 분리 방지 */
+        h2, h3, p, ul, ol {
+            page-break-inside: avoid;
         }
-    </style>
+    }
+    
+    /* 스크롤 최적화 */
+    .slide {
+        scrollbar-width: none;
+    }
+    
+    .slide::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
 </head>
 <body>
 
