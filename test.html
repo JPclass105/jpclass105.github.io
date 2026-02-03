@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0강 - 일본어의 문자와 발음 기초</title>
+    
+    <!-- Pretendard 폰트 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    
+    <!-- Noto Sans JP 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #fafafa;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .slide-container {
+            width: 100vw;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* 모바일 슬라이드 (9:16 비율) */
+        .slide {
+            width: 100%;
+            max-width: 540px;
+            aspect-ratio: 9/16;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 40px 30px;
+            margin: 10px auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            page-break-after: always;
+            overflow-y: auto;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+        
+        /* 한글/영문 */
+        .slide h1, .slide h2, .slide h3, .slide p, .slide li {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        /* 일본어 텍스트 */
+        .japanese-text, .slide .jp {
+            font-family: 'Noto Sans JP', 'Pretendard', sans-serif;
+            font-weight: 500;
+        }
+        
+        /* ===== 제목 슬라이드 ===== */
+        .slide.title {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .slide.title h1 {
+            font-size: 56px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+        
+        .slide.title .subtitle {
+            font-size: 26px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+        
+        .slide.title .subtitle-jp {
+            font-size: 22px;
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 32px;
+            letter-spacing: 2px;
+        }
+        
+        .slide.title .meta {
+            font-size: 16px;
+            color: #888;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+        
+        .slide.title .meta div {
+            margin: 8px 0;
+        }
+        
+        /* ===== 일반 슬라이드 ===== */
+        .slide h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+            border-bottom: 3px solid #e8e8e8;
+            padding-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        .slide h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 18px;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        .slide p {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .slide ul, .slide ol {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .slide li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        /* 강조 텍스트 */
+        .slide strong {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        /* ===== 특수 박스 요소 ===== */
+        .highlight {
+            background: #fffef0;
+            padding: 16px;
+            border-left: 4px solid #ffd700;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .highlight p {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+        
+        .box {
+            background: #f0f8ff;
+            padding: 14px;
+            border-radius: 6px;
+            margin: 14px 0;
+        }
+        
+        .tip {
+            background: #e8f5e9;
+            padding: 12px;
+            border-left: 4px solid #4caf50;
+            margin: 12px 0;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        
+        /* ===== 일본어 텍스트 ===== */
+        .japanese-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 12px 0;
+            letter-spacing: 6px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        /* 작은 일본어 */
+        .japanese-small {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        /* 큰 일본어 */
+        .japanese-large {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        /* ===== 체크리스트 ===== */
+        .checklist {
+            background: #fafafa;
+            padding: 14px;
+            margin: 14px 0;
+            border-radius: 6px;
+        }
+        
+        .checklist-item {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        /* ===== 반응형 (PDF 인쇄) ===== */
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .slide {
+                margin: 0 auto;
+                box-shadow: none;
+                border-radius: 0;
+                page-break-after: always;
+                break-after: page;
+            }
+            
+            .slide:last-child {
+                page-break-after: avoid;
+            }
+        }
+        
+        /* 스크롤 최적화 */
+        .slide {
+            scrollbar-width: none;
+        }
+        
+        .slide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- 슬라이드 1: 표지 -->
+    <div class="slide title">
+        <h1>🎌 0강 🎌</h1>
+        <div class="subtitle">일본어의 문자와 발음 기초</div>
+        <div class="subtitle-jp">ひらがな・カタカナ</div>
+        <div class="meta">
+            <div>Week 1 - Day 1</div>
+            <div>⏱️ 학습시간: 약 20분</div>
+            <div>📊 난이도: ★☆☆☆☆</div>
+        </div>
+    </div>
+
+    <!-- 슬라이드 2: 학습 목표 -->
+    <div class="slide">
+        <h2>🎯 오늘의 학습 목표</h2>
+        <p style="font-weight: 600; margin-bottom: 16px;">이번 강의를 마치면...</p>
+        <ul>
+            <li>✅ 히라가나 44자를 읽고 쓸 수 있습니다</li>
+            <li>✅ 카타카나 44자를 읽고 쓸 수 있습니다</li>
+            <li>✅ 일본어 발음의 기본을 이해합니다</li>
+            <li>✅ 한국인이 자주 틀리는 발음을 구분합니다</li>
+        </ul>
+        
+        <div class="highlight">
+            <h3>💡 핵심 포인트</h3>
+            <p>일본어는 3가지 문자로 이루어져 있습니다. 히라가나(부드러운 글씨)와 카타카나(각진 글씨)를 배워 일본어 읽기의 기초를 완성합니다!</p>
+        </div>
+    </div>
+
+    <!-- 슬라이드 3: 일본어 문자 소개 -->
+    <div class="slide">
+        <h2>📖 일본어 3가지 문자</h2>
+        
+        <h3>1️⃣ 히라가나 (ひらがな)</h3>
+        <ul>
+            <li>부드러운 곡선의 글씨</li>
+            <li>일상 일본어에서 가장 자주 사용</li>
+            <li>기본 44자 (+ 탁음/반탁음)</li>
+        </ul>
+        
+        <h3>2️⃣ 카타카나 (カタカナ)</h3>
+        <ul>
+            <li>각진 직선의 글씨</li>
+            <li>외래어, 의성어에 사용</li>
+            <li>기본 44자 (+ 탁음/반탁음)</li>
+        </ul>
+        
+        <h3>3️⃣ 한자 (かんじ)</h3>
+        <ul>
+            <li>중국에서 유래한 문자</li>
+            <li>뜻과 음을 나타냄</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>💡 팁:</strong> 지금은 히라가나와 카타카나만 집중하세요!
+        </div>
+    </div>
+
+    <!-- 슬라이드 4: 히라가나 기본 44자 (1) -->
+    <div class="slide">
+        <h2>ひらがな 기본 44자 (1)</h2>
+        
+        <div class="japanese-text">あいうえお</div>
+        <div class="japanese-text">かきくけこ</div>
+        <div class="japanese-text">さしすせそ</div>
+        <div class="japanese-text">たちつてと</div>
+        <div class="japanese-text">なにぬねの</div>
+        
+        <h3>🔊 발음 팁</h3>
+        <ul>
+            <li><span class="japanese-small">あ</span> (a) - "아"</li>
+            <li><span class="japanese-small">い</span> (i) - "이"</li>
+            <li><span class="japanese-small">う</span> (u) - "우"</li>
+            <li><span class="japanese-small">え</span> (e) - "에"</li>
+            <li><span class="japanese-small">お</span> (o) - "오"</li>
+        </ul>
+    </div>
+
+    <!-- 슬라이드 5: 히라가나 기본 44자 (2) -->
+    <div class="slide">
+        <h2>ひらがな 기본 44자 (2)</h2>
+        
+        <div class="japanese-text">はひふへほ</div>
+        <div class="japanese-text">まみむめも</div>
+        <div class="japanese-text">やゆよ</div>
+        <div class="japanese-text">らりるれろ</div>
+        <div class="japanese-text">わを (ん)</div>
+        
+        <h3>⚠️ 주의점</h3>
+        <ul>
+            <li><span class="japanese-small">ん</span> (n) - 유일한 모음 없는 글자</li>
+            <li><span class="japanese-small">わ</span> (wa) - 현대 일본어에서 거의 미사용</li>
+            <li><span class="japanese-small">を</span> (wo) - 목적어 조사로만 사용</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>💡 팁:</strong> わ행은 거의 안 나오니 나중에 복습해도 괜찮아요!
+        </div>
+    </div>
+
+    <!-- 슬라이드 6: 카타카나 기본 44자 (1) -->
+    <div class="slide">
+        <h2>カタカナ 기본 44자 (1)</h2>
+        
+        <div class="japanese-text">アイウエオ</div>
+        <div class="japanese-text">カキクケコ</div>
+        <div class="japanese-text">サシスセソ</div>
+        <div class="japanese-text">タチツテト</div>
+        <div class="japanese-text">ナニヌネノ</div>
+        
+        <h3>🔊 발음 팁</h3>
+        <p>카타카나의 발음은 히라가나와 동일합니다! 단지 글씨 모양만 다릅니다.</p>
+    </div>
+
+    <!-- 슬라이드 7: 카타카나 기본 44자 (2) -->
+    <div class="slide">
+        <h2>カタカナ 기본 44자 (2)</h2>
+        
+        <div class="japanese-text">ハヒフヘホ</div>
+        <div class="japanese-text">マミムメモ</div>
+        <div class="japanese-text">ヤユヨ</div>
+        <div class="japanese-text">ラリルレロ</div>
+        <div class="japanese-text">ワヲ (ン)</div>
+        
+        <h3>💬 외래어 예시</h3>
+        <ul>
+            <li>🍔 コンピュータ = 컴퓨터</li>
+            <li>🌐 インターネット = 인터넷</li>
+            <li>📺 テレビ = 텔레비전</li>
+            <li>📱 スマートフォン = 스마트폰</li>
+        </ul>
+    </div>
+
+    <!-- 슬라이드 8: 한국인이 자주 틀리는 발음 (1) -->
+    <div class="slide">
+        <h2>⚠️ 한국인이 자주 틀리는 발음</h2>
+        
+        <h3>1️⃣ <span class="japanese-small">ら</span>행의 발음</h3>
+        <p><strong>한국어:</strong> "라" (혀를 말아서)<br>
+        <strong>일본어:</strong> <span class="japanese-small">ら</span> (혀를 튕겨서)</p>
+        
+        <h3>2️⃣ <span class="japanese-small">し</span>의 발음</h3>
+        <p><strong>한국어:</strong> "시"<br>
+        <strong>일본어:</strong> <span class="japanese-small">し</span> = "쉬"</p>
+        
+        <h3>3️⃣ <span class="japanese-small">つ</span>의 발음</h3>
+        <p><strong>한국어:</strong> "츠" (혀를 굴려)<br>
+        <strong>일본어:</strong> <span class="japanese-small">つ</span> = "츠" (혀를 굴리지 않음)</p>
+        
+        <h3>4️⃣ <span class="japanese-small">う</span>와 <span class="japanese-small">ぅ</span> 구분</h3>
+        <p><strong>う</strong> = "우" | <strong>ぅ</strong> = "우" (작은 우)</p>
+        
+        <h3>5️⃣ <span class="japanese-small">へ</span>의 발음</h3>
+        <p>발음은 같지만 방향을 나타내는 조사입니다.</p>
+    </div>
+
+    <!-- 슬라이드 9: 탁음 -->
+    <div class="slide">
+        <h2>📌 탁음 (だくおん)</h2>
+        
+        <p>기본 글자에 점(゛)을 붙이면 탁음입니다.</p>
+        
+        <div class="box">
+            <div class="japanese-text" style="font-size: 24px; letter-spacing: 3px;">
+                か→が | き→ぎ | く→ぐ | け→げ | こ→ご
+            </div>
+        </div>
+        
+        <h3>🔊 중요한 탁음</h3>
+        <ul>
+            <li><span class="japanese-small">じ</span> = "지"</li>
+            <li><span class="japanese-small">ぎ</span> = "기"</li>
+            <li><span class="japanese-small">ぐ</span> = "구"</li>
+            <li><span class="japanese-small">ぜ</span> = "제"</li>
+            <li><span class="japanese-small">ど</span> = "도"</li>
+        </ul>
+    </div>
+
+    <!-- 슬라이드 10: 반탁음과 요음 -->
+    <div class="slide">
+        <h2>📌 반탁음 · 요음</h2>
+        
+        <h3>반탁음 (はんだくおん)</h3>
+        <p><span class="japanese-small">は</span>행에만 있습니다. 점(゜)을 붙입니다.</p>
+        <div class="box">
+            <div class="japanese-text" style="font-size: 24px; letter-spacing: 3px;">
+                は→ぱ | ひ→ぴ | ふ→ぷ | へ→ぺ | ほ→ぽ
+            </div>
+        </div>
+        
+        <h3>요음 (ようおん)</h3>
+        <p>작은 야행 글자를 결합합니다.</p>
+        <ul>
+            <li><span class="japanese-small">きゃ きゅ きょ</span> = "캬, 큐, 쿄"</li>
+            <li><span class="japanese-small">しゃ しゅ しょ</span> = "샤, 슈, 쇼"</li>
+            <li><span class="japanese-small">ちゃ ちゅ ちょ</span> = "차, 추, 초"</li>
+        </ul>
+    </div>
+
+    <!-- 슬라이드 11: 장음 -->
+    <div class="slide">
+        <h2>📌 장음 (ちょうおん)</h2>
+        
+        <p>음을 길게 늘리는 것입니다.</p>
+        
+        <h3>히라가나에서</h3>
+        <ul>
+            <li>あ + あ = ああ → "아아"</li>
+            <li>い + い = いい → "이이"</li>
+            <li>う + う = うう → "우우"</li>
+            <li>え + え = ええ → "에에"</li>
+            <li>お + う = おう → "오오"</li>
+        </ul>
+        
+        <h3>🎤 예시</h3>
+        <ul>
+            <li><span class="japanese-small">スーパー</span> = "수우파" (슈퍼)</li>
+            <li><span class="japanese-small">コーヒー</span> = "코오히이" (커피)</li>
+            <li><span class="japanese-small">ケーキ</span> = "케이키" (케이크)</li>
+        </ul>
+    </div>
+
+    <!-- 슬라이드 12: 촉음 -->
+    <div class="slide">
+        <h2>📌 촉음 (そくおん)</h2>
+        
+        <p>작은 <span class="japanese-small">つ</span>를 사용해 음을 짧게 끊습니다.</p>
+        
+        <h3>🎤 예시</h3>
+        <ul>
+            <li><span class="japanese-small">かった</span> = "깠다"</li>
+            <li><span class="japanese-small">きって</span> = "낏떼" (우표)</li>
+            <li><span class="japanese-small">がっこう</span> = "깍꼬오" (학교)</li>
+            <li><span class="japanese-small">さっき</span> = "쌧끼" (방금)</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>💡 팁:</strong> 한국어 쌍자음처럼 앞 글자를 짧게 끊었다가 다음 글자를 발음합니다.
+        </div>
+    </div>
+
+    <!-- 슬라이드 13: 의성어와 의태어 -->
+    <div class="slide">
+        <h2>📌 의성어 · 의태어</h2>
+        
+        <h3>의성어 (소리)</h3>
+        <ul>
+            <li>🔊 <span class="japanese-small">ぱたぱた</span> = "팍팍" (발소리)</li>
+            <li>🔊 <span class="japanese-small">わんわん</span> = "멍멍" (개 짖는 소리)</li>
+        </ul>
+        
+        <h3>의태어 (모습)</h3>
+        <ul>
+            <li>✨ <span class="japanese-small">ふわふわ</span> = "폭신폭신" (부드러움)</li>
+            <li>✨ <span class="japanese-small">ぴかぴか</span> = "반짝반짝" (빛남)</li>
+            <li>✨ <span class="japanese-small">つるつる</span> = "매끈매끈" (매끄러움)</li>
+            <li>✨ <span class="japanese-small">ほかほか</span> = "따뜻따뜻" (따스함)</li>
+        </ul>
+    </div>
+
+    <!-- 슬라이드 14: 복습 체크리스트 -->
+    <div class="slide">
+        <h2>✅ 오늘 배운 내용 확인</h2>
+        
+        <div class="checklist">
+            <div class="checklist-item">☐ 히라가나 44자 읽기</div>
+            <div class="checklist-item">☐ 카타카나 44자 읽기</div>
+            <div class="checklist-item">☐ 탁음·반탁음·요음 구분</div>
+            <div class="checklist-item">☐ 장음·촉음 이해</div>
+            <div class="checklist-item">☐ 한국인이 틀리는 발음 5가지</div>
+            <div class="checklist-item">☐ 의성어·의태어 차이</div>
+        </div>
+        
+        <h3>점수 확인</h3>
+        <ul>
+            <li>6개 ✅: <strong>완벽! 다음 강으로!</strong></li>
+            <li>4-5개 ✅: <strong>잘했어요! 복습 후 진행!</strong></li>
+            <li>3개 이하: <strong>다시 학습하세요!</strong></li>
+        </ul>
+    </div>
+
+    <!-- 슬라이드 15: 마무리 -->
+    <div class="slide title">
+        <h1>🎉 0강 완료!</h1>
+        
+        <div style="text-align: left; font-size: 15px; line-height: 1.8; margin: 24px 0;">
+            <p style="font-weight: 600; margin-bottom: 12px;">✨ 0강 핵심 복습</p>
+            <p>✨ 히라가나 = 부드러운 글씨</p>
+            <p>✨ 카타카나 = 각진 글씨</p>
+            <p>✨ 발음 규칙 = 탁음, 반탁음, 요음</p>
+            <p>✨ 장음, 촉음 = 음의 길이 조절</p>
+        </div>
+        
+        <div class="highlight">
+            <p style="font-weight: 600; font-size: 16px; margin-bottom: 8px;">📅 다음 강: 0.5강</p>
+            <p style="margin: 0; font-size: 15px;">조사 기초 (は/を/に/が)</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
