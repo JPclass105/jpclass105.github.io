@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 - 일본어 학습 목차</title>
+    
+    <!-- Pretendard 폰트 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    
+    <!-- Noto Sans JP 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .slide-container {
+            width: 100vw;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* 목차 페이지 슬라이드 */
+        .slide {
+            width: 100%;
+            max-width: 600px;
+            min-height: 1080px;
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 60px 40px;
+            margin: 10px auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            color: #ffffff;
+            line-height: 1.6;
+            break-inside: avoid;
+        }
+        
+        /* ===== 상단 헤더 ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        /* 상단 중앙 - 폰트 40px, 흰색 */
+        .header-top {
+            font-size: 40px;
+            color: #ffffff;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        /* 중앙 - 폰트 100px, Bold, 흰색 */
+        .header-main {
+            font-size: 100px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        
+        /* 중앙 아래 - 폰트 60px, Bold, 흰색 */
+        .header-sub {
+            font-size: 60px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 32px;
+            line-height: 1.3;
+        }
+        
+        /* 구분선 */
+        .divider {
+            text-align: center;
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 40px;
+            letter-spacing: 8px;
+        }
+        
+        /* ===== 본문 섹션 ===== */
+        .content {
+            flex: 1;
+        }
+        
+        /* 본문 - 폰트 42px, 흰색 */
+        .content-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        
+        /* 강의 목록 - 폰트 38px, 흰색 */
+        .lecture-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .lecture-list li {
+            font-size: 38px;
+            color: #ffffff;
+            margin-bottom: 18px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        /* ===== 하단 박스 ===== */
+        .info-box {
+            background: #E8F8F5;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        
+        /* 정보 박스 내용 - 폰트 36px, 검은색 */
+        .info-box-text {
+            font-size: 36px;
+            color: #1a1a1a;
+            line-height: 2.0;
+            font-weight: 400;
+        }
+        
+        /* ===== 최하단 ===== */
+        .footer {
+            text-align: center;
+            font-size: 32px;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        /* ===== PDF 인쇄 최적화 ===== */
+        @page {
+            size: 600px 1080px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        @media print {
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 600px;
+                height: auto;
+                background: white;
+            }
+            
+            .slide {
+                width: 600px;
+                min-height: 1080px;
+                margin: 0;
+                padding: 60px 40px;
+                box-shadow: none;
+                border-radius: 0;
+                overflow: visible;
+                page-break-after: avoid;
+            }
+            
+            h2, h3, p, ul, ol {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* 스크롤 최적화 */
+        .slide {
+            scrollbar-width: none;
+        }
+        
+        .slide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- 목차 페이지 -->
+    <div class="slide">
+        <!-- 상단 헤더 -->
+        <div class="header">
+            <div class="header-top">JPclass105 일본어 학습 1단계</div>
+            <div class="header-main">Week 1</div>
+            <div class="header-sub">일본어 문장의 기본 구조 익히기</div>
+            <div class="divider">─────────────────</div>
+        </div>
+        
+        <!-- 본문 내용 -->
+        <div class="content">
+            <div class="content-title">이번 주 배울 강의</div>
+            
+            <ul class="lecture-list">
+                <li>0강. 일본어의 문자와 발음 기초</li>
+                <li>0.5강. 조사 기초: は/を/に/が</li>
+                <li>1강. 일본어 문장의 첫걸음: です/ます의 기본</li>
+                <li>2강. 질문하고 대답하기: 의문문의 구조</li>
+                <li>3강. 가까이 있는 것 가리키기: 지시대명사 1</li>
+                <li>4강. 명사와 함께 쓰는 지시어: この/その/あの</li>
+                <li>5강. Week 1 종합 실습: 자기소개 완성하기</li>
+            </ul>
+            
+            <!-- 하단 박스 -->
+            <div class="info-box">
+                <div class="info-box-text">
+                    ⏱️ 총 학습시간: 약 145분 (약 2시간 25분)<br>
+                    📊 난이도: ★☆☆☆☆<br>
+                    🎯 최종 목표: 완벽한 자기소개를 할 수 있다
+                </div>
+            </div>
+        </div>
+        
+        <!-- 최하단 -->
+        <div class="footer">화이팅! 화이팅! 🔥</div>
+    </div>
+
+</div>
+
+</body>
+</html>
