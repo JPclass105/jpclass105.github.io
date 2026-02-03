@@ -260,6 +260,13 @@
     padding: 0;
 }
 
+/* ===== PDF 인쇄 최적화 ===== */
+@page {
+    size: 600px 1080px;
+    margin: 0;
+    padding: 0;
+}
+
 @media print {
     html, body {
         margin: 0;
@@ -271,19 +278,20 @@
     
     .slide {
         width: 600px;
-        min-height: 900px;
+        min-height: 1080px;
         margin: 0;
         padding: 45px 35px;
-        page-break-after: always;
-        break-after: page;
         box-shadow: none;
         border-radius: 0;
         overflow: visible;
-    }
-    
-    .slide:last-child {
         page-break-after: avoid;
     }
+    
+    /* 페이지 내 요소 분리 방지 */
+    h2, h3, p, ul, ol {
+        page-break-inside: avoid;
+    }
+}
     
     /* 페이지 내 요소 분리 방지 */
     h2, h3, p, ul, ol {
