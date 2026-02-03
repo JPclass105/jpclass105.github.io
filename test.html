@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
+        
         * {
             margin: 0;
             padding: 0;
@@ -252,26 +253,45 @@
             line-height: 1.6;
         }
         
-        /* ===== PDF 인쇄 최적화 ===== */
-        @media print {
-            body {
-                padding: 0;
-                background: white;
-            }
-            
-            .slide {
-                margin: 0 auto;
-                box-shadow: none;
-                border-radius: 0;
-                page-break-after: always;
-                break-after: page;
-                /* 중요: 콘텐츠가 넘치면 자동으로 다음 페이지로 이동 */
-                overflow: visible;
-            }
-            
-            .slide:last-child {
-                page-break-after: avoid;
-            }
+       /* ===== PDF 인쇄 최적화 ===== */
+@page {
+    size: 600px 900px;
+    margin: 0;
+    padding: 0;
+}
+
+@media print {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 600px;
+        height: auto;
+        background: white;
+    }
+    
+    .slide {
+        width: 600px;
+        min-height: 900px;
+        margin: 0;
+        padding: 45px 35px;
+        page-break-after: always;
+        break-after: page;
+        box-shadow: none;
+        border-radius: 0;
+        overflow: visible;
+    }
+    
+    .slide:last-child {
+        page-break-after: avoid;
+    }
+    
+    /* 페이지 내 요소 분리 방지 */
+    h2, h3, p, ul, ol {
+        page-break-inside: avoid;
+        orphans: 3;
+        widows: 3;
+    }
+}
             
             /* 페이지 내 요소 분리 방지 */
             h2, h3, p, ul, ol {
