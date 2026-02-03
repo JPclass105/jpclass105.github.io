@@ -40,11 +40,10 @@
             align-items: center;
         }
         
-        /* 모바일 슬라이드 (9:16 비율) */
+        /* 모바일 슬라이드 (9:16 비율) - PDF 인쇄 최적화 */
         .slide {
             width: 100%;
             max-width: 540px;
-            aspect-ratio: 9/16;
             background: white;
             display: flex;
             flex-direction: column;
@@ -54,9 +53,10 @@
             border-radius: 12px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             page-break-after: always;
-            overflow-y: auto;
             color: #2c2c2c;
             line-height: 1.6;
+            /* 콘텐츠가 넘치면 자동 페이지 분할 */
+            break-inside: avoid;
         }
         
         /* 한글/영문 */
@@ -76,6 +76,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            min-height: auto;
         }
         
         .slide.title h1 {
@@ -129,6 +130,7 @@
             border-bottom: 3px solid #e8e8e8;
             padding-bottom: 16px;
             line-height: 1.3;
+            page-break-after: avoid;
         }
         
         .slide h3 {
@@ -138,6 +140,7 @@
             margin-bottom: 14px;
             color: #2c3e50;
             line-height: 1.4;
+            page-break-after: avoid;
         }
         
         .slide p {
@@ -145,11 +148,14 @@
             margin-bottom: 14px;
             color: #555;
             line-height: 1.7;
+            orphans: 2;
+            widows: 2;
         }
         
         .slide ul, .slide ol {
             margin-left: 22px;
             margin-bottom: 16px;
+            page-break-inside: avoid;
         }
         
         .slide li {
@@ -172,6 +178,7 @@
             border-left: 4px solid #ffd700;
             margin: 18px 0;
             border-radius: 4px;
+            page-break-inside: avoid;
         }
         
         .highlight h3 {
@@ -190,6 +197,7 @@
             padding: 16px;
             border-radius: 6px;
             margin: 16px 0;
+            page-break-inside: avoid;
         }
         
         .tip {
@@ -200,6 +208,7 @@
             border-radius: 4px;
             font-size: 17px;
             line-height: 1.6;
+            page-break-inside: avoid;
         }
         
         /* ===== 일본어 텍스트 ===== */
@@ -211,6 +220,7 @@
             letter-spacing: 8px;
             text-align: center;
             line-height: 1.9;
+            page-break-inside: avoid;
         }
         
         /* 작은 일본어 */
@@ -233,6 +243,7 @@
             padding: 16px;
             margin: 16px 0;
             border-radius: 6px;
+            page-break-inside: avoid;
         }
         
         .checklist-item {
@@ -241,7 +252,7 @@
             line-height: 1.6;
         }
         
-        /* ===== 반응형 (PDF 인쇄) ===== */
+        /* ===== PDF 인쇄 최적화 ===== */
         @media print {
             body {
                 padding: 0;
@@ -254,10 +265,19 @@
                 border-radius: 0;
                 page-break-after: always;
                 break-after: page;
+                /* 중요: 콘텐츠가 넘치면 자동으로 다음 페이지로 이동 */
+                overflow: visible;
             }
             
             .slide:last-child {
                 page-break-after: avoid;
+            }
+            
+            /* 페이지 내 요소 분리 방지 */
+            h2, h3, p, ul, ol {
+                page-break-inside: avoid;
+                orphans: 3;
+                widows: 3;
             }
         }
         
@@ -408,7 +428,7 @@
         </ul>
     </div>
 
-    <!-- 슬라이드 8: 한국인이 자주 틀리는 발음 (1) -->
+    <!-- 슬라이드 8: 한국인이 자주 틀리는 발음 -->
     <div class="slide">
         <h2>⚠️ 한국인이 자주 틀리는 발음</h2>
         
@@ -423,12 +443,22 @@
         <h3>3️⃣ <span class="japanese-small">つ</span>의 발음</h3>
         <p><strong>한국어:</strong> "츠" (혀를 굴려)<br>
         <strong>일본어:</strong> <span class="japanese-small">つ</span> = "츠" (혀를 굴리지 않음)</p>
+    </div>
+
+    <!-- 슬라이드 8-2: 한국인이 자주 틀리는 발음 (계속) -->
+    <div class="slide">
+        <h2>⚠️ 한국인이 자주 틀리는 발음 (계속)</h2>
         
         <h3>4️⃣ <span class="japanese-small">う</span>와 <span class="japanese-small">ぅ</span> 구분</h3>
-        <p><strong>う</strong> = "우" | <strong>ぅ</strong> = "우" (작은 우)</p>
+        <p><strong>う</strong> = "우" (일반)<br>
+        <strong>ぅ</strong> = "우" (작은 우, 거의 발음 안 함)</p>
         
         <h3>5️⃣ <span class="japanese-small">へ</span>의 발음</h3>
-        <p>발음은 같지만 방향을 나타내는 조사입니다.</p>
+        <p>발음은 같지만 방향을 나타내는 조사로 사용됩니다.</p>
+        
+        <div class="tip">
+            <strong>💡 팁:</strong> 발음 차이를 귀로 익히기 위해 자주 듣고 따라 말해보세요!
+        </div>
     </div>
 
     <!-- 슬라이드 9: 탁음 -->
@@ -439,7 +469,10 @@
         
         <div class="box">
             <div class="japanese-text" style="font-size: 28px; letter-spacing: 4px;">
-                か→が | き→ぎ | く→ぐ | け→げ | こ→ご
+                か→が | き→ぎ | く→ぐ
+            </div>
+            <div class="japanese-text" style="font-size: 28px; letter-spacing: 4px;">
+                け→げ | こ→ご
             </div>
         </div>
         
@@ -461,7 +494,10 @@
         <p><span class="japanese-small">は</span>행에만 있습니다. 점(゜)을 붙입니다.</p>
         <div class="box">
             <div class="japanese-text" style="font-size: 28px; letter-spacing: 4px;">
-                は→ぱ | ひ→ぴ | ふ→ぷ | へ→ぺ | ほ→ぽ
+                は→ぱ | ひ→ぴ | ふ→ぷ
+            </div>
+            <div class="japanese-text" style="font-size: 28px; letter-spacing: 4px;">
+                へ→ぺ | ほ→ぽ
             </div>
         </div>
         
