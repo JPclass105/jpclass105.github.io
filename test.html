@@ -79,15 +79,22 @@
         }
         
         .slide.title h1 {
-            font-size: 56px;
-            margin-bottom: 16px;
+            font-size: 64px;
+            margin-bottom: 8px;
             font-weight: 700;
             color: #1a1a1a;
             line-height: 1.2;
+            letter-spacing: 4px;
+        }
+        
+        .slide.title .icon {
+            font-size: 48px;
+            margin: 0 12px;
+            display: inline-block;
         }
         
         .slide.title .subtitle {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 600;
             color: #333;
             margin-bottom: 24px;
@@ -95,27 +102,27 @@
         }
         
         .slide.title .subtitle-jp {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 500;
             color: #666;
-            margin-bottom: 32px;
-            letter-spacing: 2px;
+            margin-bottom: 40px;
+            letter-spacing: 3px;
         }
         
         .slide.title .meta {
-            font-size: 16px;
+            font-size: 18px;
             color: #888;
-            line-height: 1.8;
+            line-height: 2;
             font-weight: 500;
         }
         
         .slide.title .meta div {
-            margin: 8px 0;
+            margin: 10px 0;
         }
         
         /* ===== 일반 슬라이드 ===== */
         .slide h2 {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
             margin-bottom: 24px;
             color: #1a1a1a;
@@ -125,31 +132,31 @@
         }
         
         .slide h3 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
-            margin-top: 18px;
-            margin-bottom: 12px;
+            margin-top: 20px;
+            margin-bottom: 14px;
             color: #2c3e50;
             line-height: 1.4;
         }
         
         .slide p {
-            font-size: 16px;
-            margin-bottom: 12px;
+            font-size: 18px;
+            margin-bottom: 14px;
             color: #555;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         
         .slide ul, .slide ol {
-            margin-left: 20px;
+            margin-left: 22px;
             margin-bottom: 16px;
         }
         
         .slide li {
-            font-size: 16px;
-            margin-bottom: 8px;
+            font-size: 18px;
+            margin-bottom: 10px;
             color: #555;
-            line-height: 1.5;
+            line-height: 1.6;
         }
         
         /* 강조 텍스트 */
@@ -161,75 +168,77 @@
         /* ===== 특수 박스 요소 ===== */
         .highlight {
             background: #fffef0;
-            padding: 16px;
+            padding: 18px;
             border-left: 4px solid #ffd700;
-            margin: 16px 0;
+            margin: 18px 0;
             border-radius: 4px;
         }
         
         .highlight h3 {
             margin-top: 0;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .highlight p {
             margin-bottom: 0;
-            font-size: 15px;
+            font-size: 17px;
+            line-height: 1.7;
         }
         
         .box {
             background: #f0f8ff;
-            padding: 14px;
+            padding: 16px;
             border-radius: 6px;
-            margin: 14px 0;
+            margin: 16px 0;
         }
         
         .tip {
             background: #e8f5e9;
-            padding: 12px;
+            padding: 14px;
             border-left: 4px solid #4caf50;
-            margin: 12px 0;
+            margin: 14px 0;
             border-radius: 4px;
-            font-size: 15px;
+            font-size: 17px;
+            line-height: 1.6;
         }
         
         /* ===== 일본어 텍스트 ===== */
         .japanese-text {
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 500;
-            margin: 12px 0;
-            letter-spacing: 6px;
+            margin: 14px 0;
+            letter-spacing: 8px;
             text-align: center;
-            line-height: 1.8;
+            line-height: 1.9;
         }
         
         /* 작은 일본어 */
         .japanese-small {
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 500;
         }
         
         /* 큰 일본어 */
         .japanese-large {
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 600;
         }
         
         /* ===== 체크리스트 ===== */
         .checklist {
             background: #fafafa;
-            padding: 14px;
-            margin: 14px 0;
+            padding: 16px;
+            margin: 16px 0;
             border-radius: 6px;
         }
         
         .checklist-item {
-            margin: 10px 0;
-            font-size: 16px;
-            line-height: 1.5;
+            margin: 12px 0;
+            font-size: 18px;
+            line-height: 1.6;
         }
         
         /* ===== 반응형 (PDF 인쇄) ===== */
@@ -268,7 +277,7 @@
 
     <!-- 슬라이드 1: 표지 -->
     <div class="slide title">
-        <h1>🎌 0강 🎌</h1>
+        <h1><span class="icon">📚</span>0강<span class="icon">✍️</span></h1>
         <div class="subtitle">일본어의 문자와 발음 기초</div>
         <div class="subtitle-jp">ひらがな・カタカナ</div>
         <div class="meta">
@@ -429,7 +438,7 @@
         <p>기본 글자에 점(゛)을 붙이면 탁음입니다.</p>
         
         <div class="box">
-            <div class="japanese-text" style="font-size: 24px; letter-spacing: 3px;">
+            <div class="japanese-text" style="font-size: 28px; letter-spacing: 4px;">
                 か→が | き→ぎ | く→ぐ | け→げ | こ→ご
             </div>
         </div>
@@ -451,7 +460,7 @@
         <h3>반탁음 (はんだくおん)</h3>
         <p><span class="japanese-small">は</span>행에만 있습니다. 점(゜)을 붙입니다.</p>
         <div class="box">
-            <div class="japanese-text" style="font-size: 24px; letter-spacing: 3px;">
+            <div class="japanese-text" style="font-size: 28px; letter-spacing: 4px;">
                 は→ぱ | ひ→ぴ | ふ→ぷ | へ→ぺ | ほ→ぽ
             </div>
         </div>
@@ -549,10 +558,10 @@
 
     <!-- 슬라이드 15: 마무리 -->
     <div class="slide title">
-        <h1>🎉 0강 완료!</h1>
+        <h1><span class="icon">🎉</span>0강 완료!</h1>
         
-        <div style="text-align: left; font-size: 15px; line-height: 1.8; margin: 24px 0;">
-            <p style="font-weight: 600; margin-bottom: 12px;">✨ 0강 핵심 복습</p>
+        <div style="text-align: left; font-size: 17px; line-height: 1.9; margin: 28px 0;">
+            <p style="font-weight: 600; margin-bottom: 14px;">✨ 0강 핵심 복습</p>
             <p>✨ 히라가나 = 부드러운 글씨</p>
             <p>✨ 카타카나 = 각진 글씨</p>
             <p>✨ 발음 규칙 = 탁음, 반탁음, 요음</p>
@@ -560,8 +569,8 @@
         </div>
         
         <div class="highlight">
-            <p style="font-weight: 600; font-size: 16px; margin-bottom: 8px;">📅 다음 강: 0.5강</p>
-            <p style="margin: 0; font-size: 15px;">조사 기초 (は/を/に/が)</p>
+            <p style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">📅 다음 강: 0.5강</p>
+            <p style="margin: 0; font-size: 17px;">조사 기초 (は/を/に/が)</p>
         </div>
     </div>
 
