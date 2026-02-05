@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프롤로그 2강 - 조사 기초: は/を/に/が</title>
+    <style>
+        /* ========== PDF 변환 필수 설정 ========== */
+        
+        /* 1️⃣ 페이지 크기 고정 (필수) */
+        @page {
+            size: 600px 1080px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 2️⃣ 슬라이드 기본 구조 (필수) */
+        .slide {
+            width: 100%;
+            max-width: 600px;
+            min-height: 1080px;
+            padding: 60px 40px;
+            margin: 10px auto;
+            page-break-after: always;
+            page-break-inside: avoid;
+            background: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* 표지 페이지 센터링 */
+        .slide.cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+        }
+        
+        /* 3️⃣ 페이지 깨기 방지 (필수) */
+        .objective-box,
+        .tip-box,
+        .warning-box,
+        .highlight-box,
+        .practice-question,
+        .answer-box,
+        table,
+        h2,
+        h3 {
+            page-break-inside: avoid;
+        }
+        
+        h2, h3 {
+            page-break-after: avoid;
+        }
+        
+        li, tr {
+            page-break-inside: avoid;
+        }
+        
+        /* 4️⃣ 폰트 크기 기준 (필수) */
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #1a1a1a;
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 30px 0 15px 0;
+            color: #1a1a1a;
+        }
+        
+        h3 {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            color: #1a1a1a;
+        }
+        
+        .jp-text {
+            font-size: 26px;
+            color: #1a1a1a;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+        
+        p, li, .text {
+            font-size: 24px;
+            color: #333;
+            margin: 8px 0;
+        }
+        
+        /* 5️⃣ 박스 스타일 - 컬러 시스템 */
+        
+        /* 파란색 계열 - 기본 정보/목표 */
+        .objective-box {
+            background: rgba(173, 216, 230, 0.25);
+            padding: 20px;
+            padding-left: 20px;
+            border-left: 6px solid #1e88e5;
+            border-radius: 6px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        .objective-box ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        .objective-box li {
+            margin: 8px 0;
+        }
+        
+        /* 초록색 계열 - 팁/도움말 */
+        .tip-box {
+            background: rgba(144, 238, 144, 0.25);
+            padding: 15px;
+            padding-left: 15px;
+            border-left: 6px solid #43a047;
+            border-radius: 6px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        .tip-box p {
+            margin: 5px 0;
+        }
+        
+        /* 주황색 계열 - 핵심 개념/강조 */
+        .highlight-box {
+            background: rgba(255, 214, 165, 0.3);
+            padding: 15px;
+            padding-left: 15px;
+            border-left: 6px solid #f57c00;
+            border-radius: 6px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        /* 빨간색 계열 - 주의/경고 */
+        .warning-box {
+            background: rgba(255, 205, 210, 0.3);
+            padding: 15px;
+            padding-left: 15px;
+            border-left: 6px solid #d32f2f;
+            border-radius: 6px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        /* 보라색 계열 - 연습문제 */
+        .practice-question {
+            background: rgba(221, 160, 221, 0.2);
+            padding: 15px;
+            padding-left: 15px;
+            border-left: 6px solid #7b1fa2;
+            border-radius: 6px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        /* 회색 계열 - 정답/해설 */
+        .answer-box {
+            background: rgba(189, 189, 189, 0.25);
+            padding: 15px;
+            padding-left: 15px;
+            border-left: 6px solid #616161;
+            border-radius: 6px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        .answer-box strong {
+            color: #1a1a1a;
+        }
+        
+        /* 6️⃣ 테이블 스타일 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+            font-size: 24px;
+        }
+        
+        th {
+            background: rgba(173, 216, 230, 0.3);
+            font-weight: bold;
+            border-left: 6px solid #1e88e5;
+        }
+        
+        /* 7️⃣ 기타 스타일 */
+        .cover-info {
+            font-size: 24px;
+            color: #666;
+            margin-top: 60px;
+            line-height: 1.8;
+        }
+        
+        .cover-info p {
+            margin: 10px 0;
+        }
+        
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        /* 8️⃣ PDF 인쇄 최적화 (필수) */
+        @media print {
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 600px;
+                height: auto;
+            }
+            
+            .slide {
+                width: 600px;
+                min-height: 1080px;
+                margin: 0;
+                padding: 60px 40px;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+            
+            .slide.cover {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== 페이지 1: 표지 (센터링) ========== -->
+<div class="slide cover">
+    <h1>🎬 프롤로그 2강</h1>
+    <h2 style="font-size: 36px; margin-top: 40px; margin-bottom: 0;">조사 기초: は/を/に/が</h2>
+    
+    <div class="cover-info">
+        <p><strong>Week 1</strong></p>
+        <p>학습시간: 15분</p>
+        <p>난이도: ★☆☆☆☆</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 2: 학습 목표 ========== -->
+<div class="slide">
+    <h2>이번 강을 마치면...</h2>
+    
+    <div class="objective-box">
+        <ul>
+            <li>✅ 조사(じょし)가 뭔지 이해하고 설명할 수 있다</li>
+            <li>✅ は의 정확한 기능과 발음을 알 수 있다</li>
+            <li>✅ を, に, が의 쓰임을 구분할 수 있다</li>
+            <li>✅ 기초 문장에서 조사를 올바르게 배치할 수 있다</li>
+            <li>✅ 한국어와 일본어의 조사 차이를 이해한다</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ========== 페이지 3: 핵심 개념 - 조사란? ========== -->
+<div class="slide">
+    <h3>🎯 조사(じょし)란 뭐예요?</h3>
+    
+    <p style="margin-top: 20px;">조사는 <strong>단어와 단어의 관계</strong>를 보여주는 신호탄입니다. 한국어의 '은/는', '을/를', '에게', '이/가' 같은 것이죠. 일본어 문장에서 조사가 없으면 문장이 성립하지 않습니다!</p>
+    
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p><strong>조사의 역할</strong></p>
+        <ul style="margin-top: 10px;">
+            <li>주어 표시 (누가?)</li>
+            <li>목적어 표시 (뭘?)</li>
+            <li>장소/위치 표시 (어디에?)</li>
+            <li>행동의 대상 표시 (누가?)</li>
+        </ul>
+    </div>
+    
+    <div class="tip-box">
+        <p>💡 <strong>한국어와 비교:</strong> 한국어 "나는 학교에 간다" → 일본어 "私は学校に行きます" → 조사 3개(は, に)</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 4: 조사 1 - は (주제/주어) ========== -->
+<div class="slide">
+    <h3>1️⃣ は(와)의 역할</h3>
+    
+    <p style="margin-top: 15px;"><strong>は</strong>는 <strong>문장의 주제(주어)를 표시</strong>하는 조사입니다. 항상 명사 뒤에 따라옵니다.</p>
+    
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p><strong>기본 문형:</strong></p>
+        <p class="jp-text" style="margin-top: 10px;">[명사] は [설명/상태]</p>
+    </div>
+    
+    <p style="margin-top: 20px;"><strong>💬 예문:</strong></p>
+    <ul>
+        <li class="jp-text">私は学生です。(나는 학생입니다)</li>
+        <li class="jp-text">田中さんは先生です。(다나카 씨는 선생입니다)</li>
+    </ul>
+    
+    <div class="warning-box">
+        <p><strong>⚠️ 중요:</strong> は 조사일 때는 항상 <strong>"와"</strong>로 발음합니다! "하"가 아니에요!</p>
+    </div>
+    
+    <div class="tip-box">
+        <p>💡 "는"과의 차이: 한국어처럼 は도 대비/강조의 느낌이 있습니다. "나는 학생이지만 형은 직장인이야"처럼요!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 5: 조사 2 - を (목적어) ========== -->
+<div class="slide">
+    <h3>2️⃣ を(오)의 역할</h3>
+    
+    <p style="margin-top: 15px;"><strong>を</strong>는 <strong>동사의 목적어</strong>를 나타내는 조사입니다. "뭘 ~하다"는 의미죠.</p>
+    
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p><strong>기본 문형:</strong></p>
+        <p class="jp-text" style="margin-top: 10px;">[명사] を [동사]</p>
+    </div>
+    
+    <p style="margin-top: 20px;"><strong>💬 예문:</strong></p>
+    <ul>
+        <li class="jp-text">本を読みます。(책을 읽습니다)</li>
+        <li class="jp-text">水を飲みます。(물을 마십니다)</li>
+    </ul>
+    
+    <div class="warning-box">
+        <p><strong>⚠️ 중요:</strong> を는 항상 동사 앞에만 옵니다. 다른 위치에 오면 안 돼요!</p>
+    </div>
+    
+    <div class="tip-box">
+        <p>💡 를과의 차이: 한국어와 달리 일본어는 "~를 하다"라는 표현이 매우 많습니다!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 6: 조사 3 - に (장소/방향) ========== -->
+<div class="slide">
+    <h3>3️⃣ に(에)의 역할</h3>
+    
+    <p style="margin-top: 15px;"><strong>に</strong>는 <strong>장소, 방향, 시간, 대상</strong>을 나타내는 다재다능한 조사입니다. 가장 많이 사용되기도 해요.</p>
+    
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p><strong>기본 문형들:</strong></p>
+    </div>
+    
+    <p style="margin-top: 15px;"><strong>🎯 장소 표시 (목표):</strong></p>
+    <p class="jp-text">学校に行きます。(학교에 갑니다)</p>
+    
+    <p style="margin-top: 15px;"><strong>⏰ 시간 표시:</strong></p>
+    <p class="jp-text">朝に起きます。(아침에 일어납니다)</p>
+    
+    <p style="margin-top: 15px;"><strong>👤 대상 표시:</strong></p>
+    <p class="jp-text">先生に聞きます。(선생님께 물어봅니다)</p>
+    
+    <div class="warning-box">
+        <p><strong>⚠️ 중요:</strong> 한국의 "에", "에게", "에게서" 모두 に로 표현될 수 있습니다!</p>
+    </div>
+    
+    <div class="tip-box">
+        <p>💡 팁: "에 간다" = に行く, "에 있다" = に있る (동사에 따라 쓰임이 달라집니다)</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 7: 조사 4 - が (객관적 주어) ========== -->
+<div class="slide">
+    <h3>4️⃣ が(이/가)의 역할</h3>
+    
+    <p style="margin-top: 15px;"><strong>が</strong>는 <strong>객관적 주어</strong>를 표시하거나, <strong>의문문에서 질문의 대상</strong>을 나타냅니다.</p>
+    
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p><strong>기본 문형:</strong></p>
+        <p class="jp-text" style="margin-top: 10px;">[명사] が [설명/성질]</p>
+    </div>
+    
+    <p style="margin-top: 20px;"><strong>💬 예문:</strong></p>
+    <ul>
+        <li class="jp-text">私が一番上手です。(내가 가장 잘합니다)</li>
+        <li class="jp-text">誰がここにいますか。(누가 여기 있어요?)</li>
+    </ul>
+    
+    <div class="warning-box">
+        <p><strong>⚠️ 중요:</strong> は와 가의 차이가 정말 중요해요! 두 개 모두 주어를 나타내지만 뉘앙스가 달라요!</p>
+    </div>
+    
+    <div class="tip-box">
+        <p>💡 <strong>비교:</strong> "私は学生です" (나는 학생입니다) vs "私が学生です" (내가 학생입니다) - 전자는 주제, 후자는 강조/구분의 의미</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 8: 조사 4가지 한눈에 비교 ========== -->
+<div class="slide">
+    <h3>📋 조사 4가지 한눈에 비교</h3>
+    
+    <table style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th style="width: 15%;">조사</th>
+                <th style="width: 30%;">역할</th>
+                <th style="width: 55%;">예시</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="jp-text" style="font-weight: bold;">は</td>
+                <td>주제/주어</td>
+                <td class="jp-text">私は学生です</td>
+            </tr>
+            <tr>
+                <td class="jp-text" style="font-weight: bold;">を</td>
+                <td>목적어</td>
+                <td class="jp-text">本を読みます</td>
+            </tr>
+            <tr>
+                <td class="jp-text" style="font-weight: bold;">に</td>
+                <td>장소/방향/시간</td>
+                <td class="jp-text">学校に行きます</td>
+            </tr>
+            <tr>
+                <td class="jp-text" style="font-weight: bold;">が</td>
+                <td>객관적 주어</td>
+                <td class="jp-text">誰がいますか</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p><strong>💡 기초 문장 패턴:</strong></p>
+        <p style="margin-top: 10px;"><strong>[주제]は [목적어]を [장소]に [동사]します</strong></p>
+        <p class="jp-text" style="margin-top: 10px;">私は本を学校に持ってきます。</p>
+        <p style="margin-top: 8px;">(나는 책을 학교에 가져옵니다)</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 9: 한국인이 자주하는 실수 ========== -->
+<div class="slide">
+    <h3>⚠️ 한국인이 자주하는 실수 4가지</h3>
+    
+    <div class="warning-box">
+        <p><strong>❌ 실수 1: は를 "하"라고 발음하기</strong></p>
+        <p style="margin-top: 10px;">✅ 수정: は 조사일 때는 항상 <strong>"와"</strong>로 발음합니다. 私は(わたしわ), 学校は(がっこうわ)</p>
+    </div>
+    
+    <div class="warning-box">
+        <p><strong>❌ 실수 2: は와 が를 마구 섞어 쓰기</strong></p>
+        <p style="margin-top: 10px;">✅ 수정: は는 주제/대비, が는 객관적 주어/의문. 기초에선 は부터 확실히 해두세요!</p>
+    </div>
+    
+    <div class="warning-box">
+        <p><strong>❌ 실수 3: を를 "오"라고 읽으려 하기</strong></p>
+        <p style="margin-top: 10px;">✅ 수정: を는 조사이므로 항상 음성적으로는 생략됩니다. 읽을 때도 띄지 않고 "책を読む" = "책 읽는다" 이렇게 붙어서 발음해요.</p>
+    </div>
+    
+    <div class="warning-box">
+        <p><strong>❌ 실수 4: に의 여러 의미를 한 번에 이해하려 하기</strong></p>
+        <p style="margin-top: 10px;">✅ 수정: に는 정말 다재다능합니다. 지금은 "장소" 하나만 기억하세요! 나머지는 나중 강에서 배웁니다.</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 10: 연습문제 ========== -->
+<div class="slide">
+    <h3>✏️ 연습문제</h3>
+    
+    <div class="practice-question">
+        <p><strong>문제 1:</strong> 빈 칸에 올바른 조사를 넣으세요.</p>
+        <p style="margin-top: 10px;">私＿学生です。(나는 학생입니다)</p>
+    </div>
+    
+    <div class="practice-question">
+        <p><strong>문제 2:</strong> 목적어를 표시하는 조사는?</p>
+        <p style="margin-top: 10px;">田中さんは毎日水＿飲みます。(다나카 씨는 매일 물을 마십니다)</p>
+    </div>
+    
+    <div class="practice-question">
+        <p><strong>문제 3:</strong> 장소를 표시하는 조사는?</p>
+        <p style="margin-top: 10px;">私は毎日学校＿行きます。(나는 매일 학교에 갑니다)</p>
+    </div>
+    
+    <div class="practice-question">
+        <p><strong>문제 4:</strong> は를 조사로 쓸 때의 발음은?</p>
+        <p style="margin-top: 10px;">① 하　② 와　③ 호　④ 히</p>
+    </div>
+    
+    <div class="practice-question">
+        <p><strong>문제 5:</strong> 의문문에서 "누가"를 나타내는 조사는?</p>
+        <p style="margin-top: 10px;">誰＿ここにいますか。(누가 여기 있어요?)</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 11: 정답 ========== -->
+<div class="slide">
+    <h3>📝 정답 및 해설</h3>
+    
+    <div class="answer-box">
+        <p><strong>문제 1:</strong> は</p>
+        <p style="margin-top: 5px; font-size: 22px;">해설: 주제를 나타낼 때 は를 씁니다. "나는 학생이다"이므로 は를 넣습니다. (발음: "와")</p>
+    </div>
+    
+    <div class="answer-box">
+        <p><strong>문제 2:</strong> を</p>
+        <p style="margin-top: 5px; font-size: 22px;">해설: 동사 앞의 명사는 목적어이므로 を를 씁니다. "물을 마신다"</p>
+    </div>
+    
+    <div class="answer-box">
+        <p><strong>문제 3:</strong> に</p>
+        <p style="margin-top: 5px; font-size: 22px;">해설: "어디에 간다"는 표현에는 に를 씁니다. "학교에 간다"</p>
+    </div>
+    
+    <div class="answer-box">
+        <p><strong>문제 4:</strong> ② 와</p>
+        <p style="margin-top: 5px; font-size: 22px;">해설: は 조사로 쓰일 때는 항상 "와"로 발음합니다. 초급생들이 가장 자주 하는 실수예요!</p>
+    </div>
+    
+    <div class="answer-box">
+        <p><strong>문제 5:</strong> が</p>
+        <p style="margin-top: 5px; font-size: 22px;">해설: 의문문에서 "누가?", "뭐가?"를 나타낼 때는 が를 씁니다.</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 12: 마무리·복습 체크리스트 ========== -->
+<div class="slide">
+    <h3>✅ 이번 강 복습 체크리스트</h3>
+    
+    <div class="objective-box">
+        <ul>
+            <li>✓ 조사란 단어의 관계를 나타내는 신호탄임을 알았다</li>
+            <li>✓ は(주제), を(목적어), に(장소), が(객관적 주어)를 구분할 수 있다</li>
+            <li>✓ は를 조사로 쓸 때 "와"라고 발음한다는 것을 기억한다</li>
+            <li>✓ 기초 문장에 조사를 올바르게 배치할 수 있다</li>
+            <li>✓ 조사가 없으면 일본어 문장이 성립하지 않는다는 것을 이해했다</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ========== 페이지 13: 다음 강 예고 ========== -->
+<div class="slide">
+    <h3>🎬 다음 강 예고</h3>
+    
+    <h2 style="font-size: 36px; margin-top: 60px; margin-bottom: 0; color: #666;">1강</h2>
+    <h3 style="font-size: 28px; color: #666; font-weight: normal; margin-top: 10px; margin-bottom: 0;">일본어 문장의 첫걸음: です/ます의 구조</h3>
+    
+    <p style="margin-top: 40px; font-size: 24px;">이제 조사를 배웠으니, 본격적인 일본어 문장을 만들어봅시다! 가장 중요한 것은 바로 <strong>"です"와 "ます"</strong>입니다. 이 둘이 없으면 일본어 문장이 완성되지 않아요. 1강에서 기초 문장의 기둥을 세워봅시다!</p>
+    
+    <div class="tip-box" style="margin-top: 30px;">
+        <p>💡 <strong>팁:</strong> 프롤로그 1, 2강을 마쳤다면, 이제 진짜 일본어 기초 문장을 만들 준비가 다 되었습니다!</p>
+    </div>
+</div>
+
+</body>
+</html>
