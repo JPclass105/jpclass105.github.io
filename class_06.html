@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6강 - 의문문 심화: 의문사 완벽 마스터</title>
+    <style>
+        /* ========== 박스 컬러 시스템 ========== */
+        .objective-box {
+            background: rgba(173, 216, 230, 0.25);
+            border-left: 6px solid #1e88e5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .tip-box {
+            background: rgba(144, 238, 144, 0.25);
+            border-left: 6px solid #43a047;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box {
+            background: rgba(255, 214, 165, 0.3);
+            border-left: 6px solid #f57c00;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: rgba(255, 205, 210, 0.3);
+            border-left: 6px solid #d32f2f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .practice-question {
+            background: rgba(221, 160, 221, 0.2);
+            border-left: 6px solid #7b1fa2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .answer-box {
+            background: rgba(230, 230, 230, 0.5);
+            border-left: 6px solid #616161;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* ========== PDF 변환 필수 설정 ========== */
+        @page {
+            size: 600px 1080px;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 600px;
+            min-height: 1080px;
+            padding: 60px 40px;
+            margin: 10px auto;
+            page-break-after: always;
+            page-break-inside: avoid;
+            box-sizing: border-box;
+        }
+
+        /* ========== 페이지 깨기 방지 ========== */
+        .objective-box,
+        .tip-box,
+        .warning-box,
+        .highlight-box,
+        .practice-question,
+        .answer-box,
+        table,
+        h2,
+        h3 {
+            page-break-inside: avoid;
+        }
+
+        h2, h3 {
+            page-break-after: avoid;
+        }
+
+        li, tr {
+            page-break-inside: avoid;
+        }
+
+        /* ========== 폰트 크기 기준 ========== */
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px 0 15px 0;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0 15px 0;
+            color: #333;
+        }
+
+        p, li, .text, .jp-example {
+            font-size: 24px;
+            line-height: 1.6;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .jp-example {
+            font-size: 26px;
+            font-weight: 500;
+            margin: 15px 0;
+            color: #1565c0;
+        }
+
+        .jp-ruby {
+            font-size: 26px;
+            color: #1565c0;
+        }
+
+        .kr-translation {
+            font-size: 24px;
+            color: #555;
+            margin-left: 20px;
+        }
+
+        /* ========== 테이블 스타일 ========== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 22px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e3f2fd;
+            font-weight: bold;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* ========== Week 목차 페이지 스타일 ========== */
+        .week-title {
+            font-size: 42px;
+            font-weight: bold;
+            text-align: center;
+            margin: 40px 0 20px 0;
+            color: #1565c0;
+        }
+
+        .week-subtitle {
+            font-size: 28px;
+            text-align: center;
+            margin: 20px 0 40px 0;
+            color: #555;
+        }
+
+        .week-info-box {
+            background: rgba(173, 216, 230, 0.2);
+            border: 2px solid #1e88e5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .week-lecture-list {
+            margin: 20px 0;
+        }
+
+        .lecture-item {
+            font-size: 22px;
+            margin: 15px 0;
+            padding-left: 20px;
+            border-left: 3px solid #1e88e5;
+        }
+
+        /* ========== 강 표지 스타일 ========== */
+        .cover-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 1080px;
+        }
+
+        .cover-number {
+            font-size: 80px;
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .cover-title {
+            font-size: 42px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .cover-info {
+            font-size: 24px;
+            color: #666;
+            line-height: 2;
+            margin-top: 60px;
+        }
+
+        .difficulty {
+            color: #f57c00;
+            font-weight: bold;
+        }
+
+        /* ========== PDF 인쇄 최적화 ========== */
+        @media print {
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 600px;
+                height: auto;
+            }
+            
+            .slide {
+                width: 600px;
+                min-height: 1080px;
+                margin: 0;
+                padding: 60px 40px;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== 페이지 1: Week 2 목차 ========== -->
+<div class="slide">
+    <div class="week-title">Week 2</div>
+    <div class="week-subtitle">의문문 심화 + 기본 동사 + 지시어 최종</div>
+    
+    <div class="week-info-box">
+        <h2 style="margin-top: 0;">🎯 주차 개요</h2>
+        <p>이번 주는 의문문을 완벽하게 마스터하고, 일상에서 자주 쓰는 동사와 지시어를 배우는 주입니다. 의문사를 정확히 이해하면, 일본인과의 실시간 대화가 훨씬 자연스러워집니다!</p>
+    </div>
+
+    <h2>📚 강의 목록</h2>
+    <div class="week-lecture-list">
+        <div class="lecture-item">
+            <strong>6강</strong> | 의문문 심화: 의문사 완벽 마스터 | 20분 | 난이도 ★☆☆☆☆ | 누가, 뭐, 어디에서 등 6가지 의문사를 정확히 구분하고 실제 상황에서 활용하는 법 배우기
+        </div>
+        <div class="lecture-item">
+            <strong>7강</strong> | 대답 표현 완성: はい/いいえ/そうです/ちがいます | 20분 | 난이도 ★☆☆☆☆ | 의문문에 자연스럽게 대답하는 4가지 방식 마스터
+        </div>
+        <div class="lecture-item">
+            <strong>8강</strong> | 동사 기초: 5단 동사 vs 1단 동사 | 20분 | 난이도 ★☆☆☆☆ | 일본어 동사의 기본 분류와 변화 방식 이해
+        </div>
+        <div class="lecture-item">
+            <strong>9강</strong> | 지시어 최종 정리: 실전 활용 | 20분 | 난이도 ★☆☆☆☆ | この/その/あの/どの를 완벽히 구분하여 사용하기
+        </div>
+        <div class="lecture-item">
+            <strong>10강</strong> | 실전 말하기: 교실/쇼핑/카페 상황 대화 | 30분 | 난이도 ★★☆☆☆ | Week 2 종합 복습 및 실제 상황에서 자신감 있게 말하기
+        </div>
+    </div>
+
+    <h2>📊 주차 정보</h2>
+    <p><strong>• 총 학습시간:</strong> 약 150분 (약 2시간 30분)</p>
+    <p><strong>• 난이도:</strong> ★☆☆☆☆ ~ ★★☆☆☆</p>
+    <p><strong>• 최종 목표:</strong> 의문사를 자유롭게 구사하고, 일상 대화에서 자연스럽게 질문하고 대답하기</p>
+    <p><strong>• 학습 팁:</strong> 각 의문사를 외우기보다는 "누가?"라는 개념으로 이해하세요. 패턴을 알면 자동으로 말이 나옵니다!</p>
+</div>
+
+<!-- ========== 페이지 2: 강 표지 ========== -->
+<div class="slide cover-slide">
+    <div class="cover-number">6강</div>
+    <div class="cover-title">의문문 심화:<br>의문사 완벽 마스터</div>
+    <div class="cover-info">
+        <p><strong>Week 2</strong></p>
+        <p>학습시간: 20분</p>
+        <p>난이도: <span class="difficulty">★☆☆☆☆</span></p>
+    </div>
+</div>
+
+<!-- ========== 페이지 3: 학습 목표 ========== -->
+<div class="slide">
+    <h2>이번 강을 마치면...</h2>
+    <div class="objective-box">
+        <p>✅ 의문사(의문词)란 무엇인지 이해하고 설명할 수 있습니다</p>
+        <p>✅ 누가, 뭐, 어디에서, 언제, 왜, 어떻게 의문사 6가지를 완벽히 구분할 수 있습니다</p>
+        <p>✅ 각 의문사를 문장에 올바르게 배치하고 발음할 수 있습니다</p>
+        <p>✅ 의문사를 포함한 의문문을 자연스럽게 만들고 발화할 수 있습니다</p>
+        <p>✅ 한국어 의문사와 일본어 의문사의 사용 방식 차이를 이해합니다</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 4: 핵심 개념 (1) - 의문사란? ========== -->
+<div class="slide">
+    <h2>🎯 의문사(疑問詞)란 뭐예요?</h2>
+    
+    <p>의문사는 <strong>"뭔가 모르는 부분을 물어보는 단어"</strong>입니다. 한국어의 "누가?", "뭐?", "어디?", "언제?", "왜?", "어떻게?"처럼 말이에요.</p>
+
+    <div class="highlight-box">
+        <p><strong>의문사의 역할:</strong></p>
+        <p>• 주어를 물어봄 (누가?) → 誰 (だれ/たれ)</p>
+        <p>• 목적어를 물어봄 (뭐?) → 何 (なに/なん)</p>
+        <p>• 장소를 물어봄 (어디?) → どこ</p>
+        <p>• 시간을 물어봄 (언제?) → いつ</p>
+        <p>• 원인을 물어봄 (왜?) → なぜ</p>
+        <p>• 방법을 물어봄 (어떻게?) → どう</p>
+    </div>
+
+    <div class="tip-box">
+        <p><strong>💡 팁:</strong> 의문사 + 조사 + ます형 = 완벽한 의문문! 문장 끝에 か를 붙이는 것 잊지 마세요!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 5: 핵심 개념 (2) - 의문사 1 (누가, 뭐) ========== -->
+<div class="slide">
+    <h2>1️⃣ 누가? / 뭐?</h2>
+
+    <h3>🔤 誰 (だれ / たれ)</h3>
+    <p class="jp-example">誰ですか？</p>
+    <p class="kr-translation">(누구예요?)</p>
+
+    <p class="jp-example">誰が来ましたか？</p>
+    <p class="kr-translation">(누가 왔어요?)</p>
+
+    <div class="tip-box">
+        <p><strong>💡 발음 팁:</strong> "だれ"와 "たれ" 모두 사용되지만, 일상에서는 "だれ"가 더 많이 쓰입니다.</p>
+    </div>
+
+    <h3>🔤 何 (なに / なん)</h3>
+    <p class="jp-example">これは何ですか？</p>
+    <p class="kr-translation">(이것은 뭐예요?)</p>
+
+    <p class="jp-example">何を食べますか？</p>
+    <p class="kr-translation">(뭘 먹어요?)</p>
+
+    <div class="warning-box">
+        <p><strong>⚠️ 주의:</strong> "何" 다음에 조사가 바로 올 때, "なに" 대신 "なん"으로 발음하기도 합니다.</p>
+        <p>예) 何の本ですか？ (뭐라는 책이예요?) → "なんの" 발음</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 6: 핵심 개념 (3) - 의문사 2 (어디, 언제) ========== -->
+<div class="slide">
+    <h2>2️⃣ 어디에? / 언제?</h2>
+
+    <h3>🔤 どこ (어디)</h3>
+    <p class="jp-example">どこにいますか？</p>
+    <p class="kr-translation">(어디에 있어요?)</p>
+
+    <p class="jp-example">どこで勉強しますか？</p>
+    <p class="kr-translation">(어디에서 공부해요?)</p>
+
+    <div class="tip-box">
+        <p><strong>💡 팁:</strong> "どこに" (어디에) vs "どこで" (어디에서) 차이를 기억하세요!</p>
+        <p>• に = 목적지 (어디로/어디에) → 존재 / 이동</p>
+        <p>• で = 장소 (어디에서) → 행동의 장소</p>
+    </div>
+
+    <h3>🔤 いつ (언제)</h3>
+    <p class="jp-example">いつですか？</p>
+    <p class="kr-translation">(언제예요?)</p>
+
+    <p class="jp-example">毎日いつ学校に行きますか？</p>
+    <p class="kr-translation">(매일 언제 학교에 가요?)</p>
+
+    <div class="tip-box">
+        <p><strong>💡 발음:</strong> いつ는 "이쯔"라고 발음합니다. 한국인들이 "언제"라고 하면서 "이-언-제"처럼 길게 끌기 쉬우니 주의하세요!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 7: 핵심 개념 (4) - 의문사 3 (왜, 어떻게) ========== -->
+<div class="slide">
+    <h2>3️⃣ 왜? / 어떻게?</h2>
+
+    <h3>🔤 なぜ (왜)</h3>
+    <p class="jp-example">なぜですか？</p>
+    <p class="kr-translation">(왜예요?)</p>
+
+    <p class="jp-example">なぜ来ませんでしたか？</p>
+    <p class="kr-translation">(왜 안 왔어요?)</p>
+
+    <div class="highlight-box">
+        <p><strong>📌 원인 vs 이유:</strong> "なぜ"는 원인을 물을 때, "どうして"는 조금 더 부드러운 이유를 물을 때 사용합니다. (나중에 배우기)</p>
+    </div>
+
+    <h3>🔤 どう (어떻게)</h3>
+    <p class="jp-example">どうですか？</p>
+    <p class="kr-translation">(어떻게요? / 어떠세요?)</p>
+
+    <p class="jp-example">毎日どう過ごしていますか？</p>
+    <p class="kr-translation">(매일 어떻게 보내세요?)</p>
+
+    <div class="tip-box">
+        <p><strong>💡 팁:</strong> "どう"는 "방법"뿐 아니라 "상태/느낌"도 물어봅니다. 따라서 매우 자주 쓰이는 의문사입니다!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 8: 의문문 패턴 정리 ========== -->
+<div class="slide">
+    <h2>📋 의문사별 기본 패턴</h2>
+
+    <table>
+        <tr>
+            <th style="width: 15%;">의문사</th>
+            <th style="width: 20%;">일본어</th>
+            <th style="width: 30%;">예문</th>
+            <th style="width: 35%;">번역</th>
+        </tr>
+        <tr>
+            <td><strong>누가?</strong></td>
+            <td>誰</td>
+            <td>誰ですか？</td>
+            <td>누구예요?</td>
+        </tr>
+        <tr>
+            <td><strong>뭐?</strong></td>
+            <td>何</td>
+            <td>何ですか？</td>
+            <td>뭐예요?</td>
+        </tr>
+        <tr>
+            <td><strong>어디?</strong></td>
+            <td>どこ</td>
+            <td>どこですか？</td>
+            <td>어디예요?</td>
+        </tr>
+        <tr>
+            <td><strong>언제?</strong></td>
+            <td>いつ</td>
+            <td>いつですか？</td>
+            <td>언제예요?</td>
+        </tr>
+        <tr>
+            <td><strong>왜?</strong></td>
+            <td>なぜ</td>
+            <td>なぜですか？</td>
+            <td>왜예요?</td>
+        </tr>
+        <tr>
+            <td><strong>어떻게?</strong></td>
+            <td>どう</td>
+            <td>どうですか？</td>
+            <td>어떻게예요?</td>
+        </tr>
+    </table>
+
+    <div class="highlight-box">
+        <p><strong>🎯 기본 공식:</strong> [의문사] + 조사 + 명사/동사 + ですか = 의문문</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 9: 실전 예문 (1) ========== -->
+<div class="slide">
+    <h2>💬 상황별 실전 예문 (1)</h2>
+
+    <h3>📍 교실 상황</h3>
+    <p class="jp-example">田中さんはどこにいますか？</p>
+    <p class="kr-translation">(다나카 씨는 어디에 있어요?)</p>
+
+    <p class="jp-example">これは何ですか？</p>
+    <p class="kr-translation">(이것은 뭐예요?)</p>
+
+    <p class="jp-example">先生はいつ来ますか？</p>
+    <p class="kr-translation">(선생님은 언제 오세요?)</p>
+
+    <h3>🏪 쇼핑 상황</h3>
+    <p class="jp-example">これはいくらですか？</p>
+    <p class="kr-translation">(이건 얼마예요?)</p>
+
+    <p class="jp-example">どこに置いていますか？</p>
+    <p class="kr-translation">(어디에 놓아두세요?)</p>
+
+    <div class="tip-box">
+        <p><strong>💡 팁:</strong> "いくらですか?" (얼마?)는 새로운 의문사입니다! 나중에 자세히 배울 거예요.</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 10: 실전 예문 (2) ========== -->
+<div class="slide">
+    <h2>💬 상황별 실전 예문 (2)</h2>
+
+    <h3>🍵 카페 상황</h3>
+    <p class="jp-example">いつ来ましたか？</p>
+    <p class="kr-translation">(언제 왔어요?)</p>
+
+    <p class="jp-example">何を飲みますか？</p>
+    <p class="kr-translation">(뭘 마셔요?)</p>
+
+    <h3>🎂 일상 대화</h3>
+    <p class="jp-example">誰と一緒に行きますか？</p>
+    <p class="kr-translation">(누구와 함께 가요?)</p>
+
+    <p class="jp-example">どうしてそんなことをするんですか？</p>
+    <p class="kr-translation">(왜 그런 일을 해요?)</p>
+
+    <div class="highlight-box">
+        <p><strong>📌 패턴 주목:</strong> 의문사 + 조사 + 명사 + 동사 + ますか?</p>
+        <p>혼자 자신 있게 문장을 만들어보세요!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 11: 한국인이 자주하는 실수 ========== -->
+<div class="slide">
+    <h2>⚠️ 한국인이 자주하는 실수 5가지</h2>
+
+    <div class="warning-box">
+        <p><strong>❌ 실수 1: 의문사를 문장 끝에 넣기</strong></p>
+        <p>잘못: 学校に行きます、どこに？(X)</p>
+        <p>올바름: どこに学校に行きますか？(O)</p>
+        <p>→ 일본어는 의문사가 문장 앞에 와야 합니다!</p>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>❌ 실수 2: なぜ와 どうして 구분 못 하기</strong></p>
+        <p>이 단계에서는 둘 다 "왜?"의 의미인데, 미묘한 차이가 있습니다.</p>
+        <p>→ 지금은 なぜ부터 확실히 익히세요!</p>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>❌ 실수 3: どこに vs どこで 헷갈리기</strong></p>
+        <p>잘못: どこにご飯を食べますか？</p>
+        <p>올바름: どこで御飯を食べますか？</p>
+        <p>→ 행동의 장소는 で, 목적지는 に 기억하세요!</p>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>❌ 실수 4: 何を뒤에 바로 명사 붙이기</strong></p>
+        <p>잘못: 何を好きですか？(X)</p>
+        <p>올바름: 何が好きですか？(O)</p>
+        <p>→ 좋아하다는 を가 아니라 が와 함께 써요!</p>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>❌ 실수 5: いつ발음 길게 끌기</strong></p>
+        <p>한국인: "이-언-제" (길게)</p>
+        <p>올바른 발음: "い-つ" (짧고 빠르게)</p>
+        <p>→ 음절 단위로 끊어서 발음하세요!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 12: 필수 단어/문법 정리 ========== -->
+<div class="slide">
+    <h2>📚 6강 필수 정리: 의문사 완벽 마스터</h2>
+
+    <div class="highlight-box">
+        <p><strong>의문사 6가지 최종 정리</strong></p>
+        <p><strong>誰 (だれ)</strong> - 누가?</p>
+        <p><strong>何 (なに/なん)</strong> - 뭐?</p>
+        <p><strong>どこ</strong> - 어디?</p>
+        <p><strong>いつ</strong> - 언제?</p>
+        <p><strong>なぜ</strong> - 왜?</p>
+        <p><strong>どう</strong> - 어떻게?</p>
+    </div>
+
+    <div class="objective-box">
+        <p><strong>의문문 만드는 공식</strong></p>
+        <p>[의문사] + 조사 + 명사/동사 + ですか?</p>
+        <p>예: どこ + に + 行き + ますか？ = どこに行きますか？</p>
+    </div>
+
+    <div class="tip-box">
+        <p><strong>💡 최고의 팁:</strong> 각 의문사를 그냥 외우지 말고, "누가를 물어본다"는 개념으로 이해하세요. 그러면 자동으로 입에서 나옵니다!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 13: 연습문제 ========== -->
+<div class="slide">
+    <h2>✏️ 연습문제</h2>
+
+    <div class="practice-question">
+        <p><strong>문제 1:</strong> 다음 한국어를 일본어 의문문으로 만들어보세요.</p>
+        <p>→ "누구예요?"</p>
+    </div>
+
+    <div class="practice-question">
+        <p><strong>문제 2:</strong> 빈 칸에 올바른 의문사를 넣으세요.</p>
+        <p>＿＿を食べますか？(뭘 먹어요?)</p>
+    </div>
+
+    <div class="practice-question">
+        <p><strong>문제 3:</strong> 다음 문장을 의문문으로 바꾸세요.</p>
+        <p>田中さんは毎日学校に行きます。</p>
+        <p>→ 田中さんは毎日＿＿行きますか？</p>
+    </div>
+
+    <div class="practice-question">
+        <p><strong>문제 4:</strong> "어디에서 공부해요?"를 일본어로 말해보세요.</p>
+        <p>힌트: どこ + (조사) + 勉強します</p>
+    </div>
+
+    <div class="practice-question">
+        <p><strong>문제 5:</strong> 다음 중 올바른 문장은?</p>
+        <p>① なぜ来ました？ (O / X)</p>
+        <p>② 来ます、なぜ？ (O / X)</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 14: 정답 및 해설 ========== -->
+<div class="slide">
+    <h2>📝 정답 및 해설</h2>
+
+    <div class="answer-box">
+        <p><strong>문제 1: 誰ですか？</strong></p>
+        <p>해설: 누가를 나타내는 의문사는 "誰(だれ)"입니다. 문장 끝에 か를 붙여 의문문을 만들어요.</p>
+    </div>
+
+    <div class="answer-box">
+        <p><strong>문제 2: 何</strong></p>
+        <p>해설: "뭘 먹다"는 "何を食べます"입니다. を 앞에 오는 의문사는 "何"입니다.</p>
+    </div>
+
+    <div class="answer-box">
+        <p><strong>문제 3: どこに / いつ (또는 どこで)</strong></p>
+        <p>해설: "어디에 간다"는 "どこに行きます"입니다. 행동 장소를 물을 때는 "どこで"를 써도 괜찮아요.</p>
+    </div>
+
+    <div class="answer-box">
+        <p><strong>문제 4: どこで勉強しますか？</strong></p>
+        <p>해설: "어디에서"는 "どこで"입니다. 행동의 장소를 나타낼 때 で를 씁니다.</p>
+    </div>
+
+    <div class="answer-box">
+        <p><strong>문제 5: ① O (O) / ② X (X)</strong></p>
+        <p>해설: 의문사는 문장 앞에 와야 합니다. ①은 올바른 문장, ②는 한국식 어순이므로 틀렸어요!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 15: 마무리 & 복습 체크리스트 ========== -->
+<div class="slide">
+    <h2>✅ 이번 강 복습 체크리스트</h2>
+
+    <div class="objective-box">
+        <p>✓ 의문사(疑問詞)가 뭔지 설명할 수 있다</p>
+        <p>✓ 6가지 의문사 (누가, 뭐, 어디, 언제, 왜, 어떻게)를 구분한다</p>
+        <p>✓ 각 의문사를 문장에 올바르게 배치할 수 있다</p>
+        <p>✓ 의문문 끝에 か를 붙인다는 것을 기억한다</p>
+        <p>✓ どこに vs どこで의 차이를 이해한다</p>
+        <p>✓ 5가지 실수를 피할 수 있다</p>
+        <p>✓ 간단한 의문문을 자유롭게 만들 수 있다</p>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>🎉 6강 완료!</strong></p>
+        <p>의문사를 마스터했습니다! 이제 일본인과 실시간 대화의 첫 걸음을 내딛었어요. 다음 강에서는 "네 / 아니오" 같은 대답 표현을 배워, 의문문-대답의 완벽한 쌍을 만들어보겠습니다!</p>
+    </div>
+</div>
+
+<!-- ========== 페이지 16: 다음 강 예고 ========== -->
+<div class="slide">
+    <h2>🎬 다음 강 예고</h2>
+
+    <div class="tip-box">
+        <p><strong>7강</strong></p>
+        <p><strong>대답 표현 완성: はい/いいえ/そうです/ちがいます</strong></p>
+    </div>
+
+    <p>이번 강에서는 의문사를 배웠으니, 이제 의문문에 자연스럽게 대답할 차례입니다! "네(はい)", "아니오(いいえ)"뿐 아니라 "그렇습니다(そうです)", "아닙니다(ちがいます)" 같은 고급 대답 표현을 배워봅시다. 이 4가지만 마스터하면, 대화의 60%는 완성된 거예요!</p>
+
+    <div class="highlight-box">
+        <p><strong>💡 팁:</strong> 의문사와 대답 표현을 함께 배우면, 실제 회화에서 "물어보기 → 대답하기"의 완벽한 사이클을 만들 수 있습니다!</p>
+    </div>
+</div>
+
+</body>
+</html>
