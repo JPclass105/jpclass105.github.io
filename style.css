@@ -24,7 +24,7 @@ body {
     letter-spacing: 1px;
     font-weight: 500;
     text-align: center;
-    padding-bottom: 70px;  /* 이 값을 조절 */
+    padding-bottom: 80px;  /* 이 값을 조절 */
     padding-left: 30px;  /* 이 값을 조절 */
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ body {
 }
 
 .brand-logo {
-    height: 70px;  /* 필요에 따라 조절 */
+    height: 80px;  /* 필요에 따라 조절 */
     width: auto;   /* 비율 유지 */
 }
 
@@ -45,7 +45,7 @@ body {
     padding: 20px;
     margin: 20px 0;
     min-height: 85vh;
-    margin-top: 70px;  /* 필요에 따라 조절 */
+    margin-top: 80px;  /* 필요에 따라 조절 */
 }
 
 .page h2 {
