@@ -26,6 +26,11 @@ body {
     text-align: center;
 }
 
+.brand-logo {
+    height: 40px;  /* 필요에 따라 조절 */
+    width: auto;   /* 비율 유지 */
+}
+
 /* 📖 다이어리 */
 .diary {    
     width: 340px;
