@@ -24,13 +24,13 @@ body {
     letter-spacing: 1px;
     font-weight: 500;
     text-align: center;
-    padding-bottom: 75px;  /* 이 값을 조절 */
+    padding-bottom: 60px;  /* 이 값을 조절 */
 }
 
 .brand-logo {
-    height: 75px;  /* 필요에 따라 조절 */
+    height: 60px;  /* 필요에 따라 조절 */
     width: auto;   /* 비율 유지 */
-    align: center;
+    align-items: center;
 }
 
 /* 📖 다이어리 */
@@ -42,7 +42,7 @@ body {
     padding: 20px;
     margin: 20px 0;
     min-height: 85vh;
-    margin-top: 75px;  /* 필요에 따라 조절 */
+    margin-top: 60px;  /* 필요에 따라 조절 */
 }
 
 .page h2 {
