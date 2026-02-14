@@ -42,6 +42,7 @@ body {
     padding: 20px;
     margin: 20px 0;
     min-height: 85vh;
+    margin-top: 75px;  /* 필요에 따라 조절 */
 }
 
 .page h2 {
