@@ -29,6 +29,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;  /* 👈 이 줄 추가! */
+    z-index: 1;  /* 👈 이것도 추가 */
 }
 
 .brand-logo {
