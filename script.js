@@ -11,7 +11,8 @@ const map = {
     "news.html": "tab6",
     "kanji.html": "tab7",
     "anki.html": "tab8",
-    "show.html": "tab9"
+    "show.html": "tab9",
+    "curriculum.html": "tab10"
 };
 
 const activeId = map[path];
@@ -31,7 +32,8 @@ const PAGE_LINKS = {
     news: "news.html",
     kanji: "kanji.html",
     anki: "anki.html",
-    show: "show.html"
+    show: "show.html",
+    curriculum: "curriculum.html"
 };
 
 /* 📍 현재 페이지 자동 active 처리 */
