@@ -321,3 +321,104 @@ body {
     text-align: center;
     line-height: 1.6;
 }
+
+/* ===== curriculum page ===== */
+.curriculum-page h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.curriculum-block {
+    background: #fff;
+    border: 1px solid #e6e1d8;
+    border-radius: 12px;
+    margin: 12px 0;
+    overflow: hidden;
+}
+
+.curriculum-block summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    font-weight: 700;
+    background: #fdf8ef;
+    position: relative;
+}
+
+.curriculum-block summary::-webkit-details-marker {
+    display: none;
+}
+
+.curriculum-block summary::after {
+    content: "＋";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 18px;
+}
+
+.curriculum-block[open] summary::after {
+    content: "－";
+}
+
+.curriculum-content {
+    padding: 14px 16px 16px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+    background: #fffdf9;
+}
+
+.curriculum-content p {
+    margin: 0 0 12px;
+}
+
+.week-detail {
+    border: 1px solid #ece7de;
+    border-radius: 10px;
+    background: #ffffff;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.week-detail summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #faf7f1;
+    position: relative;
+}
+
+.week-detail summary::-webkit-details-marker {
+    display: none;
+}
+
+.week-detail summary::after {
+    content: "›";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 16px;
+}
+
+.week-detail[open] summary::after {
+    content: "⌄";
+}
+
+.week-detail div {
+    padding: 10px 14px 12px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555;
+    background: #fff;
+}
+
+/* curriculum tab color */
+#tab10 { background: #e9f0d1; }
